@@ -121,7 +121,6 @@ footer {
     
         Psychoactive Herb Index
         <div style="margin-top: 0.5rem; font-size: 0.9rem;">Explore by name, effect, or region</div>
-
 <div class="filter-bar"><button class="filter-btn" onclick="filterTag('Dream')">🧠 Dream</button><button class="filter-btn" onclick="filterTag('Euphoria')">💫 Euphoria</button><button class="filter-btn" onclick="filterTag('Dissociation')">🌀 Dissociation</button><button class="filter-btn" onclick="filterTag('Ritual')">🔮 Ritual</button><button class="filter-btn" onclick="filterTag('Sedation')">🧘 Sedation</button><button class="filter-btn" onclick="filterTag('Safe')">✅ Safe</button><button class="filter-btn" onclick="resetFilters()">🔄 Reset</button></div><input id="search" onkeyup="filterTable()" placeholder="Search for herbs, effects, tags..." type="text"/>
 <table id="herbTable">
 <thead>
@@ -977,33 +976,55 @@ footer {
 </tbody>
 </table>
 <script>
-        function filterTable() {
-            let input = document.getElementById("search").value.toLowerCase();
-            let rows = document.querySelectorAll("#herbTable tbody tr");
-            rows.forEach(row => {
-                let text = row.innerText.toLowerCase();
-                row.style.display = text.includes(input) ? "" : "none";
-            });
-        }
-    
-    function filterTag(keyword) {
-        document.getElementById("search").value = keyword;
-        filterTable();
-        // Toggle button highlight
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            if (btn.innerText.includes(keyword)) {
-                btn.classList.toggle('active');
-            } else {
-                btn.classList.remove('active');
-            }
-        });
+let activeTags = [];
+
+function filterTable() {
+    const input = document.getElementById("search").value.toLowerCase();
+    const rows = document.querySelectorAll("#herbTable tbody tr");
+
+    rows.forEach(row => {
+        const text = row.innerText.toLowerCase();
+        const matchesSearch = text.includes(input);
+        const tagText = row.querySelector("td:last-child").innerText.toLowerCase();
+
+        const matchesAllTags = activeTags.every(tag => tagText.includes(tag.toLowerCase()));
+        row.style.display = matchesSearch && matchesAllTags ? "" : "none";
+    });
+}
+
+function filterTag(keyword) {
+    const index = activeTags.indexOf(keyword);
+    if (index === -1) {
+        activeTags.push(keyword);
+    } else {
+        activeTags.splice(index, 1);
     }
-    function resetFilters() {
-        document.getElementById("search").value = '';
-        filterTable();
-        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-    }
-    </script>
+    filterTable();
+    updateTagButtonStates();
+}
+
+function updateTagButtonStates() {
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        const tag = btn.textContent.trim();
+        btn.classList.toggle('active', activeTags.includes(tag));
+    });
+}
+
+function resetFilters() {
+    document.getElementById("search").value = '';
+    activeTags = [];
+    filterTable();
+    updateTagButtonStates();
+}
+
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    filterTable();
+});
+</script>
 <footer style="text-align: center; font-size: 0.8rem; padding: 1rem; background: #fafafa; color: #555;">
         © 2025 Willie B. Randolph III. All rights reserved.
     </footer>
