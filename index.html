@@ -121,7 +121,7 @@ footer {
     
         Psychoactive Herb Index
         <div style="margin-top: 0.5rem; font-size: 0.9rem;">Explore by name, effect, or region</div>
-<div class="filter-bar"><button class="filter-btn" onclick="filterTag('Dream')">🧠 Dream</button><button class="filter-btn" onclick="filterTag('Euphoria')">💫 Euphoria</button><button class="filter-btn" onclick="filterTag('Dissociation')">🌀 Dissociation</button><button class="filter-btn" onclick="filterTag('Ritual')">🔮 Ritual</button><button class="filter-btn" onclick="filterTag('Sedation')">🧘 Sedation</button><button class="filter-btn" onclick="filterTag('Safe')">✅ Safe</button><button class="filter-btn" onclick="resetFilters()">🔄 Reset</button></div><input id="search" onkeyup="filterTable()" placeholder="Search for herbs, effects, tags..." type="text"/>
+<div class="filter-bar"><button class="filter-btn" onclick="filterTag('Dream')">🧠 Dream</button><button class="filter-btn" onclick="filterTag('Euphoria')">💫 Euphoria</button><button class="filter-btn" onclick="filterTag('Dissociation')">🌀 Dissociation</button><button class="filter-btn" onclick="filterTag('Ritual')">🔮 Ritual</button><button class="filter-btn" onclick="filterTag('Sedation')">🧘 Sedation</button><button class="filter-btn" onclick="filterTag('Safe')">✅ Safe</button><button class="filter-btn" onclick="resetFilters()">🔄 Reset</button></div><input id="search" onkeyup="filterTable()" placeholder="Search for herbs, effects, tags..." type="text"/><select id="categoryFilter" style="margin: 0 auto 1rem auto; display: block; padding: 0.5rem;"><option value="All">🧪 All Categories</option><option value="Deliriant / Toxic">Deliriant / Toxic</option><option value="Dissociative / Sedative">Dissociative / Sedative</option><option value="Empathogen / Euphoriant">Empathogen / Euphoriant</option><option value="Ethnobotanical / Rare">Ethnobotanical / Rare</option><option value="Oneirogen">Oneirogen</option><option value="Other">Other</option><option value="Ritual / Visionary">Ritual / Visionary</option></select><select id="regionFilter" style="margin: 0 auto 1rem auto; display: block; padding: 0.5rem;"><option value="All">🌐 All Regions</option><option value="🇨🇳 East Asia">🇨🇳 East Asia</option><option value="🇪🇺 Europe">🇪🇺 Europe</option><option value="🇮🇳 India">🇮🇳 India</option><option value="🇲🇽 Latin America">🇲🇽 Latin America</option><option value="🌍 Africa">🌍 Africa</option><option value="🌎 Unknown / Global">🌎 Unknown / Global</option><option value="🌐 Global / Ritual">🌐 Global / Ritual</option></select>
 <table id="herbTable">
 <thead>
 <tr>
@@ -977,18 +977,23 @@ footer {
 </table>
 <script>
 let activeTags = [];
-
 function filterTable() {
     const input = document.getElementById("search").value.toLowerCase();
+    const selectedRegion = document.getElementById("regionFilter").value;
+    const selectedCategory = document.getElementById("categoryFilter").value;
     const rows = document.querySelectorAll("#herbTable tbody tr");
 
     rows.forEach(row => {
         const text = row.innerText.toLowerCase();
-        const matchesSearch = text.includes(input);
-        const tagText = row.querySelector("td:last-child").innerText.toLowerCase();
+        const regionText = row.cells[7].innerText;
+        const categoryText = row.cells[1].innerText;
 
-        const matchesAllTags = activeTags.every(tag => tagText.includes(tag.toLowerCase()));
-        row.style.display = matchesSearch && matchesAllTags ? "" : "none";
+        const matchesSearch = text.includes(input);
+        const matchesAllTags = activeTags.every(tag => row.cells[8].innerText.toLowerCase().includes(tag.toLowerCase()));
+        const matchesRegion = selectedRegion === "All" || regionText === selectedRegion;
+        const matchesCategory = selectedCategory === "All" || categoryText === selectedCategory;
+
+        row.style.display = matchesSearch && matchesAllTags && matchesRegion && matchesCategory ? "" : "none";
     });
 }
 
@@ -1012,6 +1017,8 @@ function updateTagButtonStates() {
 
 function resetFilters() {
     document.getElementById("search").value = '';
+    document.getElementById("regionFilter").value = 'All';
+    document.getElementById("categoryFilter").value = 'All';
     activeTags = [];
     filterTable();
     updateTagButtonStates();
@@ -1021,7 +1028,31 @@ function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
 }
 
+function highlightSearchMatches() {
+    const input = document.getElementById("search").value.toLowerCase();
+    document.querySelectorAll("#herbTable tbody tr").forEach(row => {
+        row.querySelectorAll("td").forEach(cell => {
+            const raw = cell.innerText;
+            const lower = raw.toLowerCase();
+            if (input && lower.includes(input)) {
+                const start = lower.indexOf(input);
+                const end = start + input.length;
+                const highlighted = raw.substring(0, start) + '<mark>' + raw.substring(start, end) + '</mark>' + raw.substring(end);
+                cell.innerHTML = highlighted;
+            } else {
+                cell.innerHTML = raw;
+            }
+        });
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("regionFilter").addEventListener("change", filterTable);
+    document.getElementById("categoryFilter").addEventListener("change", filterTable);
+    document.getElementById("search").addEventListener("input", () => {
+        filterTable();
+        highlightSearchMatches();
+    });
     filterTable();
 });
 </script>
