@@ -1188,5 +1188,12 @@ document.addEventListener("DOMContentLoaded", function () {
 <footer style="text-align: center; font-size: 0.8rem; padding: 1rem; background: #fafafa; color: #555;">
         © 2025 Willie B. Randolph III. All rights reserved.
     </footer>
+
+<div id="herbModal" style="display:none; position:fixed; top:10%; left:50%; transform:translateX(-50%);
+    background:#fff; padding:1.5rem; border-radius:10px; border:1px solid #ccc; max-width:90%; z-index:10000;">
+<h3 id="modalHerbName"></h3>
+<p id="modalHerbDetails" style="line-height:1.5;"></p>
+<button onclick="document.getElementById('herbModal').style.display='none';">Close</button>
+</div>
 </body>
 </html>
