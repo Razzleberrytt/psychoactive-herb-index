@@ -150,6 +150,30 @@ footer {
         Psychoactive Herb Index
         <div style="margin-top: 0.5rem; font-size: 0.9rem;">Explore by name, effect, or region</div>
 <div class="filter-bar"><button class="filter-btn" onclick="filterTag('Dream')">🧠 Dream</button><button class="filter-btn" onclick="filterTag('Euphoria')">💫 Euphoria</button><button class="filter-btn" onclick="filterTag('Dissociation')">🌀 Dissociation</button><button class="filter-btn" onclick="filterTag('Ritual')">🔮 Ritual</button><button class="filter-btn" onclick="filterTag('Sedation')">🧘 Sedation</button><button class="filter-btn" onclick="filterTag('Safe')">✅ Safe</button><button class="filter-btn" onclick="resetFilters()">🔄 Reset</button></div><button onclick="toggleFavorites()" style="margin: 0 auto 1rem auto; display: block;">⭐ Show Favorites Only</button><input id="search" onkeyup="filterTable()" placeholder="Search for herbs, effects, tags..." type="text"/><select id="categoryFilter" style="margin: 0 auto 1rem auto; display: block; padding: 0.5rem;"><option value="All">🧪 All Categories</option><option value="Deliriant / Toxic">Deliriant / Toxic</option><option value="Dissociative / Sedative">Dissociative / Sedative</option><option value="Empathogen / Euphoriant">Empathogen / Euphoriant</option><option value="Ethnobotanical / Rare">Ethnobotanical / Rare</option><option value="Oneirogen">Oneirogen</option><option value="Other">Other</option><option value="Ritual / Visionary">Ritual / Visionary</option></select><select id="regionFilter" style="margin: 0 auto 1rem auto; display: block; padding: 0.5rem;"><option value="All">🌐 All Regions</option><option value="🇨🇳 East Asia">🇨🇳 East Asia</option><option value="🇪🇺 Europe">🇪🇺 Europe</option><option value="🇮🇳 India">🇮🇳 India</option><option value="🇲🇽 Latin America">🇲🇽 Latin America</option><option value="🌍 Africa">🌍 Africa</option><option value="🌎 Unknown / Global">🌎 Unknown / Global</option><option value="🌐 Global / Ritual">🌐 Global / Ritual</option></select>
+<div id="tagLegend" style="max-width:600px; margin:1rem auto; background:#fff; border:1px solid #ccc; padding:1rem; border-radius:8px;">
+<h3 style="margin-top:0;">🌿 Tag Legend</h3>
+<ul style="list-style:none; padding-left:0; font-size:0.9rem;">
+<li>🧠 Dream – Enhances dreaming</li>
+<li>💫 Euphoria – Elevates mood</li>
+<li>🌀 Dissociation – Alters body awareness</li>
+<li>🔮 Ritual – Traditional or ceremonial use</li>
+<li>🧘 Sedation – Calming or sleep-inducing</li>
+<li>✅ Safe – Generally recognized as low-risk</li>
+<li>⚠️ Restricted – May be regulated</li>
+<li>☠️ Toxic – Known toxic effects</li>
+<li>☕ Brewable – Can be consumed as tea</li>
+<li>🌬️ Smokable – Can be smoked</li>
+<li>💊 Oral – Taken as capsule or raw</li>
+<li>🕯️ Ritual – Often burned or used in incense</li>
+<li>⚡ Stimulant – Increases energy</li>
+<li>🧪 Fermented – Requires fermentation</li>
+<li>🧠 Cognitive – May affect cognition or clarity</li>
+</ul>
+</div>
+<div style="max-width:600px; margin:1rem auto; text-align:center;">
+<button onclick="exportTableToCSV()" style="margin-right:1rem;">📄 Export CSV</button>
+<button onclick="exportTableToJSON()">📦 Export JSON</button>
+</div>
 <table id="herbTable">
 <thead>
 <tr><th>⭐</th>
