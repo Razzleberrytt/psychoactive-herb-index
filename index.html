@@ -233,6 +233,48 @@ a {
 .expand-row {
   background: #fafafa !important;
 }
+
+.filter-bar {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 1000;
+    padding: 0.75rem;
+    border-bottom: 1px solid #ddd;
+}
+tbody tr:hover {
+    background-color: #f5f5f5;
+}
+td, th {
+    font-size: 0.92rem;
+    font-weight: 400;
+}
+th {
+    font-weight: 600;
+}
+.filter-btn[title], .tag-tooltip {
+    position: relative;
+}
+.filter-btn[title]:hover::after,
+.tag-tooltip:hover::after {
+    content: attr(title);
+    position: absolute;
+    top: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #222;
+    color: #fff;
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    border-radius: 4px;
+    z-index: 9999;
+}
+@media (max-width: 768px) {
+    .filter-bar, .tag-legend, .filter-btn, input, select {
+        font-size: 0.85rem !important;
+    }
+}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/></head>
 <body>
@@ -246,7 +288,7 @@ a {
         Psychoactive Herb Index
         <div style="margin-top: 0.5rem; font-size: 0.9rem;">Explore by name, effect, or region</div>
 <div class="filter-bar"><button class="filter-btn" onclick="filterTag('Dream')">🧠 Dream</button><button class="filter-btn" onclick="filterTag('Euphoria')">💫 Euphoria</button><button class="filter-btn" onclick="filterTag('Dissociation')">🌀 Dissociation</button><button class="filter-btn" onclick="filterTag('Ritual')">🔮 Ritual</button><button class="filter-btn" onclick="filterTag('Sedation')">🧘 Sedation</button><button class="filter-btn" onclick="filterTag('Safe')">✅ Safe</button><button class="filter-btn" onclick="resetFilters()">🔄 Reset</button></div><button onclick="toggleFavorites()" style="margin: 0 auto 1rem auto; display: block;">⭐ Show Favorites Only</button><input id="search" onkeyup="filterTable()" placeholder="Search for herbs, effects, tags..." type="text"/><select id="categoryFilter" style="margin: 0 auto 1rem auto; display: block; padding: 0.5rem;"><option value="All">🧪 All Categories</option><option value="Deliriant / Toxic">Deliriant / Toxic</option><option value="Dissociative / Sedative">Dissociative / Sedative</option><option value="Empathogen / Euphoriant">Empathogen / Euphoriant</option><option value="Ethnobotanical / Rare">Ethnobotanical / Rare</option><option value="Oneirogen">Oneirogen</option><option value="Other">Other</option><option value="Ritual / Visionary">Ritual / Visionary</option></select><select id="regionFilter" style="margin: 0 auto 1rem auto; display: block; padding: 0.5rem;"><option value="All">🌐 All Regions</option><option value="🇨🇳 East Asia">🇨🇳 East Asia</option><option value="🇪🇺 Europe">🇪🇺 Europe</option><option value="🇮🇳 India">🇮🇳 India</option><option value="🇲🇽 Latin America">🇲🇽 Latin America</option><option value="🌍 Africa">🌍 Africa</option><option value="🌎 Unknown / Global">🌎 Unknown / Global</option><option value="🌐 Global / Ritual">🌐 Global / Ritual</option></select>
-<div id="tagLegend" style="max-width:600px; margin:1rem auto; background:#fff; border:1px solid #ccc; padding:1rem; border-radius:8px;">
+<button onclick="toggleLegend()" style="margin: 1rem auto; display: block;">🧾 Toggle Tag Legend</button><div id="tagLegend" style="max-width:600px; margin:1rem auto; background:#fff; border:1px solid #ccc; padding:1rem; border-radius:8px;">
 <h3 style="margin-top:0;">🌿 Tag Legend</h3>
 <ul style="list-style:none; padding-left:0; font-size:0.9rem;">
 <li>🧠 Dream – Enhances dreaming</li>
@@ -294,17 +336,15 @@ a {
 <td data-label="Onset">1-5 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🇲🇽 Latin America</td>
-<td data-label="Tags">🌬️ Smokable, ☕ Brewable, 🧠 Dream, ✅ Safe</td>
-</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">
-<strong>Mechanism of Action (MOA):</strong> Unknown; may involve cholinergic or serotonergic modulation<br/>
+<td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, 🧠 Dream, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10"><strong>Mechanism of Action (MOA):</strong> Unknown; may involve cholinergic or serotonergic modulation<br/>
 <strong>Pharmacokinetics:</strong> Limited data; likely metabolized hepatically<br/>
 <strong>Therapeutic Uses:</strong> Traditional use for dream enhancement and divination<br/>
 <strong>Side Effects:</strong> Bitter taste, nausea, mild sedation<br/>
 <strong>Contraindications:</strong> Pregnancy, liver issues, unknown compound sensitivity<br/>
 <strong>Drug Interactions:</strong> Unknown; caution with CNS depressants<br/>
 <strong>Toxicity / LD50:</strong> No formal LD50; high doses may cause dizziness or vomiting<br/>
-<strong>External Source:</strong> <a href="https://erowid.org/plants/calea_zacatechichi/" target="_blank">More info</a>
-</td></tr>
+<strong>External Source:</strong> <a href="https://erowid.org/plants/calea_zacatechichi/" target="_blank">More info</a></td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Silene capensis</td>
 <td data-label="Category">Oneirogen</td>
@@ -314,17 +354,15 @@ a {
 <td data-label="Onset">15-45 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌍 Africa</td>
-<td data-label="Tags">☕ Brewable, 🧠 Dream, ✅ Safe</td>
-</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">
-<strong>Mechanism of Action (MOA):</strong> Poorly understood; possibly interacts with sleep-related neurochemistry<br/>
+<td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, 🧠 Dream, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10"><strong>Mechanism of Action (MOA):</strong> Poorly understood; possibly interacts with sleep-related neurochemistry<br/>
 <strong>Pharmacokinetics:</strong> Onset 15-45 mins; duration unknown<br/>
 <strong>Therapeutic Uses:</strong> Dream enhancement, traditional Xhosa use<br/>
 <strong>Side Effects:</strong> Rare; possibly drowsiness or GI upset<br/>
 <strong>Contraindications:</strong> Unknown, but caution in pregnancy or with sedatives<br/>
 <strong>Drug Interactions:</strong> Unknown<br/>
 <strong>Toxicity / LD50:</strong> Low reported toxicity<br/>
-<strong>External Source:</strong> <a href="https://erowid.org/plants/silene_capensis/" target="_blank">More info</a>
-</td></tr>
+<strong>External Source:</strong> <a href="https://erowid.org/plants/silene_capensis/" target="_blank">More info</a></td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Entada rheedii</td>
 <td data-label="Category">Oneirogen</td>
@@ -334,17 +372,15 @@ a {
 <td data-label="Onset">30-60 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🇲🇽 Latin America</td>
-<td data-label="Tags">💊 Oral, 🧠 Dream, ✅ Safe</td>
-</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">
-<strong>Mechanism of Action (MOA):</strong> May involve cholinergic activation; traditional use<br/>
+<td data-label="Tags"><span class="tag-tooltip" title="Taken as capsule or raw">💊 Oral</span>, 🧠 Dream, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10"><strong>Mechanism of Action (MOA):</strong> May involve cholinergic activation; traditional use<br/>
 <strong>Pharmacokinetics:</strong> Moderate onset; effects last several hours<br/>
 <strong>Therapeutic Uses:</strong> Dream induction, seed chewing in African traditions<br/>
 <strong>Side Effects:</strong> Possible nausea or mild intoxication at higher doses<br/>
 <strong>Contraindications:</strong> Unknown<br/>
 <strong>Drug Interactions:</strong> Unknown<br/>
 <strong>Toxicity / LD50:</strong> No known toxicity data<br/>
-<strong>External Source:</strong> <a href="https://en.wikipedia.org/wiki/Entada_rheedii" target="_blank">More info</a>
-</td></tr>
+<strong>External Source:</strong> <a href="https://en.wikipedia.org/wiki/Entada_rheedii" target="_blank">More info</a></td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Mugwort</td>
 <td data-label="Category">Oneirogen</td>
@@ -354,7 +390,7 @@ a {
 <td data-label="Onset">1-5 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🇪🇺 Europe</td>
-<td data-label="Tags">🌬️ Smokable, ☕ Brewable, 🧠 Dream, ✅ Safe</td>
+<td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, 🧠 Dream, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Mugwort will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Heimia salicifolia (Sinicuichi)</td>
@@ -365,7 +401,7 @@ a {
 <td data-label="Onset">15-45 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌎 Unknown / Global</td>
-<td data-label="Tags">☕ Brewable, 🧪 Fermented, 🌀 Dissociation, ✅ Safe</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Requires fermentation">🧪 Fermented</span>, <span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Heimia salicifolia (Sinicuichi) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Sceletium tortuosum (Kanna)</td>
@@ -376,7 +412,7 @@ a {
 <td data-label="Onset">30-60 min</td>
 <td data-label="Legal Status">Legal, sometimes restricted</td>
 <td data-label="Region">🌎 Unknown / Global</td>
-<td data-label="Tags">💊 Oral, 💫 Euphoria, ⚠️ Restricted</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Taken as capsule or raw">💊 Oral</span>, <span class="tag-tooltip" title="Elevates mood">💫 Euphoria</span>, <span class="tag-tooltip" title="May be regulated">⚠️ Restricted</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Sceletium tortuosum (Kanna) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Blue Lotus (Nymphaea caerulea)</td>
@@ -387,7 +423,7 @@ a {
 <td data-label="Onset">1-5 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌎 Unknown / Global</td>
-<td data-label="Tags">🌬️ Smokable, ☕ Brewable, 🧘 Sedation, ✅ Safe</td>
+<td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Calming or sleep-inducing">🧘 Sedation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Blue Lotus (Nymphaea caerulea) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Wild Dagga</td>
@@ -398,7 +434,7 @@ a {
 <td data-label="Onset">1-5 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌍 Africa</td>
-<td data-label="Tags">🌬️ Smokable, 💫 Euphoria, ✅ Safe</td>
+<td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Elevates mood">💫 Euphoria</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Wild Dagga will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Damiana</td>
@@ -409,7 +445,7 @@ a {
 <td data-label="Onset">1-5 min</td>
 <td data-label="Legal Status">Legal, banned in some countries</td>
 <td data-label="Region">🇲🇽 Latin America</td>
-<td data-label="Tags">🌬️ Smokable, ☕ Brewable, 💫 Euphoria, ✅ Safe</td>
+<td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Elevates mood">💫 Euphoria</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Damiana will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Nelumbo nucifera (Sacred Lotus)</td>
@@ -420,7 +456,7 @@ a {
 <td data-label="Onset">1-5 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌎 Unknown / Global</td>
-<td data-label="Tags">🌬️ Smokable, ☕ Brewable, 🧠 Cognitive, 🧘 Sedation, ✅ Safe</td>
+<td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Affects cognition or clarity">🧠 Cognitive</span>, <span class="tag-tooltip" title="Calming or sleep-inducing">🧘 Sedation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Nelumbo nucifera (Sacred Lotus) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Salvia divinorum</td>
@@ -431,7 +467,7 @@ a {
 <td data-label="Onset">1-5 min</td>
 <td data-label="Legal Status">Restricted in many regions</td>
 <td data-label="Region">🇲🇽 Latin America</td>
-<td data-label="Tags">🌬️ Smokable, 🌀 Dissociation, ⚠️ Restricted</td>
+<td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="May be regulated">⚠️ Restricted</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Salvia divinorum will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Wild Lettuce</td>
@@ -442,7 +478,7 @@ a {
 <td data-label="Onset">1-5 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌎 Unknown / Global</td>
-<td data-label="Tags">🌬️ Smokable, 🌀 Dissociation, ✅ Safe</td>
+<td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Wild Lettuce will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Valerian Root</td>
@@ -453,7 +489,7 @@ a {
 <td data-label="Onset">15-45 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🇪🇺 Europe</td>
-<td data-label="Tags">☕ Brewable, 🌀 Dissociation, ✅ Safe</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Valerian Root will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Kava Kava</td>
@@ -464,7 +500,7 @@ a {
 <td data-label="Onset">1-5 min</td>
 <td data-label="Legal Status">Legal, restricted in some countries</td>
 <td data-label="Region">🌎 Unknown / Global</td>
-<td data-label="Tags">🌬️ Smokable, ☕ Brewable, 🌀 Dissociation, ⚠️ Restricted</td>
+<td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="May be regulated">⚠️ Restricted</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Kava Kava will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Acorus calamus</td>
@@ -475,7 +511,7 @@ a {
 <td data-label="Onset">15-45 min</td>
 <td data-label="Legal Status">Banned for food use in US (asarone)</td>
 <td data-label="Region">🌎 Unknown / Global</td>
-<td data-label="Tags">☕ Brewable, 💊 Oral, 🌀 Dissociation, 🧠 Cognitive, ✅ Safe</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Taken as capsule or raw">💊 Oral</span>, <span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="Affects cognition or clarity">🧠 Cognitive</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Acorus calamus will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Chiric Sanango</td>
@@ -486,7 +522,7 @@ a {
 <td data-label="Onset">15-45 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌎 Unknown / Global</td>
-<td data-label="Tags">☕ Brewable, 🌀 Dissociation, ✅ Safe</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Chiric Sanango will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Wormwood</td>
@@ -497,7 +533,7 @@ a {
 <td data-label="Onset">1-5 min</td>
 <td data-label="Legal Status">Legal, thujone regulated in some countries</td>
 <td data-label="Region">🇪🇺 Europe</td>
-<td data-label="Tags">🌬️ Smokable, 🔮 Ritual, ✅ Safe</td>
+<td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Traditional or ceremonial use">🔮 Ritual</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Wormwood will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Mexican Tarragon</td>
@@ -508,7 +544,7 @@ a {
 <td data-label="Onset">1-5 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🇲🇽 Latin America</td>
-<td data-label="Tags">🌬️ Smokable, ☕ Brewable, 🕯️ Ritual, 🧠 Cognitive, ✅ Safe</td>
+<td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Burned or used in incense">🕯️ Ritual</span>, <span class="tag-tooltip" title="Affects cognition or clarity">🧠 Cognitive</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Mexican Tarragon will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Frankincense</td>
@@ -519,7 +555,7 @@ a {
 <td data-label="Onset">5-20 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌐 Global / Ritual</td>
-<td data-label="Tags">🕯️ Ritual, 🔮 Ritual, ✅ Safe</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Burned or used in incense">🕯️ Ritual</span>, <span class="tag-tooltip" title="Traditional or ceremonial use">🔮 Ritual</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Frankincense will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Mapacho</td>
@@ -530,7 +566,7 @@ a {
 <td data-label="Onset">1-5 min</td>
 <td data-label="Legal Status">Restricted (due to nicotine content)</td>
 <td data-label="Region">🇲🇽 Latin America</td>
-<td data-label="Tags">🌬️ Smokable, 🔮 Ritual, ⚠️ Restricted</td>
+<td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Traditional or ceremonial use">🔮 Ritual</span>, <span class="tag-tooltip" title="May be regulated">⚠️ Restricted</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Mapacho will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Datura / Brugmansia</td>
@@ -541,7 +577,7 @@ a {
 <td data-label="Onset">Varies</td>
 <td data-label="Legal Status">Dangerous / Toxic / Controlled</td>
 <td data-label="Region">🌎 Unknown / Global</td>
-<td data-label="Tags">☠️ Toxic</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Known toxic effects">☠️ Toxic</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Datura / Brugmansia will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Nutmeg (high dose)</td>
@@ -552,7 +588,7 @@ a {
 <td data-label="Onset">Varies</td>
 <td data-label="Legal Status">Discouraged / Toxic</td>
 <td data-label="Region">🌎 Unknown / Global</td>
-<td data-label="Tags">☠️ Toxic</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Known toxic effects">☠️ Toxic</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Nutmeg (high dose) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Asparagus racemosus (Shatavari)</td>
@@ -563,7 +599,7 @@ a {
 <td data-label="Onset">15-45 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🇮🇳 India</td>
-<td data-label="Tags">☕ Brewable, ✅ Safe</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Asparagus racemosus (Shatavari) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Tagetes lucida (Mexican Tarragon)</td>
@@ -574,7 +610,7 @@ a {
 <td data-label="Onset">1-5 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🇲🇽 Latin America</td>
-<td data-label="Tags">🌬️ Smokable, ☕ Brewable, 🕯️ Ritual, 🧠 Cognitive, ✅ Safe</td>
+<td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Burned or used in incense">🕯️ Ritual</span>, <span class="tag-tooltip" title="Affects cognition or clarity">🧠 Cognitive</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Tagetes lucida (Mexican Tarragon) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Turnera diffusa</td>
@@ -585,7 +621,7 @@ a {
 <td data-label="Onset">1-5 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌎 Unknown / Global</td>
-<td data-label="Tags">🌬️ Smokable, ☕ Brewable, 💫 Euphoria, ✅ Safe</td>
+<td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Elevates mood">💫 Euphoria</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Turnera diffusa will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Kratom (Mitragyna speciosa)</td>
@@ -596,7 +632,7 @@ a {
 <td data-label="Onset">1-5 min</td>
 <td data-label="Legal Status">Restricted in some regions</td>
 <td data-label="Region">🌎 Unknown / Global</td>
-<td data-label="Tags">🌬️ Smokable, 💊 Oral, 💫 Euphoria, ⚡ Stimulant, ⚠️ Restricted</td>
+<td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Taken as capsule or raw">💊 Oral</span>, <span class="tag-tooltip" title="Elevates mood">💫 Euphoria</span>, <span class="tag-tooltip" title="Increases energy">⚡ Stimulant</span>, <span class="tag-tooltip" title="May be regulated">⚠️ Restricted</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Kratom (Mitragyna speciosa) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Kra Thum Na / Kok</td>
@@ -607,7 +643,7 @@ a {
 <td data-label="Onset">15-45 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌎 Unknown / Global</td>
-<td data-label="Tags">☕ Brewable, 💊 Oral, 💫 Euphoria, ✅ Safe</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Taken as capsule or raw">💊 Oral</span>, <span class="tag-tooltip" title="Elevates mood">💫 Euphoria</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Kra Thum Na / Kok will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Sakae Naa</td>
@@ -618,7 +654,7 @@ a {
 <td data-label="Onset">15-45 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌎 Unknown / Global</td>
-<td data-label="Tags">☕ Brewable, 💊 Oral, 💫 Euphoria, ⚡ Stimulant, ✅ Safe</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Taken as capsule or raw">💊 Oral</span>, <span class="tag-tooltip" title="Elevates mood">💫 Euphoria</span>, <span class="tag-tooltip" title="Increases energy">⚡ Stimulant</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Sakae Naa will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Nelumbo nucifera</td>
@@ -629,7 +665,7 @@ a {
 <td data-label="Onset">1-5 min</td>
 <td data-label="Legal Status">Legal, low concern</td>
 <td data-label="Region">🌎 Unknown / Global</td>
-<td data-label="Tags">🌬️ Smokable, ☕ Brewable, 💫 Euphoria, 🧘 Sedation, ✅ Safe</td>
+<td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Elevates mood">💫 Euphoria</span>, <span class="tag-tooltip" title="Calming or sleep-inducing">🧘 Sedation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Nelumbo nucifera will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Scullcap (Scutellaria)</td>
@@ -640,7 +676,7 @@ a {
 <td data-label="Onset">15-45 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌎 Unknown / Global</td>
-<td data-label="Tags">☕ Brewable, 🌀 Dissociation, ✅ Safe</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Scullcap (Scutellaria) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">California Poppy</td>
@@ -651,7 +687,7 @@ a {
 <td data-label="Onset">15-45 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌎 Unknown / Global</td>
-<td data-label="Tags">☕ Brewable, 🌀 Dissociation, 🧘 Sedation, ✅ Safe</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="Calming or sleep-inducing">🧘 Sedation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for California Poppy will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Hop Flowers</td>
@@ -662,7 +698,7 @@ a {
 <td data-label="Onset">15-45 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌎 Unknown / Global</td>
-<td data-label="Tags">☕ Brewable, 🌀 Dissociation, ✅ Safe</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Hop Flowers will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Copal</td>
@@ -673,7 +709,7 @@ a {
 <td data-label="Onset">5-20 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌐 Global / Ritual</td>
-<td data-label="Tags">🕯️ Ritual, 🔮 Ritual, ✅ Safe</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Burned or used in incense">🕯️ Ritual</span>, <span class="tag-tooltip" title="Traditional or ceremonial use">🔮 Ritual</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Copal will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Sweetgrass</td>
@@ -684,7 +720,7 @@ a {
 <td data-label="Onset">Varies</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌐 Global / Ritual</td>
-<td data-label="Tags">🔮 Ritual, ✅ Safe</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Traditional or ceremonial use">🔮 Ritual</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Sweetgrass will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">White Sage</td>
@@ -695,7 +731,7 @@ a {
 <td data-label="Onset">5-20 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌐 Global / Ritual</td>
-<td data-label="Tags">🕯️ Ritual, 🔮 Ritual, 🧠 Cognitive, ✅ Safe</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Burned or used in incense">🕯️ Ritual</span>, <span class="tag-tooltip" title="Traditional or ceremonial use">🔮 Ritual</span>, <span class="tag-tooltip" title="Affects cognition or clarity">🧠 Cognitive</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for White Sage will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Frankincense (Boswellia)</td>
@@ -706,7 +742,7 @@ a {
 <td data-label="Onset">Varies</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌐 Global / Ritual</td>
-<td data-label="Tags">✅ Safe</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Frankincense (Boswellia) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Henbane</td>
@@ -717,7 +753,7 @@ a {
 <td data-label="Onset">Varies</td>
 <td data-label="Legal Status">Controlled / Toxic</td>
 <td data-label="Region">🌎 Unknown / Global</td>
-<td data-label="Tags">🕯️ Ritual, ☠️ Toxic</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Burned or used in incense">🕯️ Ritual</span>, <span class="tag-tooltip" title="Known toxic effects">☠️ Toxic</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Henbane will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Belladonna</td>
@@ -728,7 +764,7 @@ a {
 <td data-label="Onset">Varies</td>
 <td data-label="Legal Status">Controlled / Toxic</td>
 <td data-label="Region">🌎 Unknown / Global</td>
-<td data-label="Tags">☠️ Toxic</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Known toxic effects">☠️ Toxic</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Belladonna will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Mandrake Root</td>
@@ -739,7 +775,7 @@ a {
 <td data-label="Onset">Varies</td>
 <td data-label="Legal Status">Controlled / Toxic</td>
 <td data-label="Region">🌎 Unknown / Global</td>
-<td data-label="Tags">☠️ Toxic</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Known toxic effects">☠️ Toxic</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Mandrake Root will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Anadenanthera peregrina (Yopo)</td>
@@ -750,7 +786,7 @@ a {
 <td data-label="Onset">1-3 min</td>
 <td data-label="Legal Status">Restricted in many regions</td>
 <td data-label="Region">🇲🇽 Latin America</td>
-<td data-label="Tags">⚠️ Restricted</td>
+<td data-label="Tags"><span class="tag-tooltip" title="May be regulated">⚠️ Restricted</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Anadenanthera peregrina (Yopo) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Anadenanthera colubrina (Cebíl)</td>
@@ -761,7 +797,7 @@ a {
 <td data-label="Onset">Varies</td>
 <td data-label="Legal Status">Restricted in many regions</td>
 <td data-label="Region">🌎 Unknown / Global</td>
-<td data-label="Tags">⚠️ Restricted</td>
+<td data-label="Tags"><span class="tag-tooltip" title="May be regulated">⚠️ Restricted</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Anadenanthera colubrina (Cebíl) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Virola spp.</td>
@@ -772,7 +808,7 @@ a {
 <td data-label="Onset">1-3 min</td>
 <td data-label="Legal Status">Restricted / Controlled</td>
 <td data-label="Region">🇲🇽 Latin America</td>
-<td data-label="Tags">⚠️ Restricted</td>
+<td data-label="Tags"><span class="tag-tooltip" title="May be regulated">⚠️ Restricted</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Virola spp. will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Acorus gramineus</td>
@@ -783,7 +819,7 @@ a {
 <td data-label="Onset">15-45 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🇨🇳 East Asia</td>
-<td data-label="Tags">☕ Brewable, 💊 Oral, 🧠 Cognitive, ✅ Safe</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Taken as capsule or raw">💊 Oral</span>, <span class="tag-tooltip" title="Affects cognition or clarity">🧠 Cognitive</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Acorus gramineus will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Celastrus paniculatus (Intellect Tree)</td>
@@ -794,7 +830,7 @@ a {
 <td data-label="Onset">Varies</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌎 Unknown / Global</td>
-<td data-label="Tags">🧠 Cognitive, ✅ Safe</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Affects cognition or clarity">🧠 Cognitive</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Celastrus paniculatus (Intellect Tree) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Silphium (extinct)</td>
@@ -805,7 +841,7 @@ a {
 <td data-label="Onset">Varies</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌎 Unknown / Global</td>
-<td data-label="Tags">✅ Safe</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Silphium (extinct) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Nymphaea ampla</td>
@@ -816,7 +852,7 @@ a {
 <td data-label="Onset">15-45 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌎 Unknown / Global</td>
-<td data-label="Tags">🌬️ Smokable, ☕ Brewable, 💫 Euphoria, ✅ Safe</td>
+<td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Elevates mood">💫 Euphoria</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Nymphaea ampla will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Pedicularis densiflora (Indian warrior)</td>
@@ -827,7 +863,7 @@ a {
 <td data-label="Onset">5-15 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌍 Africa, 🇮🇳 India</td>
-<td data-label="Tags">🌬️ Smokable, ☕ Brewable, 🌀 Dissociation, ✅ Safe</td>
+<td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Pedicularis densiflora (Indian warrior) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Pedicularis groenlandica</td>
@@ -838,7 +874,7 @@ a {
 <td data-label="Onset">5-15 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌍 Africa</td>
-<td data-label="Tags">🌬️ Smokable, ☕ Brewable, 🌀 Dissociation, ✅ Safe</td>
+<td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Pedicularis groenlandica will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Lactuca canadensis</td>
@@ -849,7 +885,7 @@ a {
 <td data-label="Onset">15-45 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌎 Unknown / Global</td>
-<td data-label="Tags">🌬️ Smokable, ☕ Brewable, 🌀 Dissociation, 🧘 Sedation, ✅ Safe</td>
+<td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="Calming or sleep-inducing">🧘 Sedation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Lactuca canadensis will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Artemisia absinthium (Wormwood)</td>
@@ -860,7 +896,7 @@ a {
 <td data-label="Onset">15-45 min</td>
 <td data-label="Legal Status">Legal, thujone regulated</td>
 <td data-label="Region">🇪🇺 Europe</td>
-<td data-label="Tags">🌬️ Smokable, ☕ Brewable, 🔮 Ritual, ✅ Safe</td>
+<td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Traditional or ceremonial use">🔮 Ritual</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Artemisia absinthium (Wormwood) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Artemisia vulgaris (Mugwort)</td>
@@ -871,7 +907,7 @@ a {
 <td data-label="Onset">5-15 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🇪🇺 Europe</td>
-<td data-label="Tags">🌬️ Smokable, ☕ Brewable, 🕯️ Ritual, 🧠 Dream, ✅ Safe</td>
+<td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Burned or used in incense">🕯️ Ritual</span>, 🧠 Dream, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Artemisia vulgaris (Mugwort) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Justicia pectoralis</td>
@@ -882,7 +918,7 @@ a {
 <td data-label="Onset">15-30 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌎 Unknown / Global</td>
-<td data-label="Tags">🌬️ Smokable, ☕ Brewable, 💫 Euphoria, ✅ Safe</td>
+<td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Elevates mood">💫 Euphoria</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Justicia pectoralis will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Viola odorata (Sweet violet)</td>
@@ -893,7 +929,7 @@ a {
 <td data-label="Onset">15-30 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🇪🇺 Europe</td>
-<td data-label="Tags">☕ Brewable, 🌀 Dissociation, 🧘 Sedation, ✅ Safe</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="Calming or sleep-inducing">🧘 Sedation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Viola odorata (Sweet violet) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Piper auritum (Root beer plant)</td>
@@ -904,7 +940,7 @@ a {
 <td data-label="Onset">15-30 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌎 Unknown / Global</td>
-<td data-label="Tags">☕ Brewable, 💫 Euphoria, 🧘 Sedation, ✅ Safe</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Elevates mood">💫 Euphoria</span>, <span class="tag-tooltip" title="Calming or sleep-inducing">🧘 Sedation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Piper auritum (Root beer plant) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Eschscholzia californica (California poppy)</td>
@@ -915,7 +951,7 @@ a {
 <td data-label="Onset">15-45 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌎 Unknown / Global</td>
-<td data-label="Tags">☕ Brewable, 🌀 Dissociation, 🧘 Sedation, ✅ Safe</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="Calming or sleep-inducing">🧘 Sedation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Eschscholzia californica (California poppy) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Rivea corymbosa</td>
@@ -926,7 +962,7 @@ a {
 <td data-label="Onset">30-90 min</td>
 <td data-label="Legal Status">Restricted in some countries</td>
 <td data-label="Region">🌎 Unknown / Global</td>
-<td data-label="Tags">⚠️ Restricted</td>
+<td data-label="Tags"><span class="tag-tooltip" title="May be regulated">⚠️ Restricted</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Rivea corymbosa will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Ipomoea tricolor (Heavenly Blue)</td>
@@ -937,7 +973,7 @@ a {
 <td data-label="Onset">30-90 min</td>
 <td data-label="Legal Status">Restricted in some countries</td>
 <td data-label="Region">🌎 Unknown / Global</td>
-<td data-label="Tags">⚠️ Restricted</td>
+<td data-label="Tags"><span class="tag-tooltip" title="May be regulated">⚠️ Restricted</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Ipomoea tricolor (Heavenly Blue) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Argyreia nervosa (Hawaiian Baby Woodrose)</td>
@@ -948,7 +984,7 @@ a {
 <td data-label="Onset">30-90 min</td>
 <td data-label="Legal Status">Restricted in some countries</td>
 <td data-label="Region">🌎 Unknown / Global</td>
-<td data-label="Tags">⚠️ Restricted</td>
+<td data-label="Tags"><span class="tag-tooltip" title="May be regulated">⚠️ Restricted</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Argyreia nervosa (Hawaiian Baby Woodrose) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Tilia europaea (Linden flower)</td>
@@ -959,7 +995,7 @@ a {
 <td data-label="Onset">15-30 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🇪🇺 Europe</td>
-<td data-label="Tags">☕ Brewable, 🌀 Dissociation, 🧘 Sedation, ✅ Safe</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="Calming or sleep-inducing">🧘 Sedation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Tilia europaea (Linden flower) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Melissa officinalis (Lemon balm)</td>
@@ -970,7 +1006,7 @@ a {
 <td data-label="Onset">15-30 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌎 Unknown / Global</td>
-<td data-label="Tags">🌬️ Smokable, ☕ Brewable, 🌀 Dissociation, 🧠 Cognitive, 🧘 Sedation, ✅ Safe</td>
+<td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="Affects cognition or clarity">🧠 Cognitive</span>, <span class="tag-tooltip" title="Calming or sleep-inducing">🧘 Sedation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Melissa officinalis (Lemon balm) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Ocimum sanctum (Holy Basil / Tulsi)</td>
@@ -981,7 +1017,7 @@ a {
 <td data-label="Onset">15-30 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🇮🇳 India</td>
-<td data-label="Tags">☕ Brewable, 🕯️ Ritual, 💫 Euphoria, 🧘 Sedation, ✅ Safe</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Burned or used in incense">🕯️ Ritual</span>, <span class="tag-tooltip" title="Elevates mood">💫 Euphoria</span>, <span class="tag-tooltip" title="Calming or sleep-inducing">🧘 Sedation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Ocimum sanctum (Holy Basil / Tulsi) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Rhodiola rosea</td>
@@ -992,7 +1028,7 @@ a {
 <td data-label="Onset">30-60 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌎 Unknown / Global</td>
-<td data-label="Tags">💊 Oral, 💫 Euphoria, 🧠 Cognitive, ✅ Safe</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Taken as capsule or raw">💊 Oral</span>, <span class="tag-tooltip" title="Elevates mood">💫 Euphoria</span>, <span class="tag-tooltip" title="Affects cognition or clarity">🧠 Cognitive</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Rhodiola rosea will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Withania somnifera (Ashwagandha)</td>
@@ -1003,7 +1039,7 @@ a {
 <td data-label="Onset">30-60 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🇮🇳 India</td>
-<td data-label="Tags">☕ Brewable, 💊 Oral, 🌀 Dissociation, 🧘 Sedation, ✅ Safe</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Taken as capsule or raw">💊 Oral</span>, <span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="Calming or sleep-inducing">🧘 Sedation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Withania somnifera (Ashwagandha) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Bacopa monnieri</td>
@@ -1014,7 +1050,7 @@ a {
 <td data-label="Onset">30-60 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🇮🇳 India</td>
-<td data-label="Tags">☕ Brewable, 💊 Oral, 💫 Euphoria, 🧘 Sedation, ✅ Safe</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Taken as capsule or raw">💊 Oral</span>, <span class="tag-tooltip" title="Elevates mood">💫 Euphoria</span>, <span class="tag-tooltip" title="Calming or sleep-inducing">🧘 Sedation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Bacopa monnieri will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Eleutherococcus senticosus (Siberian Ginseng)</td>
@@ -1025,7 +1061,7 @@ a {
 <td data-label="Onset">30-60 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🇨🇳 East Asia</td>
-<td data-label="Tags">☕ Brewable, 💫 Euphoria, ✅ Safe</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Elevates mood">💫 Euphoria</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Eleutherococcus senticosus (Siberian Ginseng) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Voacanga africana</td>
@@ -1036,7 +1072,7 @@ a {
 <td data-label="Onset">30-90 min</td>
 <td data-label="Legal Status">Restricted in some regions</td>
 <td data-label="Region">🌍 Africa</td>
-<td data-label="Tags">☕ Brewable, ⚡ Stimulant, ⚠️ Restricted</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Increases energy">⚡ Stimulant</span>, <span class="tag-tooltip" title="May be regulated">⚠️ Restricted</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Voacanga africana will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Sida cordifolia</td>
@@ -1047,7 +1083,7 @@ a {
 <td data-label="Onset">15-30 min</td>
 <td data-label="Legal Status">Restricted in some regions</td>
 <td data-label="Region">🌍 Africa</td>
-<td data-label="Tags">☕ Brewable, 💊 Oral, 💫 Euphoria, ⚡ Stimulant, ⚠️ Restricted</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Taken as capsule or raw">💊 Oral</span>, <span class="tag-tooltip" title="Elevates mood">💫 Euphoria</span>, <span class="tag-tooltip" title="Increases energy">⚡ Stimulant</span>, <span class="tag-tooltip" title="May be regulated">⚠️ Restricted</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Sida cordifolia will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Nardostachys jatamansi (Spikenard)</td>
@@ -1058,7 +1094,7 @@ a {
 <td data-label="Onset">15-30 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🇮🇳 India</td>
-<td data-label="Tags">🌀 Dissociation, ✅ Safe</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Nardostachys jatamansi (Spikenard) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Rauvolfia serpentina</td>
@@ -1069,7 +1105,7 @@ a {
 <td data-label="Onset">30-60 min</td>
 <td data-label="Legal Status">Restricted in some countries</td>
 <td data-label="Region">🇮🇳 India</td>
-<td data-label="Tags">💊 Oral, 🌀 Dissociation, ⚠️ Restricted</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Taken as capsule or raw">💊 Oral</span>, <span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="May be regulated">⚠️ Restricted</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Rauvolfia serpentina will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Ilex guayusa</td>
@@ -1080,7 +1116,7 @@ a {
 <td data-label="Onset">15-30 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🇲🇽 Latin America</td>
-<td data-label="Tags">☕ Brewable, 💫 Euphoria, ⚡ Stimulant, ✅ Safe</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Elevates mood">💫 Euphoria</span>, <span class="tag-tooltip" title="Increases energy">⚡ Stimulant</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Ilex guayusa will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Ilex paraguariensis (Yerba Mate)</td>
@@ -1091,7 +1127,7 @@ a {
 <td data-label="Onset">15-30 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🇲🇽 Latin America</td>
-<td data-label="Tags">☕ Brewable, 💫 Euphoria, ✅ Safe</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Elevates mood">💫 Euphoria</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Ilex paraguariensis (Yerba Mate) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Banisteriopsis caapi (Ayahuasca vine only)</td>
@@ -1102,7 +1138,7 @@ a {
 <td data-label="Onset">30-60 min</td>
 <td data-label="Legal Status">Restricted in many countries</td>
 <td data-label="Region">🇲🇽 Latin America</td>
-<td data-label="Tags">☕ Brewable, 🔮 Ritual, ⚠️ Restricted</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Traditional or ceremonial use">🔮 Ritual</span>, <span class="tag-tooltip" title="May be regulated">⚠️ Restricted</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Banisteriopsis caapi (Ayahuasca vine only) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Lavandula angustifolia</td>
@@ -1113,7 +1149,7 @@ a {
 <td data-label="Onset">15-30 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌎 Unknown / Global</td>
-<td data-label="Tags">☕ Brewable, 🕯️ Ritual, 🌀 Dissociation, 🧘 Sedation, ✅ Safe</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Burned or used in incense">🕯️ Ritual</span>, <span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="Calming or sleep-inducing">🧘 Sedation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Lavandula angustifolia will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Matricaria chamomilla (Chamomile)</td>
@@ -1124,7 +1160,7 @@ a {
 <td data-label="Onset">15-30 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🇪🇺 Europe</td>
-<td data-label="Tags">☕ Brewable, 🌀 Dissociation, 🧘 Sedation, ✅ Safe</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="Calming or sleep-inducing">🧘 Sedation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Matricaria chamomilla (Chamomile) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Gynostemma pentaphyllum (Jiaogulan)</td>
@@ -1135,7 +1171,7 @@ a {
 <td data-label="Onset">15-30 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🇨🇳 East Asia</td>
-<td data-label="Tags">☕ Brewable, 💫 Euphoria, 🧘 Sedation, ✅ Safe</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Elevates mood">💫 Euphoria</span>, <span class="tag-tooltip" title="Calming or sleep-inducing">🧘 Sedation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Gynostemma pentaphyllum (Jiaogulan) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Gastrodia elata (Tian Ma)</td>
@@ -1146,7 +1182,7 @@ a {
 <td data-label="Onset">30-60 min</td>
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🇨🇳 East Asia</td>
-<td data-label="Tags">🌀 Dissociation, ✅ Safe</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Gastrodia elata (Tian Ma) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 </tbody>
 </table>
@@ -1351,6 +1387,11 @@ function toggleExpandRow(cell) {
     if (next && next.classList.contains("expand-row")) {
         next.style.display = next.style.display === "none" ? "table-row" : "none";
     }
+}
+
+function toggleLegend() {
+    const legend = document.getElementById("tagLegend");
+    legend.style.display = legend.style.display === "none" ? "block" : "none";
 }
 </script>
 <footer style="text-align: center; font-size: 0.8rem; padding: 1rem; background: #fafafa; color: #555;">
