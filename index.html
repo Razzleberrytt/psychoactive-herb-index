@@ -1108,16 +1108,21 @@ tbody tr:hover {
 <td data-label="Region">🇨🇳 East Asia</td>
 <td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Elevates mood">💫 Euphoria</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Eleutherococcus senticosus (Siberian Ginseng) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
-
-
-
-
-
-
-
-
-
-
-
 </tbody>
-</table></body></html>
+</table>
+<script>
+function toggleExpandRow(elem) {
+    var expandRow = elem.parentElement.nextElementSibling;
+    if (expandRow.style.display === "none" || expandRow.style.display === "") {
+        expandRow.style.display = "table-row";
+    } else {
+        expandRow.style.display = "none";
+    }
+}
+
+document.querySelectorAll('td[data-label="Herb"]').forEach(td => {
+    td.style.cursor = "pointer";
+    td.onclick = function() { toggleExpandRow(this); };
+});
+</script>
+</body></html>
