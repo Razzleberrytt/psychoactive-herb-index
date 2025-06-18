@@ -1110,19 +1110,23 @@ tbody tr:hover {
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Eleutherococcus senticosus (Siberian Ginseng) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 </tbody>
 </table>
-<script>
-function toggleExpandRow(elem) {
-    var expandRow = elem.parentElement.nextElementSibling;
-    if (expandRow.style.display === "none" || expandRow.style.display === "") {
-        expandRow.style.display = "table-row";
-    } else {
-        expandRow.style.display = "none";
-    }
-}
 
-document.querySelectorAll('td[data-label="Herb"]').forEach(td => {
-    td.style.cursor = "pointer";
-    td.onclick = function() { toggleExpandRow(this); };
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('td[data-label="Herb"]').forEach(td => {
+        td.style.cursor = "pointer";
+        td.onclick = function() {
+            let expandRow = this.parentElement.nextElementSibling;
+            if (expandRow.style.display === "none" || expandRow.style.display === "") {
+                expandRow.style.display = "table-row";
+            } else {
+                expandRow.style.display = "none";
+            }
+        };
+    });
+    // Initialize all expandable rows to hidden
+    document.querySelectorAll('.expand-row').forEach(row => row.style.display = 'none');
 });
 </script>
 </body></html>
