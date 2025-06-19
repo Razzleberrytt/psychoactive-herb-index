@@ -14,7 +14,34 @@
     tr:hover { background-color:#f1f1f1; }
     .favorite-star { cursor:pointer; font-size:1.2rem; user-select:none; color:lightgray; }
     .favorite-star.favorite { color:gold; }
-  </style>
+  
+    /* Neater table styling */
+    table {
+      width: 100%;
+      border: 1px solid #ddd;
+      border-collapse: collapse;
+      margin: 1rem auto;
+      font-size: 0.95rem;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 0.75rem 1rem;
+      text-align: left;
+    }
+    thead th {
+      background-color: #3e4a61;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+    tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    tbody tr:hover {
+      background-color: #ececec;
+    }
+</style>
 </head>
 <body>
   <header>
@@ -35,30 +62,30 @@
       </tr>
     </thead>
     <tbody>
-<tr><td><span class="favorite-star">☆</span></td><td>All Gold Everything</td><td>185 g Golden Blend (Mitragyna speciosa), 15 g 50:1 Gold Extract</td><td>Uplifting energy, analgesic, mood lift</td><td>⚡ Stimulant, 🧘 Sedation, 💊 Oral</td></tr>
-<tr><td><span class="favorite-star">☆</span></td><td>Black Mamba</td><td>200 g Black Maeng Da, 24 g Black Crystal, 8 g 50× Gold Extract</td><td>Potent energy boost, deep relaxation, mood enhancement</td><td>⚡ Stimulant, 🧘 Sedation, 💫 Euphoria, 💊 Oral</td></tr>
-<tr><td><span class="favorite-star">☆</span></td><td>13th Blend</td><td>185 g Red Jong Kong × Red X, 15 g 50× Red Extract</td><td>Strong analgesia and sedation, mood enhancement</td><td>🧘 Sedation, 💫 Euphoria, 💊 Oral</td></tr>
-<tr><td><span class="favorite-star">☆</span></td><td>Wicked MIT</td><td>210 g Super Green (Nano), 4 g 80% Moon Dust Ext, 18 g 50× Green Ext, 18 g Green Isolate</td><td>High potency 7-hydroxy mitragynine stimulant effects</td><td>⚡ Stimulant, 💊 Oral</td></tr>
-<tr><td><span class="favorite-star">☆</span></td><td>Batak XL</td><td>200 g Red Bentuangie, 30 g Red Isolate extract, 10 g 44% Mitra Extract, 15 g 50× Red Extract, 10 g Black Crystal Extract</td><td>Super strong stimulation and mood lift</td><td>⚡ Stimulant, 💊 Oral</td></tr>
-<tr><td><span class="favorite-star">☆</span></td><td>Shamrock</td><td>See product page for ingredients</td><td>Festive uplifting herbal mix</td><td>🌬️ Smokable, ☕ Brewable, 💫 Euphoria, 🧘 Sedation, ✅ Safe</td></tr>
-<tr><td><span class="favorite-star">☆</span></td><td>Botanical Fuel</td><td>See product page for ingredients</td><td>Botanical energy and focus boost</td><td>🌬️ Smokable, ⚡ Stimulant, ✅ Safe</td></tr>
-<tr><td><span class="favorite-star">☆</span></td><td>808 Blend</td><td>See product page for ingredients</td><td>Tropical relaxation with stimulating notes</td><td>🌬️ Smokable, ☕ Brewable, 🧘 Sedation, ⚡ Stimulant, ✅ Safe</td></tr>
-<tr><td><span class="favorite-star">☆</span></td><td>Enhanced Yellow Batak</td><td>See product page for ingredients</td><td>Strong euphoria and energy</td><td>⚡ Stimulant, 💊 Oral</td></tr>
-<tr><td><span class="favorite-star">☆</span></td><td>Gold Blend (Nano)</td><td>See product page for ingredients</td><td>Potent small-particle kratom infusion</td><td>⚡ Stimulant, 💊 Oral</td></tr>
-<tr><td><span class="favorite-star">☆</span></td><td>Hemp Blend</td><td>See product page for ingredients</td><td>Relaxing hemp infusion</td><td>🌬️ Smokable, ☕ Brewable, 🧘 Sedation, ✅ Safe</td></tr>
-<tr><td><span class="favorite-star">☆</span></td><td>KNOCK KNOCK Blend</td><td>See product page for ingredients</td><td>Intense wakefulness and clarity</td><td>🌬️ Smokable, ⚡ Stimulant, 🧠 Cognitive, ✅ Safe</td></tr>
-<tr><td><span class="favorite-star">☆</span></td><td>Chill Blend (7 Herbs)</td><td>See product page for ingredients</td><td>Relaxation and calm sedation</td><td>🌬️ Smokable, 🧘 Sedation, ✅ Safe</td></tr>
-<tr><td><span class="favorite-star">☆</span></td><td>Red Queen Blend</td><td>See product page for ingredients</td><td>Balanced stimulation and relaxation</td><td>⚡ Stimulant, 🧘 Sedation, 💊 Oral</td></tr>
-<tr><td><span class="favorite-star">☆</span></td><td>RISE & SHINE blend</td><td>See product page for ingredients</td><td>Energizing and aphrodisiac</td><td>🌬️ Smokable, ☕ Brewable, ⚡ Stimulant, 💫 Euphoria, ✅ Safe</td></tr>
-<tr><td><span class="favorite-star">☆</span></td><td>Alice Blend</td><td>See product page for ingredients</td><td>Complex party blend</td><td>🌀 Dissociation, 💫 Euphoria, 💊 Oral</td></tr>
-<tr><td><span class="favorite-star">☆</span></td><td>Botanicals Of Love</td><td>See product page for ingredients</td><td>Aphrodisiac and mood enhancement</td><td>🌬️ Smokable, 💫 Euphoria, ✅ Safe</td></tr>
-<tr><td><span class="favorite-star">☆</span></td><td>Cinco De Mayo</td><td>See product page for ingredients</td><td>Festive energy and euphoria</td><td>⚡ Stimulant, 💊 Oral</td></tr>
-<tr><td><span class="favorite-star">☆</span></td><td>RedRum (Halloween Blend)</td><td>See product page for ingredients</td><td>Spooky relaxation and mild euphoria</td><td>🌬️ Smokable, 💫 Euphoria, 🧘 Sedation, ✅ Safe</td></tr>
-<tr><td><span class="favorite-star">☆</span></td><td>Enhanced Green Batak</td><td>See product page for ingredients</td><td>Balanced stimulation</td><td>⚡ Stimulant, 💊 Oral</td></tr>
-<tr><td><span class="favorite-star">☆</span></td><td>Green Caterpillar Blend</td><td>See product page for ingredients</td><td>Smooth botanical relaxation</td><td>🌬️ Smokable, 🧘 Sedation, ✅ Safe</td></tr>
-<tr><td><span class="favorite-star">☆</span></td><td>Rotten Treats (Halloween)</td><td>See product page for ingredients</td><td>Festive dark herbal chill</td><td>🌬️ Smokable, 🧘 Sedation, ✅ Safe</td></tr>
-<tr><td><span class="favorite-star">☆</span></td><td>Demented Mushroom Blend</td><td>1 g 28% Green Extract; 30 g Mushroom Blend (14 kinds: Reishi, Cordyceps, Chaga, Mesima, Lion’s Mane, Turkey Tail, Maitake, Shiitake, Blazei, Poria, Agarikon, Suechirotake, Oyster, True Tinder Polypore); 30 g Black Maca Root; 170 g Green Jong Kong (nano); 2 g 62% Mitra Extract; 30 g White Isolate</td><td>Psychedelic edges with herbal undertones</td><td>🌀 Dissociation, 🌬️ Smokable, 💫 Euphoria, 💊 Oral</td></tr>
-<tr><td><span class="favorite-star">☆</span></td><td>Mushroom Blend (11+)</td><td>See product page for ingredients</td><td>Broad spectrum fungal psychoactivity</td><td>🌀 Dissociation, 💫 Euphoria, 💊 Oral</td></tr>
+<tr><td><span class="favorite-star">☆</span></td><td>All Gold Everything</td><td>185 g Golden Blend (Mitragyna speciosa), 15 g 50:1 Gold Extract citeturn12search0</td><td>Uplifting energy, analgesic, mood lift</td></tr>
+<tr><td><span class="favorite-star">☆</span></td><td>Black Mamba</td><td>200 g Black Maeng Da, 24 g Black Crystal, 8 g 50× Gold Extract citeturn14view0</td><td>Potent energy boost, deep relaxation, mood enhancement</td></tr>
+<tr><td><span class="favorite-star">☆</span></td><td>13th Blend</td><td>185 g Red Jong Kong × Red X, 15 g 50× Red Extract citeturn16search0</td><td>Strong analgesia and sedation, mood enhancement</td></tr>
+<tr><td><span class="favorite-star">☆</span></td><td>Wicked MIT</td><td>210 g Super Green (Nano), 4 g 80% Moon Dust Ext, 18 g 50× Green Ext, 18 g Green Isolate citeturn7search0</td><td>High potency 7-hydroxy mitragynine stimulant effects</td></tr>
+<tr><td><span class="favorite-star">☆</span></td><td>Batak XL</td><td>200 g Red Bentuangie, 30 g Red Isolate Extract, 10 g 44% Mitragynine Extract, 15 g 50× Red Extract, 10 g Black Crystal Extract citeturn11search0</td><td>Super strong stimulation and mood lift</td></tr>
+<tr><td><span class="favorite-star">☆</span></td><td>Shamrock</td><td>See product page for ingredients</td><td>Festive uplifting herbal mix</td></tr>
+<tr><td><span class="favorite-star">☆</span></td><td>Botanical Fuel</td><td>35 g Guarana Powder; 20 g Bala; 20 g Ginseng; 175 g Green Vietnam; 8 g 50× Gold Extract; 2 g 14% Mitra Extract citeturn0search1</td><td>Botanical energy and focus boost</td></tr>
+<tr><td><span class="favorite-star">☆</span></td><td>808 Blend</td><td>20 g Pineapple Powder (Citric Acid); 30 g Noble Kava + Chocolate; 180 g Red Sumatra; 20 g Ashwagandha; 20 g Mulungu; 10 g 50× Red Extract; 14% Mitra Extract; 1000 mg Cannabidiol citeturn5search0</td><td>Tropical relaxation with stimulating notes</td></tr>
+<tr><td><span class="favorite-star">☆</span></td><td>Enhanced Yellow Batak</td><td>Made with Yellow Vietnam, Borneo, Thai leaves and 25 g Yellow Isolate Extract citeturn0search2</td><td>Strong euphoria and energy</td></tr>
+<tr><td><span class="favorite-star">☆</span></td><td>Gold Blend (Nano)</td><td>See product page for ingredients</td><td>Potent small-particle kratom infusion</td></tr>
+<tr><td><span class="favorite-star">☆</span></td><td>Hemp Blend</td><td>See product page for ingredients</td><td>Relaxing hemp infusion</td></tr>
+<tr><td><span class="favorite-star">☆</span></td><td>KNOCK KNOCK Blend</td><td>50% White Lotus Stamen; 50% KNOCK KNOCK Blend Extract; 40% Wild Lemon Balm; 40% Kra Thum Kok; 10% Kra Thum Na; 10% Blue Lotus citeturn10search0</td><td>Intense wakefulness and clarity</td></tr>
+<tr><td><span class="favorite-star">☆</span></td><td>Chill Blend (7 Herbs)</td><td>See product page for ingredients</td><td>Relaxation and calm sedation</td></tr>
+<tr><td><span class="favorite-star">☆</span></td><td>Red Queen Blend</td><td>150 g Red X (M. speciosa); 30 g Sakae Naa; 10 g M. speciosa Isolate; 30 g Wild Lettuce; 3 g Akuamma Extract; 7 g Kava citeturn0search6</td><td>Balanced stimulation and relaxation</td></tr>
+<tr><td><span class="favorite-star">☆</span></td><td>RISE & SHINE blend</td><td>70% Bala (Sida cordifolia); 10% Bay Bean (Canavalia maritima); 10% Blue Lotus (Nymphaea caerulea); 10% White Lotus (Nelumbo nucifera) citeturn0search7</td><td>Energizing and aphrodisiac</td></tr>
+<tr><td><span class="favorite-star">☆</span></td><td>Alice Blend</td><td>See product page for ingredients</td><td>Complex party blend</td></tr>
+<tr><td><span class="favorite-star">☆</span></td><td>Botanicals Of Love</td><td>See product page for ingredients</td><td>Aphrodisiac and mood enhancement</td></tr>
+<tr><td><span class="favorite-star">☆</span></td><td>Cinco De Mayo</td><td>18 g 70% Mitragynine; 50 g Lion’s Mane Mushroom; 50 g Areca Nut Powder; 50 g White Isolate citeturn13search4</td><td>Festive energy and euphoria</td></tr>
+<tr><td><span class="favorite-star">☆</span></td><td>RedRum (Halloween Blend)</td><td>See product page for ingredients</td><td>Spooky relaxation and mild euphoria</td></tr>
+<tr><td><span class="favorite-star">☆</span></td><td>Enhanced Green Batak</td><td>See product page for ingredients</td><td>Balanced stimulation</td></tr>
+<tr><td><span class="favorite-star">☆</span></td><td>Green Caterpillar Blend</td><td>See product page for ingredients</td><td>Smooth botanical relaxation</td></tr>
+<tr><td><span class="favorite-star">☆</span></td><td>Rotten Treats (Halloween)</td><td>See product page for ingredients</td><td>Festive dark herbal chill</td></tr>
+<tr><td><span class="favorite-star">☆</span></td><td>Demented Mushroom Blend</td><td>1 g 28% Green Extract; 30 g multi-mushroom blend (Reishi, Cordyceps, Chaga, Mesima, Lion’s Mane, Turkey Tail, Maitake, Shiitake, Blazei, Poria, Agarikon, Suechirotake, Oyster, True Tinder Polypore); 30 g Black Maca Root; 170 g Green Jong Kong (Nano); 2 g 62% Mitragynine Extract; 30 g White Isolate citeturn5search2</td><td>Psychedelic edges with herbal undertones</td></tr>
+<tr><td><span class="favorite-star">☆</span></td><td>Mushroom Blend (11+)</td><td>See product page for ingredients</td><td>Broad spectrum fungal psychoactivity</td></tr>
 </tbody>
   </table>
   <script>
