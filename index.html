@@ -4,6 +4,8 @@
 <meta charset="utf-8"/>
 <title>Psychoactive Herb Index</title>
 <style>
+.favorite-star.active { color: gold !important; }
+
 body {
     font-family: 'Inter', sans-serif;
     background: #f3f4f6;
@@ -1305,4 +1307,15 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.expand-row').forEach(row => row.style.display = 'none');
 });
 </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('.favorite-star').forEach(function(star) {
+      star.addEventListener('click', function() {
+        this.classList.toggle('active');
+      });
+    });
+  });
+</script>
+
 </body></html>
