@@ -1,4 +1,8 @@
-<html><head>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
 <meta content="Willie B. Randolph III" name="author"/>
 <meta content="A curated global index of psychoactive herbs, their effects, legality, and traditional uses. Compiled by Willie B. Randolph III." name="description"/>
 <meta charset="utf-8"/>
@@ -19,12 +23,13 @@ header {
     font-size: 1.75rem;
     font-weight: 600;
 }
+
     .blend-link {
-  color: #ffffff !important;
-  text-decoration: underline;
-  font-size: 1.1rem;
-  font-weight: bold;
-}
+        color: #ffffff !important;
+        text-decoration: underline;
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
 
 input {
     width: 90%;
@@ -291,6 +296,13 @@ header {
     text-align: center;
     border-radius: 0 0 8px 8px;
 }
+
+    .blend-link {
+        color: #ffffff !important;
+        text-decoration: underline;
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
 input, select {
     border-radius: 6px;
     border: 1px solid #ccc;
@@ -360,34 +372,20 @@ tbody tr:hover {
     color: #111;
 }
 </style>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/></head><body><header>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/></head>
+<body>
+<header>
         Psychoactive Herb Index
         <div style="margin-top: 0.5rem; font-size: 0.9rem;">
             Compiled by <strong>Willie B. Randolph III</strong>
-                <br>
-    <a href="blends.html" class="blend-link" style="
-       color: #ffffff !important;
-       text-decoration: underline;
-       font-size: 1.1rem;
-       font-weight: bold;
-    ">
-      Click For Blends
-    </a>
-            <!-- Right below the "Compiled by Willie Randolph" line -->
-<!-- Right under your "Compiled by Willie B. Randolph III" line -->
-        </div>
-<div style="text-align:center; margin:1rem 0;">
-  <a href="blends.html"
-     style="
-       color: white;               /* make text white */
-       font-size: 1.1rem;
-       font-weight: bold;
-       text-decoration: underline;
-     ">
-    Click For Blends
-  </a>
 </div>
-</header><div class="filter-bar"><button class="filter-btn" onclick="filterTag('Dream')">🧠 Dream</button><button class="filter-btn" onclick="filterTag('Euphoria')">💫 Euphoria</button><button class="filter-btn" onclick="filterTag('Dissociation')">🌀 Dissociation</button><button class="filter-btn" onclick="filterTag('Ritual')">🔮 Ritual</button><button class="filter-btn" onclick="filterTag('Sedation')">🧘 Sedation</button><button class="filter-btn" onclick="filterTag('Safe')">✅ Safe</button><button class="filter-btn" onclick="resetFilters()">🔄 Reset</button></div><input id="search" onkeyup="filterTable()" placeholder="Search for herbs, effects, tags..." type="text"/><select id="categoryFilter" style="margin: 0 auto 1rem auto; display: block; padding: 0.5rem;"><option value="All">🧪 All Categories</option><option value="Deliriant / Toxic">Deliriant / Toxic</option><option value="Dissociative / Sedative">Dissociative / Sedative</option><option value="Empathogen / Euphoriant">Empathogen / Euphoriant</option><option value="Ethnobotanical / Rare">Ethnobotanical / Rare</option><option value="Oneirogen">Oneirogen</option><option value="Other">Other</option><option value="Ritual / Visionary">Ritual / Visionary</option></select><select id="regionFilter" style="margin: 0 auto 1rem auto; display: block; padding: 0.5rem;"><option value="All">🌐 All Regions</option><option value="🇨🇳 East Asia">🇨🇳 East Asia</option><option value="🇪🇺 Europe">🇪🇺 Europe</option><option value="🇮🇳 India">🇮🇳 India</option><option value="🇲🇽 Latin America">🇲🇽 Latin America</option><option value="🌍 Africa">🌍 Africa</option><option value="🌎 Unknown / Global">🌎 Unknown / Global</option><option value="🌐 Global / Ritual">🌐 Global / Ritual</option></select><div id="tagLegend" style="max-width:600px; margin:1rem auto; background:#fff; border:1px solid #ccc; padding:1rem; border-radius:8px;">
+    <a href="blends.html" class="blend-link">Click For Blends</a>
+</header>
+    
+        Psychoactive Herb Index
+        <div style="margin-top: 0.5rem; font-size: 0.9rem;">Explore by name, effect, or region</div>
+<div class="filter-bar"><button class="filter-btn" onclick="filterTag('Dream')">🧠 Dream</button><button class="filter-btn" onclick="filterTag('Euphoria')">💫 Euphoria</button><button class="filter-btn" onclick="filterTag('Dissociation')">🌀 Dissociation</button><button class="filter-btn" onclick="filterTag('Ritual')">🔮 Ritual</button><button class="filter-btn" onclick="filterTag('Sedation')">🧘 Sedation</button><button class="filter-btn" onclick="filterTag('Safe')">✅ Safe</button><button class="filter-btn" onclick="resetFilters()">🔄 Reset</button></div><button onclick="toggleFavorites()" style="margin: 0 auto 1rem auto; display: block;">⭐ Show Favorites Only</button><input id="search" onkeyup="filterTable()" placeholder="Search for herbs, effects, tags..." type="text"/><select id="categoryFilter" style="margin: 0 auto 1rem auto; display: block; padding: 0.5rem;"><option value="All">🧪 All Categories</option><option value="Deliriant / Toxic">Deliriant / Toxic</option><option value="Dissociative / Sedative">Dissociative / Sedative</option><option value="Empathogen / Euphoriant">Empathogen / Euphoriant</option><option value="Ethnobotanical / Rare">Ethnobotanical / Rare</option><option value="Oneirogen">Oneirogen</option><option value="Other">Other</option><option value="Ritual / Visionary">Ritual / Visionary</option></select><select id="regionFilter" style="margin: 0 auto 1rem auto; display: block; padding: 0.5rem;"><option value="All">🌐 All Regions</option><option value="🇨🇳 East Asia">🇨🇳 East Asia</option><option value="🇪🇺 Europe">🇪🇺 Europe</option><option value="🇮🇳 India">🇮🇳 India</option><option value="🇲🇽 Latin America">🇲🇽 Latin America</option><option value="🌍 Africa">🌍 Africa</option><option value="🌎 Unknown / Global">🌎 Unknown / Global</option><option value="🌐 Global / Ritual">🌐 Global / Ritual</option></select>
+<button onclick="toggleLegend()" style="margin: 1rem auto; display: block;">🧾 Toggle Tag Legend</button><div id="tagLegend" style="max-width:600px; margin:1rem auto; background:#fff; border:1px solid #ccc; padding:1rem; border-radius:8px;">
 <h3 style="margin-top:0;">🌿 Tag Legend</h3>
 <ul style="list-style:none; padding-left:0; font-size:0.9rem;">
 <li>🧠 Dream – Enhances dreaming</li>
@@ -406,7 +404,12 @@ tbody tr:hover {
 <li>🧪 Fermented – Requires fermentation</li>
 <li>🧠 Cognitive – May affect cognition or clarity</li>
 </ul>
-</div><input id="symptomSearch" placeholder="🔍 Search by symptom (e.g. anxiety, pain, sleep)..." style="width: 100%; padding: 0.5rem; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc;" type="text"/><table id="herbTable">
+</div>
+<div style="max-width:600px; margin:1rem auto; text-align:center;">
+<button onclick="exportTableToCSV()" style="margin-right:1rem;">📄 Export CSV</button>
+<button onclick="exportTableToJSON()">📦 Export JSON</button>
+</div>
+<div style="margin: 1rem 0;"><input id="symptomSearch" placeholder="🔍 Search by symptom (e.g. anxiety, pain, sleep)..." style="width: 100%; padding: 0.5rem; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc;" type="text"/></div><table id="herbTable">
 <thead>
 <tr><th>⭐</th>
 <th>Herb</th>
@@ -431,18 +434,14 @@ tbody tr:hover {
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🇲🇽 Latin America</td>
 <td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, 🧠 Dream, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>Mechanism of Action (MOA):</strong> Effects attributed to flavones and germacrolides modulating cholinergic and possibly serotonergic pathways, enhancing dream-related neurochemistry <sup>[0, 1, 0, 11]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Consumed as bitter tea or smoked: onset 20–45 min; duration ~2–3 h; likely metabolized hepatically <sup>[0, 1, 0, 21]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Traditional Mexican use for dream enhancement, divination, and improvement of dream recall <sup>[0, 6]</sup>.<br/>
-<strong>Side Effects:</strong> Bitter taste, nausea, vomiting; mild sedation <sup>[0, 6]</sup>.<br/>
-<strong>Contraindications:</strong> Avoid during pregnancy and combine cautiously with sedatives <sup>[0, 16]</sup>.<br/>
-<strong>Drug Interactions:</strong> Potentiates CNS depressants <sup>[0, 21]</sup>.<br/>
-<strong>Toxicity:</strong> Low reported toxicity; high doses may cause dizziness or vomiting <sup>[0, 16]</sup>.
-  </td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10"><strong>Mechanism of Action (MOA):</strong> Unknown; may involve cholinergic or serotonergic modulation<br/>
+<strong>Pharmacokinetics:</strong> Limited data; likely metabolized hepatically<br/>
+<strong>Therapeutic Uses:</strong> Traditional use for dream enhancement and divination<br/>
+<strong>Side Effects:</strong> Bitter taste, nausea, mild sedation<br/>
+<strong>Contraindications:</strong> Pregnancy, liver issues, unknown compound sensitivity<br/>
+<strong>Drug Interactions:</strong> Unknown; caution with CNS depressants<br/>
+<strong>Toxicity / LD50:</strong> No formal LD50; high doses may cause dizziness or vomiting<br/>
+<strong>External Source:</strong> <a href="https://erowid.org/plants/calea_zacatechichi/" target="_blank">More info</a></td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Silene capensis</td>
 <td data-label="Category">Oneirogen</td>
@@ -453,18 +452,14 @@ tbody tr:hover {
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌍 Africa</td>
 <td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, 🧠 Dream, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>Mechanism of Action (MOA):</strong> Contains triterpene saponins, alkaloids, and diterpenoids that may modulate cholinergic and GABAergic activity, enhancing REM sleep and dream vividness <sup>[0, 2, 0, 22]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Traditionally consumed as cold water infusion: onset ~30–60 min; effects last several hours <sup>[0, 7]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Promotes vivid and lucid dreaming; used in traditional Xhosa dream rituals <sup>[0, 2, 0, 7]</sup>.<br/>
-<strong>Side Effects:</strong> Rare; mild gastrointestinal upset and drowsiness in high amounts <sup>[0, 2]</sup>.<br/>
-<strong>Contraindications:</strong> Pregnancy and use with CNS depressants <sup>[0, 12]</sup>.<br/>
-<strong>Drug Interactions:</strong> May potentiate sedative effects of other herbs or medications <sup>[0, 22]</sup>.<br/>
-<strong>Toxicity:</strong> Low; no significant toxicity reported in traditional use <sup>[0, 2]</sup>.
-  </td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10"><strong>Mechanism of Action (MOA):</strong> Poorly understood; possibly interacts with sleep-related neurochemistry<br/>
+<strong>Pharmacokinetics:</strong> Onset 15-45 mins; duration unknown<br/>
+<strong>Therapeutic Uses:</strong> Dream enhancement, traditional Xhosa use<br/>
+<strong>Side Effects:</strong> Rare; possibly drowsiness or GI upset<br/>
+<strong>Contraindications:</strong> Unknown, but caution in pregnancy or with sedatives<br/>
+<strong>Drug Interactions:</strong> Unknown<br/>
+<strong>Toxicity / LD50:</strong> Low reported toxicity<br/>
+<strong>External Source:</strong> <a href="https://erowid.org/plants/silene_capensis/" target="_blank">More info</a></td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Entada rheedii</td>
 <td data-label="Category">Oneirogen</td>
@@ -475,18 +470,14 @@ tbody tr:hover {
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🇲🇽 Latin America</td>
 <td data-label="Tags"><span class="tag-tooltip" title="Taken as capsule or raw">💊 Oral</span>, 🧠 Dream, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>MOA:</strong> Contains saponins and phenolics that exhibit antiulcerogenic, antimicrobial, and dream-enhancing actions; exact CNS mechanism unclear <sup>[0, 6, 0, 11]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Traditionally consumed as cold water infusion; onset ~1–2 h; effects last ~6–8 h <sup>[0, 11]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Dream enhancement, lucid dreaming, traditional remedy for diarrhea and stomach aches <sup>[0, 6, 0, 11]</sup>.<br/>
-<strong>Side Effects:</strong> Mild GI upset, drowsiness; rare nausea <sup>[0, 6]</sup>.<br/>
-<strong>Contraindications:</strong> Pregnancy, lactation, hypersensitivity <sup>[0, 6]</sup>.<br/>
-<strong>Drug Interactions:</strong> May potentiate CNS depressants; caution with anticholinergics <sup>[0, 6]</sup>.<br/>
-<strong>Toxicity:</strong> Low; no severe toxicity reported in traditional use <sup>[0, 6]</sup>.<br/>
-</td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10"><strong>Mechanism of Action (MOA):</strong> May involve cholinergic activation; traditional use<br/>
+<strong>Pharmacokinetics:</strong> Moderate onset; effects last several hours<br/>
+<strong>Therapeutic Uses:</strong> Dream induction, seed chewing in African traditions<br/>
+<strong>Side Effects:</strong> Possible nausea or mild intoxication at higher doses<br/>
+<strong>Contraindications:</strong> Unknown<br/>
+<strong>Drug Interactions:</strong> Unknown<br/>
+<strong>Toxicity / LD50:</strong> No known toxicity data<br/>
+<strong>External Source:</strong> <a href="https://en.wikipedia.org/wiki/Entada_rheedii" target="_blank">More info</a></td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Mugwort</td>
 <td data-label="Category">Oneirogen</td>
@@ -497,18 +488,16 @@ tbody tr:hover {
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🇪🇺 Europe</td>
 <td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, 🧠 Dream, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>Mechanism of Action (MOA):</strong> Contains thujone, a GABA<sub>A</sub> antagonist; may also modulate cholinergic systems <sup>[9, 9]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Smoked or tea; onset 20–40 min; duration ~1–2 h <sup>[9, 9]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Lucid dreaming, digestive support, menstrual aid <sup>[9, 9]</sup>.<br/>
-<strong>Side Effects:</strong> Headache, nausea, dizziness; risk in pregnancy and seizure disorders <sup>[9, 9]</sup>.<br/>
-<strong>Contraindications:</strong> Pregnancy, allergies to ragweed, epilepsy <sup>[9, 9]</sup>.<br/>
-<strong>Drug Interactions:</strong> Avoid with CNS depressants and anticonvulsants <sup>[9, 9]</sup>.<br/>
-<strong>Toxicity:</strong> Thujone neurotoxic in high doses; chronic overuse dangerous <sup>[9, 9]</sup>.<br/>
-</td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">
+<strong>Mechanism of Action (MOA):</strong> Mild GABA modulation; possible cholinergic interaction<br/>
+<strong>Pharmacokinetics:</strong> Absorbed via oral or smoke route; rapid onset for smoked<br/>
+<strong>Therapeutic Uses:</strong> Used for digestive aid, dream enhancement, and menstrual support<br/>
+<strong>Side Effects:</strong> May cause allergic reactions, nausea, and uterine contractions<br/>
+<strong>Contraindications:</strong> Pregnancy, allergies to ragweed family<br/>
+<strong>Drug Interactions:</strong> None confirmed; avoid with CNS depressants<br/>
+<strong>Toxicity / LD50:</strong> Contains thujone in low amounts; neurotoxic in high doses<br/>
+<strong>External Source:</strong> <a href="https://en.wikipedia.org/wiki/Mugwort" target="_blank">More info</a>
+</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Heimia salicifolia (Sinicuichi)</td>
 <td data-label="Category">Dissociative / Sedative</td>
@@ -519,18 +508,16 @@ tbody tr:hover {
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌎 Unknown / Global</td>
 <td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Requires fermentation">🧪 Fermented</span>, <span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>Mechanism of Action (MOA):</strong> Alkaloids may affect auditory processing and blood flow, potentially modulating neurotransmission <sup>[9, 4]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Traditionally fermented sun tea; slow onset 15–45 min; duration ~2–3 h <sup>[9, 4]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Divination, auditory changes, euphoria in folk practices <sup>[9, 4]</sup>.<br/>
-<strong>Side Effects:</strong> Dry mouth, muscle relaxation, altered hearing <sup>[9, 4]</sup>.<br/>
-<strong>Contraindications:</strong> Avoid with alcohol or CNS depressants, pregnancy <sup>[9, 4]</sup>.<br/>
-<strong>Drug Interactions:</strong> None known; caution with psychiatric medications <sup>[9, 4]</sup>.<br/>
-<strong>Toxicity:</strong> Low toxicity; high doses may cause mild sedation or nausea <sup>[9, 4]</sup>.<br/>
-</td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">
+<strong>Mechanism of Action (MOA):</strong> Alkaloids may affect auditory processing and blood flow<br/>
+<strong>Pharmacokinetics:</strong> Traditionally fermented; slow onset<br/>
+<strong>Therapeutic Uses:</strong> Used for divination, auditory changes, and euphoria<br/>
+<strong>Side Effects:</strong> Dry mouth, muscle relaxation, altered hearing<br/>
+<strong>Contraindications:</strong> Avoid with alcohol or CNS depressants<br/>
+<strong>Drug Interactions:</strong> None known; caution with psychiatric medications<br/>
+<strong>Toxicity / LD50:</strong> Low toxicity; effects intensify with fermentation<br/>
+<strong>External Source:</strong> <a href="https://erowid.org/plants/heimia/" target="_blank">More info</a>
+</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Sceletium tortuosum (Kanna)</td>
 <td data-label="Category">Empathogen / Euphoriant</td>
@@ -541,20 +528,18 @@ tbody tr:hover {
 <td data-label="Legal Status">Legal, sometimes restricted</td>
 <td data-label="Region">🌎 Unknown / Global</td>
 <td data-label="Tags"><span class="tag-tooltip" title="Taken as capsule or raw">💊 Oral</span>, <span class="tag-tooltip" title="Elevates mood">💫 Euphoria</span>, <span class="tag-tooltip" title="May be regulated">⚠️ Restricted</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>Mechanism of Action (MOA):</strong> Selective serotonin reuptake inhibition (SSRI) and phosphodiesterase-4 (PDE4) inhibition <sup>[9, 4]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Oral onset 20–60 min; duration 2–4 h <sup>[9, 4]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Mood enhancement, anti-anxiety, social facilitation <sup>[9, 4]</sup>.<br/>
-<strong>Side Effects:</strong> Headache, nausea, mild sedation <sup>[9, 4]</sup>.<br/>
-<strong>Contraindications:</strong> Do not combine with other serotonergic substances; pregnancy <sup>[9, 4]</sup>.<br/>
-<strong>Drug Interactions:</strong> SSRIs, MAOIs, stimulants <sup>[9, 4]</sup>.<br/>
-<strong>Toxicity:</strong> Low toxicity at traditional doses <sup>[9, 4]</sup>.<br/>
-</td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">
+<strong>Mechanism of Action (MOA):</strong> Selective serotonin reuptake inhibition (SSRI), PDE4 inhibition<br/>
+<strong>Pharmacokinetics:</strong> Oral onset 20–60 min; duration ~2–4 hours<br/>
+<strong>Therapeutic Uses:</strong> Mood enhancement, anti-anxiety, social ease<br/>
+<strong>Side Effects:</strong> Possible headache, nausea, sedation<br/>
+<strong>Contraindications:</strong> Do not combine with other serotonergic substances<br/>
+<strong>Drug Interactions:</strong> SSRIs, MAOIs, stimulants<br/>
+<strong>Toxicity / LD50:</strong> Low toxicity in traditional doses<br/>
+<strong>External Source:</strong> <a href="https://en.wikipedia.org/wiki/Sceletium" target="_blank">More info</a>
+</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
-<td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;"><a href="#">Blue Lotus (Nymphaea caerulea)</a></td>
+<td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Blue Lotus (Nymphaea caerulea)</td>
 <td data-label="Category">Other</td>
 <td data-label="Effects">Euphoria, aphrodisiac, dreamy calm</td>
 <td data-label="Preparation">Wine soak, smoke, tea</td>
@@ -563,7 +548,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌎 Unknown / Global</td>
 <td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Calming or sleep-inducing">🧘 Sedation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
-</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10"><strong>Details for :</strong><br/>MOA: May modulate dopamine and serotonin; some MAO inhibitory action suspected.<br/>Pharmacokinetics: Onset 30–60 min, oral or alcoholic extract. Mild duration (~2–3 hours).<br/>Therapeutic Uses: Relaxation, aphrodisiac, mild euphoria, sleep aid.<br/>Side Effects: Drowsiness, dizziness, dry mouth.<br/>Contraindications: Avoid with MAOIs, sedatives, or alcohol.<br/>Drug Interactions: May potentiate CNS depressants.<br/>Toxicity: Low; very high doses can cause nausea and vomiting.</td></tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Blue Lotus (Nymphaea caerulea) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Wild Dagga</td>
 <td data-label="Category">Empathogen / Euphoriant</td>
@@ -574,18 +559,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌍 Africa</td>
 <td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Elevates mood">💫 Euphoria</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>Mechanism of Action (MOA):</strong> Contains labdane diterpenes such as leonurine and marrubiin; marrubiin modulates prostaglandin synthesis and exhibits anti-inflammatory and analgesic effects, while leonurine exhibits cardioprotective and neuroprotective properties <sup>[0, 4, 0, 0]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Leaf extracts via oral ingestion or smoking: rapid onset (5–10 min); marrubiin peak plasma ~1–2 h; metabolites excreted renally <sup>[0, 1]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Traditional analgesic, anti-inflammatory, antidiabetic, anxiolytic, pulmonary tonic; used for coughs, fevers, diabetes, hypertension <sup>[0, 7]</sup>.<br/>
-<strong>Side Effects:</strong> Dizziness, hypotension, gastrointestinal upset at high doses; potential hepatotoxicity with chronic use <sup>[0, 5, 0, 8]</sup>.<br/>
-<strong>Contraindications:</strong> Pregnancy, hypotension, use with diabetic or antihypertensive medications <sup>[0, 5]</sup>.<br/>
-<strong>Drug Interactions:</strong> Additive hypotensive and antidiabetic effects; caution when combined with antihypertensives and antidiabetic agents <sup>[0, 5]</sup>.<br/>
-<strong>Toxicity / LD50:</strong> Animal acute toxicity at 3200 mg/kg caused mortality; high doses alter hematological parameters <sup>[0, 5]</sup>.
-  </td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Wild Dagga will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Damiana</td>
 <td data-label="Category">Empathogen / Euphoriant</td>
@@ -596,18 +570,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Legal, banned in some countries</td>
 <td data-label="Region">🇲🇽 Latin America</td>
 <td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Elevates mood">💫 Euphoria</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>MOA:</strong> Contains flavonoids (apigenin, acacetin), terpenoids, phenolics, caffeine and cyanogenic glycosides; may modulate neurotransmitter systems and inhibit aromatase, contributing to stimulant and mood-enhancing effects <sup>[1, 10, 1, 0]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Oral ingestion as tea or extract: onset ~30–60 min; detailed kinetic data limited.<br/>
-<strong>Therapeutic Uses:</strong> Aphrodisiac, mood enhancer, anxiolytic, gastrointestinal tonic; used in liqueurs and smoking blends for mild psychoactive effects <sup>[1, 10, 1, 7]</sup>.<br/>
-<strong>Side Effects:</strong> None significant reported; excessive doses may cause insomnia or headache <sup>[1, 5]</sup>.<br/>
-<strong>Contraindications:</strong> Pregnancy and lactation due to insufficient safety data; avoid in individuals sensitive to caffeine <sup>[1, 5]</sup>.<br/>
-<strong>Drug Interactions:</strong> Potential additive effects with sedatives and stimulants; caution with hypoglycemic and hypotensive medications <sup>[1, 7]</sup>.<br/>
-<strong>Toxicity:</strong> Low; no lethal toxicity reported at traditional doses <sup>[1, 5]</sup>.
-  </td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Damiana will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Nelumbo nucifera (Sacred Lotus)</td>
 <td data-label="Category">Other</td>
@@ -618,18 +581,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌎 Unknown / Global</td>
 <td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Affects cognition or clarity">🧠 Cognitive</span>, <span class="tag-tooltip" title="Calming or sleep-inducing">🧘 Sedation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>MOA:</strong> Alkaloids (nuciferine, neferine) modulate dopaminergic and serotonergic receptors; exhibit vasodilatory, hypolipidemic, anti-inflammatory, antioxidant, and anti-cancer activities; flavonoids and procyanidins contribute to neuroprotective effects <sup>[2, 0, 2, 1]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Oral leaf extracts: peak plasma levels of nucleiferine and n-nornuciferine ~1–2 h; compounds cross blood–brain barrier and are renally excreted <sup>[2, 7]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Hyperlipidemia, weight management, antidiabetic, anti-inflammatory, insomnia aid, cardiovascular and pulmonary support <sup>[2, 0, 2, 5]</sup>.<br/>
-<strong>Side Effects:</strong> Generally well tolerated; high doses may cause gastrointestinal upset and sedation <sup>[2, 4]</sup>.<br/>
-<strong>Contraindications:</strong> Pregnancy and lactation due to limited safety data; monitor blood sugar in diabetics <sup>[2, 2]</sup>.<br/>
-<strong>Drug Interactions:</strong> May potentiate hypoglycemic agents and anticoagulants; use caution when coadministered <sup>[2, 2]</sup>.<br/>
-<strong>Toxicity:</strong> Low; rodent LD50 for nuciferine &gt; 1000 mg/kg; minimal toxicity at dietary doses <sup>[2, 7]</sup>.
-  </td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Nelumbo nucifera (Sacred Lotus) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Salvia divinorum</td>
 <td data-label="Category">Dissociative / Sedative</td>
@@ -640,18 +592,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Restricted in many regions</td>
 <td data-label="Region">🇲🇽 Latin America</td>
 <td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="May be regulated">⚠️ Restricted</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>MOA:</strong> Salvinorin A is a potent, selective κ-opioid receptor agonist and D₂ receptor partial agonist; lacks activity at 5-HT₂A receptors <sup>[3, 3]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Absorbed via oral mucosa, smoking or vaporization; rapid onset (seconds–minutes), short duration (~15–30 min), quickly metabolized to inactive salvinorin B <sup>[3, 1]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Visionary experiences in traditional Mazatec rituals; investigated for analgesic and anti-inflammatory properties <sup>[3, 0]</sup>.<br/>
-<strong>Side Effects:</strong> Tiredness, dizziness, amnesia, potential for transient psychosis in vulnerable individuals <sup>[3, 2]</sup>.<br/>
-<strong>Contraindications:</strong> Psychiatric disorders, cardiovascular instability; avoid in those at risk for psychosis <sup>[3, 2]</sup>.<br/>
-<strong>Drug Interactions:</strong> CNS depressants may potentiate sedative effects; caution when coadministered <sup>[3, 3]</sup>.<br/>
-<strong>Toxicity:</strong> Low toxicity; animal studies show minimal organ damage even at high doses <sup>[3, 3]</sup>.
-  </td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Salvia divinorum will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Wild Lettuce</td>
 <td data-label="Category">Dissociative / Sedative</td>
@@ -662,18 +603,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌎 Unknown / Global</td>
 <td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>Mechanism of Action (MOA):</strong> Lactucin and lactucopicrin act as acetylcholinesterase inhibitors and may bind opioid receptors, producing sedative and analgesic effects <sup>[0, 50]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Oral ingestion (tea or tincture); onset 30–60 min; duration ~4 h; metabolites excreted renally <sup>[0, 2]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Mild analgesic, sedative, sleep aid <sup>[0, 7]</sup>.<br/>
-<strong>Side Effects:</strong> Mydriasis, photophobia, dizziness, diaphoresis, auditory hallucinations, cardiovascular and respiratory distress at high doses <sup>[0, 2]</sup>.<br/>
-<strong>Contraindications:</strong> Pregnancy, concurrent sedative use, latex allergy.<br/>
-<strong>Drug Interactions:</strong> Additive sedation with CNS depressants and alcohol.<br/>
-<strong>Toxicity:</strong> Dose-dependent toxicity; hospitalizations reported but full recovery common <sup>[0, 2]</sup>.<br/>
-</td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Wild Lettuce will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Valerian Root</td>
 <td data-label="Category">Dissociative / Sedative</td>
@@ -684,18 +614,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🇪🇺 Europe</td>
 <td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>MOA:</strong> Valerenic acid and related valepotriates bind GABA_A receptors at the β subunit and inhibit GABA catabolism, producing sedative-hypnotic effects similar to benzodiazepines <sup>[4, 2, 4, 3]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Oral extracts: onset 30–60 min; constituents metabolized hepatically; half-life varies by preparation <sup>[4, 0]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Insomnia, nervous tension, mild anxiety; often combined with other sedatives for sleep disorders <sup>[4, 0]</sup>.<br/>
-<strong>Side Effects:</strong> Headache, stomach upset, vivid dreams, excitability; rare withdrawal symptoms upon abrupt discontinuation <sup>[4, 4]</sup>.<br/>
-<strong>Contraindications:</strong> Pregnancy, lactation; caution in those with hepatic impairment <sup>[4, 8]</sup>.<br/>
-<strong>Drug Interactions:</strong> Additive sedation with barbiturates, benzodiazepines, CNS depressants; may increase effects of amobarbital and phenobarbital <sup>[4, 7]</sup>.<br/>
-<strong>Toxicity:</strong> Low; occasional reports of hepatotoxicity, safe at therapeutic doses <sup>[4, 4]</sup>.
-  </td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Valerian Root will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Kava Kava</td>
 <td data-label="Category">Dissociative / Sedative</td>
@@ -706,18 +625,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Legal, restricted in some countries</td>
 <td data-label="Region">🌎 Unknown / Global</td>
 <td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="May be regulated">⚠️ Restricted</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>Mechanism of Action (MOA):</strong> Kavalactones such as kavain, methysticin, and yangonin modulate GABA<sub>A</sub> receptor activity and inhibit voltage-gated ion channels, producing anxiolytic, sedative, and muscle relaxant effects <sup>[1, 3, 1, 0]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Traditional aqueous extracts: onset 20–40 min; peak plasma kavalactone levels ~1–2 h; extensively metabolized hepatically <sup>[1, 0]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Ceremonial and social drink in Pacific cultures for anxiety relief, muscle relaxation, and mild euphoria <sup>[1, 0]</sup>.<br/>
-<strong>Side Effects:</strong> Drowsiness, headache, gastrointestinal discomfort; potential hepatotoxicity with chronic use of non-water extracts <sup>[1, 0, 1, 6]</sup>.<br/>
-<strong>Contraindications:</strong> Liver disease, concurrent alcohol or hepatotoxic medications, pregnancy.<br/>
-<strong>Drug Interactions:</strong> Additive sedation with alcohol and CNS depressants; caution with anticoagulants <sup>[1, 0]</sup>.<br/>
-<strong>Toxicity / LD50:</strong> Human LD50 unknown; animal studies indicate moderate safety margin; heavy chronic use linked to rare hepatotoxicity <sup>[1, 6]</sup>.<br/>
-</td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Kava Kava will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Acorus calamus</td>
 <td data-label="Category">Dissociative / Sedative</td>
@@ -728,18 +636,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Banned for food use in US (asarone)</td>
 <td data-label="Region">🌎 Unknown / Global</td>
 <td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Taken as capsule or raw">💊 Oral</span>, <span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="Affects cognition or clarity">🧠 Cognitive</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>Mechanism of Action (MOA):</strong> Exhibits neuroprotective, antioxidant, antidepressant, and anticonvulsant effects, likely via modulation of GABAergic and monoaminergic systems <sup>[0, 10, 0, 15]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Oral administration: onset 30–60 min; peak plasma levels within 1–2 h; metabolized hepatically and excreted renally <sup>[0, 15]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Traditional use as digestive tonic, neuroprotectant, and mood regulator; modern research explores antidepressant and anticonvulsant applications <sup>[0, 10]</sup>.<br/>
-<strong>Side Effects:</strong> Potential emmenagogic and genotoxic activity; avoid use due to carcinogenic β-asarone content <sup>[0, 0, 0, 5]</sup>.<br/>
-<strong>Contraindications:</strong> Pregnancy and lactation; use prohibited in some regions <sup>[0, 0]</sup>.<br/>
-<strong>Drug Interactions:</strong> None well documented; may reduce effectiveness of antacids <sup>[0, 25]</sup>.<br/>
-<strong>Toxicity:</strong> High doses linked to neurotoxicity; banned in some countries due to carcinogenic concerns <sup>[0, 0]</sup>.
-  </td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Acorus calamus will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Chiric Sanango</td>
 <td data-label="Category">Dissociative / Sedative</td>
@@ -750,15 +647,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌎 Unknown / Global</td>
 <td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
-</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">
-<strong>Mechanism of Action (MOA):</strong> Contains β-carboline alkaloids (harmine, harmaline) and coumarins (scopoletin) that may inhibit monoamine oxidase and modulate serotonergic/cholinergic systems <sup>[0, 11, 0, 1]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Traditionally infused or added to ayahuasca; alkaloids absorbed orally; onset ~30–60 min; duration several hours <sup>[0, 10]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Potentiates ayahuasca, used in Amazonian rituals for introspection and mild hallucinations <sup>[0, 4]</sup>.<br/>
-<strong>Side Effects:</strong> Dizziness, nausea, muscle tremors, delirium at high doses <sup>[0, 11]</sup>.<br/>
-<strong>Contraindications:</strong> Pregnancy, cardiovascular conditions.<br/>
-<strong>Drug Interactions:</strong> Other serotonergic or cholinergic agents.<br/>
-<strong>Toxicity:</strong> Toxic in high doses; caution advised.
-</td></tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Chiric Sanango will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Wormwood</td>
 <td data-label="Category">Ritual / Visionary</td>
@@ -769,18 +658,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Legal, thujone regulated in some countries</td>
 <td data-label="Region">🇪🇺 Europe</td>
 <td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Traditional or ceremonial use">🔮 Ritual</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>Mechanism of Action (MOA):</strong> Contains (−)-α- and (+)-β-thujone, which act as GABA<sub>A</sub> receptor antagonists, causing mild convulsant and excitatory effects; also exhibits anti-inflammatory and antimicrobial properties <sup>[0, 3, 0, 22]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Oral use: onset 20–60 min; peak plasma thujone ~1–2 h; metabolized by CYP450 enzymes <sup>[0, 22]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Digestive tonic, antiparasitic, antimicrobial, anti-inflammatory; ingredient in traditional absinthe liquor <sup>[0, 7]</sup>.<br/>
-<strong>Side Effects:</strong> Nausea, vomiting, convulsions, hallucinations at high doses; GI upset; allergic reactions <sup>[0, 3, 0, 22]</sup>.<br/>
-<strong>Contraindications:</strong> Pregnancy, epilepsy, seizure disorders, liver disease.<br/>
-<strong>Drug Interactions:</strong> Additive neurotoxicity with other GABA antagonists; caution with CNS stimulants <sup>[0, 17]</sup>.<br/>
-<strong>Toxicity / LD50:</strong> Rodent oral LD50 for thujone ~45 mg/kg; chronic high intake associated with neurotoxicity <sup>[0, 3]</sup>.<br/>
-</td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Wormwood will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Mexican Tarragon</td>
 <td data-label="Category">Other</td>
@@ -791,18 +669,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🇲🇽 Latin America</td>
 <td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Burned or used in incense">🕯️ Ritual</span>, <span class="tag-tooltip" title="Affects cognition or clarity">🧠 Cognitive</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>Mechanism of Action (MOA):</strong> Coumarins (dimethylfraxetin) and flavonoids modulate serotonergic (5-HT<sub>1A</sub>) and GABAergic (benzodiazepine binding) neurotransmission, producing anxiolytic and sedative-like effects <sup>[0, 0, 0, 4]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Aqueous infusions or tinctures: onset ~30–60 min; active coumarins undergo hepatic metabolism; excreted renally <sup>[0, 2]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Traditional antispasmodic, antidiarrheal, anxiolytic, sedative, and additive in tobacco mixtures for psychoactive effects <sup>[0, 0, 0, 5]</sup>.<br/>
-<strong>Side Effects:</strong> Drowsiness, nausea, headache in high doses <sup>[0, 1]</sup>.<br/>
-<strong>Contraindications:</strong> Pregnancy, lactation, respiratory conditions (smoking) <sup>[0, 0]</sup>.<br/>
-<strong>Drug Interactions:</strong> Potentiation of sedatives and MAO inhibitors <sup>[0, 2]</sup>.<br/>
-<strong>Toxicity / LD50:</strong> Low acute toxicity; no significant LD50 data available <sup>[0, 2]</sup>.<br/>
-</td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Mexican Tarragon will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Frankincense</td>
 <td data-label="Category">Ritual / Visionary</td>
@@ -813,18 +680,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌐 Global / Ritual</td>
 <td data-label="Tags"><span class="tag-tooltip" title="Burned or used in incense">🕯️ Ritual</span>, <span class="tag-tooltip" title="Traditional or ceremonial use">🔮 Ritual</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>MOA:</strong> Boswellic acids inhibit 5-lipoxygenase and cyclooxygenase pathways, reduce pro-inflammatory cytokines (IL‑1β, TNF‑α), and promote hippocampal dendritic branching <sup>[0, 2, 0, 17]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Oral extracts: peak plasma boswellic acids ~2 h post-dose; hepatic metabolism; urinary excretion of metabolites <sup>[0, 12]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Anti-inflammatory for arthritis, ulcerative colitis, asthma; wound healing; cognitive support <sup>[0, 7, 0, 2]</sup>.<br/>
-<strong>Side Effects:</strong> GI upset, allergic reactions; rare hepatotoxicity <sup>[0, 7]</sup>.<br/>
-<strong>Contraindications:</strong> Pregnancy, bleeding disorders, surgery (increased bleeding risk) <sup>[0, 7]</sup>.<br/>
-<strong>Drug Interactions:</strong> Anticoagulants, immunosuppressants; may potentiate anti‑inflammatories <sup>[0, 7]</sup>.<br/>
-<strong>Toxicity:</strong> Low; high doses may cause mild GI symptoms <sup>[0, 7]</sup>.<br/>
-</td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Frankincense will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Mapacho</td>
 <td data-label="Category">Ritual / Visionary</td>
@@ -835,15 +691,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Restricted (due to nicotine content)</td>
 <td data-label="Region">🇲🇽 Latin America</td>
 <td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Traditional or ceremonial use">🔮 Ritual</span>, <span class="tag-tooltip" title="May be regulated">⚠️ Restricted</span></td>
-</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">
-<strong>Mechanism of Action (MOA):</strong> Nicotine agonizes nicotinic acetylcholine receptors; contains β-carbolines (harmala alkaloids) acting as reversible MAO inhibitors <sup>[1, 0, 1, 9]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Smoked or insufflated; rapid absorption via lungs or mucosa; peak plasma nicotine within minutes; half-life ~2 hours <sup>[1, 0]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Shamanic entheogen in rapé blends for sensory enhancement and ritual purification <sup>[1, 0]</sup>.<br/>
-<strong>Side Effects:</strong> Nausea, tachycardia, vomiting, dizziness at high doses <sup>[1, 0]</sup>.<br/>
-<strong>Contraindications:</strong> Cardiovascular disease, pregnancy.<br/>
-<strong>Drug Interactions:</strong> Other nicotinic agonists and MAO inhibitors.<br/>
-<strong>Toxicity:</strong> High risk of nicotine overdose; very toxic.
-</td></tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Mapacho will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Datura / Brugmansia</td>
 <td data-label="Category">Deliriant / Toxic</td>
@@ -854,18 +702,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Dangerous / Toxic / Controlled</td>
 <td data-label="Region">🌎 Unknown / Global</td>
 <td data-label="Tags"><span class="tag-tooltip" title="Known toxic effects">☠️ Toxic</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>MOA:</strong> Tropane alkaloids (atropine, scopolamine, hyoscyamine) act as competitive antagonists at muscarinic acetylcholine receptors (M1–M5), causing anticholinergic delirium and sedation <sup>[0, 0, 0, 15]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Oral ingestion: onset 30–60 min; peak levels ~1–2 h; extensively metabolized hepatically; excretion via urine <sup>[0, 0]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Historically used as antispasmodic, analgesic, and hypnotic; in modern medicine for motion sickness and as pre-anesthetic <sup>[0, 5]</sup>.<br/>
-<strong>Side Effects:</strong> Dry mouth, tachycardia, blurred vision, urinary retention, confusion, hallucinations; anticholinergic toxidrome at high doses <sup>[0, 15]</sup>.<br/>
-<strong>Contraindications:</strong> Glaucoma, prostatic hypertrophy, cardiovascular disease, psychiatric disorders, pregnancy <sup>[0, 5]</sup>.<br/>
-<strong>Drug Interactions:</strong> Additive anticholinergic effects with antihistamines, tricyclic antidepressants, antipsychotics <sup>[0, 5]</sup>.<br/>
-<strong>Toxicity / LD50:</strong> Human fatal dose ~10 mg/kg atropine equivalent; rodent LD50 ~450 mg/kg (oral) <sup>[1, 9]</sup>.<br/>
-</td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Datura / Brugmansia will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Nutmeg (high dose)</td>
 <td data-label="Category">Deliriant / Toxic</td>
@@ -876,18 +713,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Discouraged / Toxic</td>
 <td data-label="Region">🌎 Unknown / Global</td>
 <td data-label="Tags"><span class="tag-tooltip" title="Known toxic effects">☠️ Toxic</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>Mechanism of Action (MOA):</strong> Myristicin and elemicin exhibit mild hallucinogenic and anticholinergic effects by inhibiting acetylcholine receptors and monoamine oxidase <sup>[0, 21]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Oral ingestion: onset 3–6 h; duration up to 12 h; metabolized hepatically, excreted renally <sup>[0, 21]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Traditional deliriant, dream enhancement, aphrodisiac; flavoring agent in culinary contexts <sup>[0, 21]</sup>.<br/>
-<strong>Side Effects:</strong> Nausea, dry mouth, anxiety, delirium, hallucinations at psychoactive doses <sup>[0, 21]</sup>.<br/>
-<strong>Contraindications:</strong> Psychiatric disorders, liver disease, pregnancy <sup>[0, 21]</sup>.<br/>
-<strong>Drug Interactions:</strong> Additive CNS effects with depressants and MAOIs <sup>[0, 21]</sup>.<br/>
-<strong>Toxicity:</strong> Moderate-to-high toxicity at psychoactive doses; overdose risk for anticholinergic delirium <sup>[0, 21]</sup>.<br/>
-</td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Nutmeg (high dose) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Asparagus racemosus (Shatavari)</td>
 <td data-label="Category">Other</td>
@@ -898,18 +724,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🇮🇳 India</td>
 <td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>Mechanism of Action (MOA):</strong> Steroidal saponins (shatavarins) modulate estrogen receptors and exhibit antioxidant, immunomodulatory, and neuroprotective properties <sup>[1, 4]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Oral administration: onset 30–60 min; bioactive saponins have prolonged half-life; cumulative effects with daily dosing <sup>[1, 4]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Galactagogue, reproductive health support, adaptogen for stress, gastric ulcer treatment, diuretic <sup>[1, 5]</sup>.<br/>
-<strong>Side Effects:</strong> GI upset, headache; potential hormonal effects at high doses <sup>[1, 5]</sup>.<br/>
-<strong>Contraindications:</strong> Pregnancy (high doses), hormone-sensitive cancers; caution with hypoglycemic agents <sup>[0, 3]</sup>.<br/>
-<strong>Drug Interactions:</strong> Lithium (efficacy reduction) and hypoglycemic drugs; possible additive effects <sup>[0, 3]</sup>.<br/>
-<strong>Toxicity:</strong> Low toxicity; very high doses may induce convulsions in animal models; generally well-tolerated <sup>[1, 9]</sup>.<br/>
-</td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Asparagus racemosus (Shatavari) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Tagetes lucida (Mexican Tarragon)</td>
 <td data-label="Category">Other</td>
@@ -920,15 +735,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🇲🇽 Latin America</td>
 <td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Burned or used in incense">🕯️ Ritual</span>, <span class="tag-tooltip" title="Affects cognition or clarity">🧠 Cognitive</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
-</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">
-<strong>Mechanism of Action (MOA):</strong> Coumarins (dimethylfraxetin, herniarin) and essential oils (methyl eugenol, estragole) interact with GABAₐ and 5-HT₁ₐ receptors, producing anxiolytic and sedative effects <sup>[2, 2, 2, 10]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Consumed as tea or tincture; onset ~20–30 min; duration ~2–4 hours <sup>[2, 2]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Anxiolytic, digestive aid, ritual incense for purification <sup>[2, 10]</sup>.<br/>
-<strong>Side Effects:</strong> Mild GI upset, potential photosensitivity <sup>[2, 3]</sup>.<br/>
-<strong>Contraindications:</strong> Pregnancy, concurrent sedatives.<br/>
-<strong>Drug Interactions:</strong> Benzodiazepines and serotonergic drugs.<br/>
-<strong>Toxicity:</strong> Low; traditional use generally safe.
-</td></tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Tagetes lucida (Mexican Tarragon) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Turnera diffusa</td>
 <td data-label="Category">Empathogen / Euphoriant</td>
@@ -939,15 +746,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌎 Unknown / Global</td>
 <td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Elevates mood">💫 Euphoria</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
-</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">
-<strong>Mechanism of Action (MOA):</strong> Likely modulates serotonin, dopamine, and GABA neurotransmission via flavonoids and tannins <sup>[8, 6]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Tea or smoked; onset ~30–45 min; duration ~2–4 hours <sup>[8, 6]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Aphrodisiac, mood enhancement, stress relief <sup>[8, 6]</sup>.<br/>
-<strong>Side Effects:</strong> Mild headache, insomnia at high doses <sup>[8, 6]</sup>.<br/>
-<strong>Contraindications:</strong> Pregnancy, MAOI coadministration.<br/>
-<strong>Drug Interactions:</strong> Serotonergic medications.<br/>
-<strong>Toxicity:</strong> Low in traditional doses.
-</td></tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Turnera diffusa will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Kratom (Mitragyna speciosa)</td>
 <td data-label="Category">Empathogen / Euphoriant</td>
@@ -958,18 +757,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Restricted in some regions</td>
 <td data-label="Region">🌎 Unknown / Global</td>
 <td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Taken as capsule or raw">💊 Oral</span>, <span class="tag-tooltip" title="Elevates mood">💫 Euphoria</span>, <span class="tag-tooltip" title="Increases energy">⚡ Stimulant</span>, <span class="tag-tooltip" title="May be regulated">⚠️ Restricted</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>Mechanism of Action (MOA):</strong> Mitragynine and 7-hydroxymitragynine act as partial agonists at μ-opioid receptors, and interact with adrenergic and serotonergic systems <sup>[0, 9]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Oral: onset 15–45 min; duration 3–6 h; hepatic metabolism via CYP enzymes; excretion renal <sup>[0, 9]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Analgesic, mood enhancer, stimulant or sedative (dose-dependent), opioid withdrawal management <sup>[0, 9]</sup>.<br/>
-<strong>Side Effects:</strong> Constipation, nausea, dependency risk, dizziness <sup>[0, 9]</sup>.<br/>
-<strong>Contraindications:</strong> Pregnancy, liver or kidney impairment, concurrent opioid or CNS depressant use <sup>[0, 9]</sup>.<br/>
-<strong>Drug Interactions:</strong> Additive sedation with opioids and sedatives; caution with MAOIs <sup>[0, 9]</sup>.<br/>
-<strong>Toxicity:</strong> Low-to-moderate; overdose may cause respiratory depression and death <sup>[0, 9]</sup>.<br/>
-</td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Kratom (Mitragyna speciosa) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Kra Thum Na / Kok</td>
 <td data-label="Category">Empathogen / Euphoriant</td>
@@ -980,12 +768,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌎 Unknown / Global</td>
 <td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Taken as capsule or raw">💊 Oral</span>, <span class="tag-tooltip" title="Elevates mood">💫 Euphoria</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<em>Information on "Kra Thum Na / Kok" was not found in standard pharmacological sources. Please clarify the botanical name or provide additional details for this entry.</em>
-</td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Kra Thum Na / Kok will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Sakae Naa</td>
 <td data-label="Category">Empathogen / Euphoriant</td>
@@ -1073,18 +856,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌐 Global / Ritual</td>
 <td data-label="Tags"><span class="tag-tooltip" title="Burned or used in incense">🕯️ Ritual</span>, <span class="tag-tooltip" title="Traditional or ceremonial use">🔮 Ritual</span>, <span class="tag-tooltip" title="Affects cognition or clarity">🧠 Cognitive</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>Mechanism of Action (MOA):</strong> 1,8-Cineole and α-thujone inhibit pro-inflammatory cytokines (TNFα, IL-1β) and arachidonic acid metabolism; antimicrobial and antiviral effects via NF-κB inhibition <sup>[0, 19, 0, 4]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Inhaled or topical; rapid local absorption; systemic exposure minimal; metabolites excreted renally <sup>[0, 4]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Smudging rituals for purification, antimicrobial, respiratory support, mental clarity <sup>[0, 19]</sup>.<br/>
-<strong>Side Effects:</strong> Respiratory irritation, asthmatic exacerbation, headaches at high exposure <sup>[0, 19]</sup>.<br/>
-<strong>Contraindications:</strong> Asthma, pregnancy, respiratory disorders.<br/>
-<strong>Drug Interactions:</strong> None significant documented.<br/>
-<strong>Toxicity:</strong> Very low; excessive inhalation may cause dizziness or nausea <sup>[0, 4]</sup>.<br/>
-</td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for White Sage will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Frankincense (Boswellia)</td>
 <td data-label="Category">Other</td>
@@ -1139,18 +911,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Restricted in many regions</td>
 <td data-label="Region">🇲🇽 Latin America</td>
 <td data-label="Tags"><span class="tag-tooltip" title="May be regulated">⚠️ Restricted</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>Mechanism of Action (MOA):</strong> Bufotenin in the seeds functions as a non-selective serotonin receptor agonist and serotonin releasing agent <sup>[1, 1]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Insufflated snuff: rapid onset; typical dose contains ~40 mg bufotenin from ~0.5 g seeds; rodent LD50 ~200–300 mg/kg <sup>[1, 1]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Used ceremonially as cohoba/yopo snuff for entheogenic experiences <sup>[1, 1]</sup>.<br/>
-<strong>Side Effects:</strong> Tachycardia, facial flushing, respiratory difficulty, leg cramps, nausea, vomiting <sup>[1, 1]</sup>.<br/>
-<strong>Contraindications:</strong> Cardiovascular disease, psychiatric disorders, pregnancy.<br/>
-<strong>Drug Interactions:</strong> Serotonergic medications may potentiate effects.<br/>
-<strong>Toxicity:</strong> High concentrations potentially embryotoxic and angiogenic; human toxicity data limited.<br/>
-</td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Anadenanthera peregrina (Yopo) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Anadenanthera colubrina (Cebíl)</td>
 <td data-label="Category">Ethnobotanical / Rare</td>
@@ -1161,18 +922,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Restricted in many regions</td>
 <td data-label="Region">🌎 Unknown / Global</td>
 <td data-label="Tags"><span class="tag-tooltip" title="May be regulated">⚠️ Restricted</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>Mechanism of Action (MOA):</strong> Bufotenin acts as a potent and non-selective serotonin receptor agonist at 5-HT₁A, 5-HT₂A, 5-HT₂C, and 5-HT₃ receptors, and serves as a specific serotonin releasing agent <sup>[1, 0]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> When insufflated, bufotenin is rapidly absorbed nasally with onset in 5–15 min and duration around 1–2 h <sup>[1, 1]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Traditionally used as a snuff for visionary and divinatory rituals in South American cultures <sup>[1, 1]</sup>.<br/>
-<strong>Side Effects:</strong> Prominent cardiovascular changes, nausea, vomiting, and dizziness <sup>[1, 0, 1, 1]</sup>.<br/>
-<strong>Contraindications:</strong> Cardiovascular disorders, psychiatric conditions, and pregnancy.<br/>
-<strong>Drug Interactions:</strong> Concomitant use with SSRIs or MAOIs may risk serotonin syndrome <sup>[1, 0]</sup>.<br/>
-<strong>Toxicity / LD50:</strong> No documented human LD50; rodent LD50 approximately 200–300 mg/kg (intraperitoneal) <sup>[1, 0]</sup>.<br/>
-</td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Anadenanthera colubrina (Cebíl) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Virola spp.</td>
 <td data-label="Category">Ethnobotanical / Rare</td>
@@ -1216,12 +966,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌎 Unknown / Global</td>
 <td data-label="Tags"><span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<em>Silphium is an ancient plant believed extinct; no modern pharmacological data available.</em>
-</td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Silphium (extinct) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Nymphaea ampla</td>
 <td data-label="Category">Empathogen / Euphoriant</td>
@@ -1232,13 +977,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌎 Unknown / Global</td>
 <td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Elevates mood">💫 Euphoria</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>MOA &amp; Uses:</strong> Closely related to Nymphaea caerulea; traditionally used for dream enhancement and mild sedation. Specific pharmacology largely undocumented. <br/>
-<em>Further research needed for detailed pharmacokinetics and safety data.</em>
-</td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Nymphaea ampla will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Pedicularis densiflora (Indian warrior)</td>
 <td data-label="Category">Dissociative / Sedative</td>
@@ -1249,18 +988,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌍 Africa, 🇮🇳 India</td>
 <td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>Mechanism of Action (MOA):</strong> Muscle relaxant potential via GABAergic modulation <sup>[2, 0]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Smoked or tea; onset rapid (minutes); duration ~2–3 h <sup>[2, 0]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Muscle tension, pain relief, sleep aid applications <sup>[2, 0]</sup>.<br/>
-<strong>Side Effects:</strong> Drowsiness, dizziness <sup>[2, 0]</sup>.<br/>
-<strong>Contraindications:</strong> Pregnancy, use with other sedatives <sup>[2, 0]</sup>.<br/>
-<strong>Drug Interactions:</strong> Additive effects with CNS depressants <sup>[2, 0]</sup>.<br/>
-<strong>Toxicity:</strong> Low; limited data on long-term use <sup>[2, 0]</sup>.<br/>
-</td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Pedicularis densiflora (Indian warrior) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Pedicularis groenlandica</td>
 <td data-label="Category">Dissociative / Sedative</td>
@@ -1271,18 +999,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌍 Africa</td>
 <td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>MOA:</strong> Contains iridoid glycosides and flavonoids exhibiting antioxidant and anti-inflammatory effects; possible GABAergic modulation <sup>[0, 7]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Oral infusion onset ~30 min; duration ~4 h; metabolites excreted renally <sup>[0, 7]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Muscle relaxant, antioxidant, antimicrobial, traditional remedy for pain and inflammation <sup>[0, 7]</sup>.<br/>
-<strong>Side Effects:</strong> Rare; possible GI upset <sup>[0, 7]</sup>.<br/>
-<strong>Contraindications:</strong> Pregnancy, lactation <sup>[0, 7]</sup>.<br/>
-<strong>Drug Interactions:</strong> Additive with CNS depressants <sup>[0, 7]</sup>.<br/>
-<strong>Toxicity:</strong> Low; no significant toxicity reported <sup>[0, 7]</sup>.
-  </td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Pedicularis groenlandica will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Lactuca canadensis</td>
 <td data-label="Category">Dissociative / Sedative</td>
@@ -1293,18 +1010,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌎 Unknown / Global</td>
 <td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="Calming or sleep-inducing">🧘 Sedation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>MOA:</strong> Lactucin and lactucopicrin act as acetylcholinesterase inhibitors and mild opioid receptor ligands, providing sedative and analgesic effects <sup>[0, 6]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Oral ingestion onset 30–60 min; duration ~4 h; metabolites excreted renally <sup>[0, 6]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Sedative, analgesic, sleep aid, antitussive <sup>[0, 6]</sup>.<br/>
-<strong>Side Effects:</strong> Mydriasis, dizziness, GI upset at high doses <sup>[0, 6]</sup>.<br/>
-<strong>Contraindications:</strong> Pregnancy, concurrent opioid use <sup>[0, 6]</sup>.<br/>
-<strong>Drug Interactions:</strong> CNS depressants <sup>[0, 6]</sup>.<br/>
-<strong>Toxicity:</strong> Low; hospitalizations reported but recovery common <sup>[0, 6]</sup>.
-  </td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Lactuca canadensis will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Artemisia absinthium (Wormwood)</td>
 <td data-label="Category">Ritual / Visionary</td>
@@ -1315,18 +1021,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Legal, thujone regulated</td>
 <td data-label="Region">🇪🇺 Europe</td>
 <td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Traditional or ceremonial use">🔮 Ritual</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>Mechanism of Action (MOA):</strong> Contains (−)-α- and (+)-β-thujone, potent GABAₐ receptor antagonists; also exhibits anti-inflammatory, antimicrobial, antioxidant, and MAO-inhibitory activities <sup>[1, 3, 0, 7]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Oral use: onset 20–60 min; peak plasma levels ~1–2 h; systemic distribution of active constituents <sup>[0, 22]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Digestive tonic, Crohn's disease aid, antiparasitic, antimicrobial, and anti-inflammatory agent <sup>[0, 7]</sup>.<br/>
-<strong>Side Effects:</strong> High-dose thujone can cause convulsions, insomnia, and hallucinations; GI upset; allergic reactions <sup>[1, 3, 0, 7]</sup>.<br/>
-<strong>Contraindications:</strong> Pregnancy, epilepsy, seizure disorders, liver disease; avoid in children <sup>[0, 7]</sup>.<br/>
-<strong>Drug Interactions:</strong> Increases INR with warfarin; additive CNS depression with sedatives and MAOIs <sup>[1, 3]</sup>.<br/>
-<strong>Toxicity / LD50:</strong> Rodent LD50 for thujone ~45 mg/kg; chronic overuse linked to neurotoxicity and convulsions <sup>[1, 3]</sup>.<br/>
-</td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Artemisia absinthium (Wormwood) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Artemisia vulgaris (Mugwort)</td>
 <td data-label="Category">Oneirogen</td>
@@ -1337,8 +1032,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🇪🇺 Europe</td>
 <td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Burned or used in incense">🕯️ Ritual</span>, 🧠 Dream, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Artemisia vulgaris (Mugwort) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Artemisia vulgaris (Mugwort) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Justicia pectoralis</td>
 <td data-label="Category">Empathogen / Euphoriant</td>
@@ -1349,18 +1043,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌎 Unknown / Global</td>
 <td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Elevates mood">💫 Euphoria</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>MOA:</strong> Coumarins (umckalin), flavonoids, and sterols exhibit anti-inflammatory, antispasmodic, and anxiolytic effects via modulation of smooth muscle and GABAergic pathways <sup>[0, 2, 0, 10]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Oral infusion onset 30–60 min; metabolites via hepatic pathways; urinary excretion <sup>[0, 10]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Gastroprotective, anti-inflammatory, antispasmodic, anxiolytic; used as snuff admixture <sup>[0, 2, 0, 10]</sup>.<br/>
-<strong>Side Effects:</strong> Rare; possible sedation, GI discomfort <sup>[0, 10]</sup>.<br/>
-<strong>Contraindications:</strong> Pregnancy; MAOI coadministration <sup>[0, 18]</sup>.<br/>
-<strong>Drug Interactions:</strong> MAO inhibitors, sedatives <sup>[0, 18]</sup>.<br/>
-<strong>Toxicity:</strong> Low; safe at traditional doses <sup>[0, 10]</sup>.
-  </td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Justicia pectoralis will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Viola odorata (Sweet violet)</td>
 <td data-label="Category">Dissociative / Sedative</td>
@@ -1382,18 +1065,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌎 Unknown / Global</td>
 <td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Elevates mood">💫 Euphoria</span>, <span class="tag-tooltip" title="Calming or sleep-inducing">🧘 Sedation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>MOA:</strong> Essential oils (safrole, eugenol) and coumarins exhibit antioxidant, anti-inflammatory, and antimutagenic activities; possible modulation of CYP enzymes <sup>[0, 3, 0, 11]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Oral infusion or extract onset 30–60 min; hepatic metabolism; renal excretion <sup>[0, 11]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Digestive aid, anti-inflammatory, antimutagen, diuretic, antipyretic <sup>[0, 11]</sup>.<br/>
-<strong>Side Effects:</strong> High doses may cause GI upset; safrole is a potential carcinogen <sup>[1, 11]</sup>.<br/>
-<strong>Contraindications:</strong> Pregnancy; safrole-containing extracts discouraged <sup>[1, 11]</sup>.<br/>
-<strong>Drug Interactions:</strong> CYP450 substrates; caution with anticoagulants <sup>[0, 19]</sup>.<br/>
-<strong>Toxicity:</strong> Safrole hepatotoxic; use sparingly <sup>[1, 11]</sup>.
-  </td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Piper auritum (Root beer plant) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Eschscholzia californica (California poppy)</td>
 <td data-label="Category">Dissociative / Sedative</td>
@@ -1404,18 +1076,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌎 Unknown / Global</td>
 <td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="Calming or sleep-inducing">🧘 Sedation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>MOA:</strong> Alkaloids (protopine, allocryptopine, NMT) modulate GABA<sub>A</sub> receptor–linked chloride currents and may convert to active metabolites affecting GPCRs <sup>[2, 0, 2, 1]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Oral (tea, extract); onset 30–60 min; duration ~4 h; bioavailability of key alkaloids moderate <sup>[2, 3]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Anxiety reduction, insomnia aid, mild analgesic, vasomotor headache relief <sup>[2, 3, 2, 7]</sup>.<br/>
-<strong>Side Effects:</strong> High doses may cause residual sedation ("hangover"), nausea, dizziness; avoid operating machinery <sup>[2, 8, 2, 9]</sup>.<br/>
-<strong>Contraindications:</strong> Glaucoma, MAOI therapy, pregnancy, lactation <sup>[2, 9]</sup>.<br/>
-<strong>Drug Interactions:</strong> Additive CNS depression with sedatives, barbiturates; caution with blood thinners and antihypertensives <sup>[2, 8]</sup>.<br/>
-<strong>Toxicity:</strong> Low; no significant toxicity at therapeutic doses <sup>[2, 9]</sup>.<br/>
-</td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Eschscholzia californica (California poppy) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Rivea corymbosa</td>
 <td data-label="Category">Ethnobotanical / Rare</td>
@@ -1426,18 +1087,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Restricted in some countries</td>
 <td data-label="Region">🌎 Unknown / Global</td>
 <td data-label="Tags"><span class="tag-tooltip" title="May be regulated">⚠️ Restricted</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>MOA:</strong> Seeds contain ergine (LSA) and isoergine acting as partial agonists at 5-HT<sub>2A</sub> receptors, producing mild psychedelic effects <sup>[0, 12]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Insufflated or ingested; onset 20–60 min; duration 4–8 h; hepatic metabolism <sup>[0, 12]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Entheogenic snuff (ololiuqui) in Mesoamerican rituals <sup>[0, 4]</sup>.<br/>
-<strong>Side Effects:</strong> Nausea, vasoconstriction, dizziness <sup>[0, 4]</sup>.<br/>
-<strong>Contraindications:</strong> Cardiovascular disease, pregnancy <sup>[0, 4]</sup>.<br/>
-<strong>Drug Interactions:</strong> Serotonergic medications <sup>[0, 12]</sup>.<br/>
-<strong>Toxicity:</strong> Low; moderate overdose risk <sup>[0, 12]</sup>.
-  </td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Rivea corymbosa will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Ipomoea tricolor (Heavenly Blue)</td>
 <td data-label="Category">Ethnobotanical / Rare</td>
@@ -1448,18 +1098,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Restricted in some countries</td>
 <td data-label="Region">🌎 Unknown / Global</td>
 <td data-label="Tags"><span class="tag-tooltip" title="May be regulated">⚠️ Restricted</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>MOA:</strong> Seeds contain ergine (LSA) and small amounts of DMT analogs; agonize 5-HT<sub>2A</sub> serotonin receptors <sup>[0, 5]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Oral ingestion onset 45–120 min; duration 4–10 h; hepatic metabolism <sup>[0, 5]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Visionary experiences, ethnobotanical use <sup>[0, 5]</sup>.<br/>
-<strong>Side Effects:</strong> Nausea, vasoconstriction, headache <sup>[0, 5]</sup>.<br/>
-<strong>Contraindications:</strong> Cardiovascular disorders, psychiatric conditions <sup>[0, 5]</sup>.<br/>
-<strong>Drug Interactions:</strong> SSRIs/MAOIs <sup>[0, 5]</sup>.<br/>
-<strong>Toxicity:</strong> Low; rodent LD50 ~200–300 mg/kg <sup>[0, 5]</sup>.
-  </td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Ipomoea tricolor (Heavenly Blue) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Argyreia nervosa (Hawaiian Baby Woodrose)</td>
 <td data-label="Category">Ethnobotanical / Rare</td>
@@ -1470,18 +1109,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Restricted in some countries</td>
 <td data-label="Region">🌎 Unknown / Global</td>
 <td data-label="Tags"><span class="tag-tooltip" title="May be regulated">⚠️ Restricted</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>Mechanism of Action (MOA):</strong> Seeds contain ergolines (ergine/LSA and isoergine) acting as partial agonists at 5-HT₂A serotonin receptors and dopamine receptors, producing mild psychedelic effects <sup>[1, 2, 1, 7]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Oral ingestion: onset 20–180 min; peak ~2 h; duration 4–10 h <sup>[1, 2]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Traditional entheogen in Mesoamerican rituals and modern recreational use <sup>[1, 2]</sup>.<br/>
-<strong>Side Effects:</strong> Nausea, vomiting, vasoconstriction, dizziness, sedation <sup>[1, 2]</sup>.<br/>
-<strong>Contraindications:</strong> Cardiovascular disorders, psychiatric conditions, pregnancy.<br/>
-<strong>Drug Interactions:</strong> CNS depressants and serotonergic agents may enhance effects.<br/>
-<strong>Toxicity:</strong> No known human fatalities; rodent LD50 for ergine ~200–300 mg/kg.<br/>
-</td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Argyreia nervosa (Hawaiian Baby Woodrose) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Tilia europaea (Linden flower)</td>
 <td data-label="Category">Dissociative / Sedative</td>
@@ -1503,18 +1131,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌎 Unknown / Global</td>
 <td data-label="Tags">🌬️ Smokable, <span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="Affects cognition or clarity">🧠 Cognitive</span>, <span class="tag-tooltip" title="Calming or sleep-inducing">🧘 Sedation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>MOA:</strong> Flavonoids (apigenin, quercetin) bind benzodiazepine sites on GABA<sub>A</sub> receptors; essential oils (citral, citronellal) exert sedative and spasmolytic effects <sup>[0, 0, 0, 8]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Oral onset 30–60 min; active compounds absorbed in GI tract; hepatic metabolism; renal excretion <sup>[0, 0]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Anxiety, insomnia, nervous tension, digestive aid <sup>[0, 8]</sup>.<br/>
-<strong>Side Effects:</strong> Drowsiness; possible allergic reactions; GI upset at high doses <sup>[0, 0]</sup>.<br/>
-<strong>Contraindications:</strong> Pregnancy, known Asteraceae allergy <sup>[0, 16]</sup>.<br/>
-<strong>Drug Interactions:</strong> May potentiate sedatives, anticoagulants; caution with CNS depressants <sup>[0, 16]</sup>.<br/>
-<strong>Toxicity:</strong> Low; safe at therapeutic doses <sup>[0, 0]</sup>.
-  </td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Melissa officinalis (Lemon balm) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Ocimum sanctum (Holy Basil / Tulsi)</td>
 <td data-label="Category">Empathogen / Euphoriant</td>
@@ -1536,8 +1153,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🌎 Unknown / Global</td>
 <td data-label="Tags"><span class="tag-tooltip" title="Taken as capsule or raw">💊 Oral</span>, <span class="tag-tooltip" title="Elevates mood">💫 Euphoria</span>, <span class="tag-tooltip" title="Affects cognition or clarity">🧠 Cognitive</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Rhodiola rosea will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Rhodiola rosea will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Withania somnifera (Ashwagandha)</td>
 <td data-label="Category">Dissociative / Sedative</td>
@@ -1548,18 +1164,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🇮🇳 India</td>
 <td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Taken as capsule or raw">💊 Oral</span>, <span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="Calming or sleep-inducing">🧘 Sedation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>MOA:</strong> Withanolides modulate GABAergic and GRIK receptors, reduce cortisol levels, and exhibit antioxidant, anti-inflammatory effects <sup>[0, 1, 0, 24]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Oral onset 30–60 min; withanolides bioavailable; hepatic metabolism; renal excretion <sup>[0, 17]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Adaptogen, anti-stress, anxiolytic, neuroprotective, anti-inflammatory, immune support <sup>[0, 1, 0, 17]</sup>.<br/>
-<strong>Side Effects:</strong> GI upset, drowsiness, rare thyroid hormone changes <sup>[0, 9]</sup>.<br/>
-<strong>Contraindications:</strong> Pregnancy, hyperthyroidism, autoimmune diseases <sup>[0, 1]</sup>.<br/>
-<strong>Drug Interactions:</strong> Immunosuppressants, sedatives, thyroid medications <sup>[0, 24]</sup>.<br/>
-<strong>Toxicity:</strong> Low; well-tolerated in clinical studies <sup>[0, 1]</sup>.
-  </td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Withania somnifera (Ashwagandha) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Bacopa monnieri</td>
 <td data-label="Category">Empathogen / Euphoriant</td>
@@ -1570,18 +1175,7 @@ tbody tr:hover {
 <td data-label="Legal Status">Legal / Unregulated</td>
 <td data-label="Region">🇮🇳 India</td>
 <td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Taken as capsule or raw">💊 Oral</span>, <span class="tag-tooltip" title="Elevates mood">💫 Euphoria</span>, <span class="tag-tooltip" title="Calming or sleep-inducing">🧘 Sedation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
-</tr>
-<tr class="expand-row" style="display:none; background:#f9f9f9;">
-<td colspan="10">
-<strong>Mechanism of Action (MOA):</strong> Contains bacosides A and B which enhance cholinergic transmission, antioxidant defenses, and modulate neurotransmitter levels (serotonin, dopamine) <sup>[0, 0, 0, 2]</sup>.<br/>
-<strong>Pharmacokinetics:</strong> Oral preparations (extracts or powder); onset 30–60 min; requires chronic dosing for peak cognitive benefits <sup>[0, 5]</sup>.<br/>
-<strong>Therapeutic Uses:</strong> Cognitive enhancement (memory, learning), anxiety reduction, ADHD management <sup>[0, 1, 0, 6]</sup>.<br/>
-<strong>Side Effects:</strong> Gastrointestinal upset (nausea, increased motility), fatigue, dry mouth <sup>[0, 5]</sup>.<br/>
-<strong>Contraindications:</strong> Pregnancy, lactation, hypersensitivity to any component <sup>[0, 5]</sup>.<br/>
-<strong>Drug Interactions:</strong> No major interactions documented; caution with sedatives <sup>[0, 5]</sup>.<br/>
-<strong>Toxicity / LD50:</strong> Generally non-toxic; no serious adverse effects at recommended doses; rodent LD50 not well established <sup>[0, 6]</sup>.<br/>
-</td>
-</tr>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Bacopa monnieri will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
 <tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
 <td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Eleutherococcus senticosus (Siberian Ginseng)</td>
 <td data-label="Category">Empathogen / Euphoriant</td>
@@ -1593,22 +1187,389 @@ tbody tr:hover {
 <td data-label="Region">🇨🇳 East Asia</td>
 <td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Elevates mood">💫 Euphoria</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
 </tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Eleutherococcus senticosus (Siberian Ginseng) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
-</tbody>
+<tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
+<td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Voacanga africana</td>
+<td data-label="Category">Ethnobotanical / Rare</td>
+<td data-label="Effects">Stimulant, visionary, contains ibogaine-like alkaloids</td>
+<td data-label="Preparation">Seeds or bark in tincture or decoction</td>
+<td data-label="Intensity">High</td>
+<td data-label="Onset">30-90 min</td>
+<td data-label="Legal Status">Restricted in some regions</td>
+<td data-label="Region">🌍 Africa</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Increases energy">⚡ Stimulant</span>, <span class="tag-tooltip" title="May be regulated">⚠️ Restricted</span></td>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Voacanga africana will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
+<tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
+<td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Sida cordifolia</td>
+<td data-label="Category">Empathogen / Euphoriant</td>
+<td data-label="Effects">Stimulant, mild euphoria, contains ephedrine alkaloids</td>
+<td data-label="Preparation">Tea or capsule</td>
+<td data-label="Intensity">Moderate</td>
+<td data-label="Onset">15-30 min</td>
+<td data-label="Legal Status">Restricted in some regions</td>
+<td data-label="Region">🌍 Africa</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Taken as capsule or raw">💊 Oral</span>, <span class="tag-tooltip" title="Elevates mood">💫 Euphoria</span>, <span class="tag-tooltip" title="Increases energy">⚡ Stimulant</span>, <span class="tag-tooltip" title="May be regulated">⚠️ Restricted</span></td>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Sida cordifolia will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
+<tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
+<td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Nardostachys jatamansi (Spikenard)</td>
+<td data-label="Category">Dissociative / Sedative</td>
+<td data-label="Effects">Sedative, trance-inducing, aromatic</td>
+<td data-label="Preparation">Essential oil or powder</td>
+<td data-label="Intensity">Mild</td>
+<td data-label="Onset">15-30 min</td>
+<td data-label="Legal Status">Legal / Unregulated</td>
+<td data-label="Region">🇮🇳 India</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Nardostachys jatamansi (Spikenard) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
+<tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
+<td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Rauvolfia serpentina</td>
+<td data-label="Category">Dissociative / Sedative</td>
+<td data-label="Effects">Sedative, used in traditional Unani/Indian medicine</td>
+<td data-label="Preparation">Root extract or capsule</td>
+<td data-label="Intensity">Moderate</td>
+<td data-label="Onset">30-60 min</td>
+<td data-label="Legal Status">Restricted in some countries</td>
+<td data-label="Region">🇮🇳 India</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Taken as capsule or raw">💊 Oral</span>, <span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="May be regulated">⚠️ Restricted</span></td>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Rauvolfia serpentina will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
+<tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
+<td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Ilex guayusa</td>
+<td data-label="Category">Empathogen / Euphoriant</td>
+<td data-label="Effects">Energizing, clear-headed, dream-enhancing stimulant</td>
+<td data-label="Preparation">Brewed tea</td>
+<td data-label="Intensity">Mild</td>
+<td data-label="Onset">15-30 min</td>
+<td data-label="Legal Status">Legal / Unregulated</td>
+<td data-label="Region">🇲🇽 Latin America</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Elevates mood">💫 Euphoria</span>, <span class="tag-tooltip" title="Increases energy">⚡ Stimulant</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Ilex guayusa will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
+<tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
+<td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Ilex paraguariensis (Yerba Mate)</td>
+<td data-label="Category">Empathogen / Euphoriant</td>
+<td data-label="Effects">Stimulating, mood-enhancing, social</td>
+<td data-label="Preparation">Tea or infusion</td>
+<td data-label="Intensity">Mild</td>
+<td data-label="Onset">15-30 min</td>
+<td data-label="Legal Status">Legal / Unregulated</td>
+<td data-label="Region">🇲🇽 Latin America</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Elevates mood">💫 Euphoria</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Ilex paraguariensis (Yerba Mate) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
+<tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
+<td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Banisteriopsis caapi (Ayahuasca vine only)</td>
+<td data-label="Category">Ritual / Visionary</td>
+<td data-label="Effects">MAOI, visionary enhancer, emotional depth</td>
+<td data-label="Preparation">Brewed in traditional decoctions</td>
+<td data-label="Intensity">High</td>
+<td data-label="Onset">30-60 min</td>
+<td data-label="Legal Status">Restricted in many countries</td>
+<td data-label="Region">🇲🇽 Latin America</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Traditional or ceremonial use">🔮 Ritual</span>, <span class="tag-tooltip" title="May be regulated">⚠️ Restricted</span></td>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Banisteriopsis caapi (Ayahuasca vine only) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
+<tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
+<td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Lavandula angustifolia</td>
+<td data-label="Category">Dissociative / Sedative</td>
+<td data-label="Effects">Calming, emotionally uplifting, sleep aid</td>
+<td data-label="Preparation">Tea or incense</td>
+<td data-label="Intensity">Mild</td>
+<td data-label="Onset">15-30 min</td>
+<td data-label="Legal Status">Legal / Unregulated</td>
+<td data-label="Region">🌎 Unknown / Global</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Burned or used in incense">🕯️ Ritual</span>, <span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="Calming or sleep-inducing">🧘 Sedation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Lavandula angustifolia will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
+<tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
+<td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Matricaria chamomilla (Chamomile)</td>
+<td data-label="Category">Dissociative / Sedative</td>
+<td data-label="Effects">Mild sedative, calming, dream aid</td>
+<td data-label="Preparation">Tea</td>
+<td data-label="Intensity">Mild</td>
+<td data-label="Onset">15-30 min</td>
+<td data-label="Legal Status">Legal / Unregulated</td>
+<td data-label="Region">🇪🇺 Europe</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="Calming or sleep-inducing">🧘 Sedation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Matricaria chamomilla (Chamomile) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
+<tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
+<td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Gynostemma pentaphyllum (Jiaogulan)</td>
+<td data-label="Category">Empathogen / Euphoriant</td>
+<td data-label="Effects">Mood support, adaptogenic calm</td>
+<td data-label="Preparation">Tea</td>
+<td data-label="Intensity">Mild</td>
+<td data-label="Onset">15-30 min</td>
+<td data-label="Legal Status">Legal / Unregulated</td>
+<td data-label="Region">🇨🇳 East Asia</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Can be consumed as tea">☕ Brewable</span>, <span class="tag-tooltip" title="Elevates mood">💫 Euphoria</span>, <span class="tag-tooltip" title="Calming or sleep-inducing">🧘 Sedation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Gynostemma pentaphyllum (Jiaogulan) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
+<tr><td data-label="⭐" onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
+<td data-label="Herb" onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">Gastrodia elata (Tian Ma)</td>
+<td data-label="Category">Dissociative / Sedative</td>
+<td data-label="Effects">Neuroprotective, anti-anxiety, grounding</td>
+<td data-label="Preparation">Boiled or tinctured</td>
+<td data-label="Intensity">Mild</td>
+<td data-label="Onset">30-60 min</td>
+<td data-label="Legal Status">Legal / Unregulated</td>
+<td data-label="Region">🇨🇳 East Asia</td>
+<td data-label="Tags"><span class="tag-tooltip" title="Alters body awareness">🌀 Dissociation</span>, <span class="tag-tooltip" title="Generally recognized as low-risk">✅ Safe</span></td>
+</tr><tr class="expand-row" style="display:none; background:#f9f9f9;"><td colspan="10">Details for Gastrodia elata (Tian Ma) will go here. (Coming soon: MOA, side effects, links, etc.)</td></tr>
+<tr class="clickable-row" onclick="toggleRow(this)"><td></td><td>Voacanga africana</td><td></td><td>🧠 Cognitive, 🔮 Ritual, ☠️ Toxic</td></tr><tr class="expand-row"><td colspan="4">
+<strong>Mechanism of Action (MOA):</strong> Contains voacangine and related alkaloids; may act as a prodrug to ibogaine analogs<br/>
+<strong>Pharmacokinetics:</strong> Poor oral bioavailability; traditional decoction or fermentation<br/>
+<strong>Therapeutic Uses:</strong> Traditional stimulant, spiritual preparations, proto-iboga analog<br/>
+<strong>Side Effects:</strong> Nausea, CNS stimulation, possible cardiac risk<br/>
+<strong>Contraindications:</strong> Heart conditions, mental illness, pregnancy<br/>
+<strong>Drug Interactions:</strong> Avoid with MAOIs or SSRIs<br/>
+<strong>Toxicity / LD50:</strong> High doses can be toxic due to voacangine content<br/>
+<strong>External Source:</strong> <a href="https://en.wikipedia.org/wiki/Voacanga_africana" target="_blank">More info</a>
+</td></tr><tr class="clickable-row" onclick="toggleRow(this)"><td></td><td>Desmodium gangeticum</td><td></td><td>🧘 Sedation, ✅ Safe, 💊 Oral</td></tr><tr class="expand-row"><td colspan="4">
+<strong>Mechanism of Action (MOA):</strong> Mild GABAergic modulation and anti-inflammatory activity<br/>
+<strong>Pharmacokinetics:</strong> Traditionally used as powdered root in decoction<br/>
+<strong>Therapeutic Uses:</strong> Anxiety, asthma, inflammatory conditions in Ayurveda<br/>
+<strong>Side Effects:</strong> Generally well tolerated; rare stomach upset<br/>
+<strong>Contraindications:</strong> None confirmed, but caution in hypotension<br/>
+<strong>Drug Interactions:</strong> May enhance sedatives<br/>
+<strong>Toxicity / LD50:</strong> Considered safe in therapeutic doses<br/>
+<strong>External Source:</strong> <a href="https://en.wikipedia.org/wiki/Desmodium_gangeticum" target="_blank">More info</a>
+</td></tr><tr class="clickable-row" onclick="toggleRow(this)"><td></td><td>Tynanthus panurensis (Clavo Huasca)</td><td></td><td>💫 Euphoria, 💊 Oral, 🔮 Ritual</td></tr><tr class="expand-row"><td colspan="4">
+<strong>Mechanism of Action (MOA):</strong> Contains eugenol derivatives; possible dopaminergic activity<br/>
+<strong>Pharmacokinetics:</strong> Infused or decocted vine bark; often combined with aphrodisiac blends<br/>
+<strong>Therapeutic Uses:</strong> Libido enhancement, energy tonic, mood booster<br/>
+<strong>Side Effects:</strong> Can cause mild GI upset if overused<br/>
+<strong>Contraindications:</strong> Avoid with anticoagulants due to eugenol<br/>
+<strong>Drug Interactions:</strong> Potential interaction with blood thinners<br/>
+<strong>Toxicity / LD50:</strong> Generally low; caution with concentrated extracts<br/>
+<strong>External Source:</strong> <a href="https://rain-tree.com/clavohuasca.htm" target="_blank">More info</a>
+</td></tr></tbody>
 </table>
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('td[data-label="Herb"]').forEach(td => {
-        td.style.cursor = "pointer";
-        td.onclick = function() {
-            let expandRow = this.parentElement.nextElementSibling;
-            if (expandRow.style.display === "none" || expandRow.style.display === "") {
-                expandRow.style.display = "table-row";
-            } else {
-                expandRow.style.display = "none";
-            }
-        };
+let activeTags = [];
+function filterTable() {
+    const input = document.getElementById("search").value.toLowerCase();
+    const selectedRegion = document.getElementById("regionFilter").value;
+    const selectedCategory = document.getElementById("categoryFilter").value;
+    const rows = document.querySelectorAll("#herbTable tbody tr");
+
+    rows.forEach(row => {
+        const text = row.innerText.toLowerCase();
+        const regionText = row.cells[7].innerText;
+        const categoryText = row.cells[1].innerText;
+
+        const matchesSearch = text.includes(input);
+        const matchesAllTags = activeTags.every(tag => row.cells[8].innerText.toLowerCase().includes(tag.toLowerCase()));
+        const matchesRegion = selectedRegion === "All" || regionText === selectedRegion;
+        const matchesCategory = selectedCategory === "All" || categoryText === selectedCategory;
+
+        row.style.display = matchesSearch && matchesAllTags && matchesRegion && matchesCategory ? "" : "none";
     });
-    document.querySelectorAll('.expand-row').forEach(row => row.style.display = 'none');
+}
+
+function filterTag(keyword) {
+    const index = activeTags.indexOf(keyword);
+    if (index === -1) {
+        activeTags.push(keyword);
+    } else {
+        activeTags.splice(index, 1);
+    }
+    filterTable();
+    updateTagButtonStates();
+}
+
+function updateTagButtonStates() {
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        const tag = btn.textContent.trim();
+        btn.classList.toggle('active', activeTags.includes(tag));
+    });
+}
+
+function resetFilters() {
+    document.getElementById("search").value = '';
+    document.getElementById("regionFilter").value = 'All';
+    document.getElementById("categoryFilter").value = 'All';
+    activeTags = [];
+    filterTable();
+    updateTagButtonStates();
+}
+
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+}
+
+function highlightSearchMatches() {
+    const input = document.getElementById("search").value.toLowerCase();
+    document.querySelectorAll("#herbTable tbody tr").forEach(row => {
+        row.querySelectorAll("td").forEach(cell => {
+            const raw = cell.innerText;
+            const lower = raw.toLowerCase();
+            if (input && lower.includes(input)) {
+                const start = lower.indexOf(input);
+                const end = start + input.length;
+                const highlighted = raw.substring(0, start) + '<mark>' + raw.substring(start, end) + '</mark>' + raw.substring(end);
+                cell.innerHTML = highlighted;
+            } else {
+                cell.innerHTML = raw;
+            }
+        });
+    });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("regionFilter").addEventListener("change", filterTable);
+    document.getElementById("categoryFilter").addEventListener("change", filterTable);
+    document.getElementById("search").addEventListener("input", () => {
+        filterTable();
+        highlightSearchMatches();
+    });
+    filterTable();
+});
+
+let showFavoritesOnly = false;
+let sortOrder = {}; // column index => ascending/descending
+
+function toggleFavorite(cell) {
+    const herbName = cell.parentElement.querySelectorAll("td")[1].innerText;
+    let favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
+    if (favorites.includes(herbName)) {
+        favorites = favorites.filter(h => h !== herbName);
+        cell.innerText = "☆";
+    } else {
+        favorites.push(herbName);
+        cell.innerText = "★";
+    }
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+    if (showFavoritesOnly) filterTable();
+}
+
+function toggleFavorites() {
+    showFavoritesOnly = !showFavoritesOnly;
+    filterTable();
+}
+
+function filterTable() {
+    const input = document.getElementById("search").value.toLowerCase();
+    const selectedRegion = document.getElementById("regionFilter").value;
+    const selectedCategory = document.getElementById("categoryFilter").value;
+    const rows = document.querySelectorAll("#herbTable tbody tr");
+    const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
+
+    rows.forEach(row => {
+        const text = row.innerText.toLowerCase();
+        const regionText = row.cells[8].innerText;
+        const categoryText = row.cells[2].innerText;
+        const herbName = row.cells[1].innerText;
+
+        const matchesSearch = text.includes(input);
+        const matchesAllTags = activeTags.every(tag => row.cells[9].innerText.toLowerCase().includes(tag.toLowerCase()));
+        const matchesRegion = selectedRegion === "All" || regionText === selectedRegion;
+        const matchesCategory = selectedCategory === "All" || categoryText === selectedCategory;
+        const matchesFavorite = !showFavoritesOnly || favorites.includes(herbName);
+
+        row.style.display = matchesSearch && matchesAllTags && matchesRegion && matchesCategory && matchesFavorite ? "" : "none";
+        row.cells[0].innerText = favorites.includes(herbName) ? "★" : "☆";
+    });
+    updateTagButtonStates();
+    highlightSearchMatches();
+}
+
+function sortTable(colIndex) {
+    const table = document.getElementById("herbTable");
+    const tbody = table.tBodies[0];
+    const rows = Array.from(tbody.rows);
+    const ascending = !(sortOrder[colIndex] || false);
+    sortOrder[colIndex] = ascending;
+
+    rows.sort((a, b) => {
+        const aText = a.cells[colIndex].innerText.trim().toLowerCase();
+        const bText = b.cells[colIndex].innerText.trim().toLowerCase();
+        return ascending ? aText.localeCompare(bText) : bText.localeCompare(aText);
+    });
+
+    rows.forEach(row => tbody.appendChild(row));
+}
+
+// Add click handlers for sortable columns
+document.addEventListener("DOMContentLoaded", function () {
+    filterTable();
+
+    const headers = document.querySelectorAll("#herbTable thead th");
+    headers.forEach((th, i) => {
+        if (i > 0) { // skip star column
+            th.style.cursor = "pointer";
+            th.onclick = () => sortTable(i);
+        }
+    });
+});
+
+document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") {
+        document.getElementById("herbModal").style.display = "none";
+    }
+});
+
+function scrollToHerb(name) {
+    const row = Array.from(document.querySelectorAll("#herbTable tbody tr")).find(r =>
+        r.cells[1].innerText.replace(/\s+/g, "") === name
+    );
+    if (row) {
+        row.scrollIntoView({ behavior: "smooth", block: "center" });
+        showHerbDetails(row.cells[1]);
+    }
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+    const hash = location.hash.slice(1);
+    if (hash) scrollToHerb(hash);
+});
+
+// Add arrow indicators to sortable columns
+document.querySelectorAll("#herbTable thead th").forEach((th, i) => {
+    if (i > 0) {
+        th.style.position = "relative";
+        th.addEventListener("click", () => {
+            const arrows = document.querySelectorAll("#herbTable thead th .arrow");
+            arrows.forEach(a => a.remove());
+
+            const arrow = document.createElement("span");
+            arrow.className = "arrow";
+            arrow.innerText = sortOrder[i] ? " ↓" : " ↑";
+            th.appendChild(arrow);
+        });
+    }
+});
+
+function toggleExpandRow(cell) {
+    const row = cell.parentElement;
+    const next = row.nextElementSibling;
+    if (next && next.classList.contains("expand-row")) {
+        next.style.display = next.style.display === "none" ? "table-row" : "none";
+    }
+}
+
+function toggleLegend() {
+    const legend = document.getElementById("tagLegend");
+    legend.style.display = legend.style.display === "none" ? "block" : "none";
+}
+
+document.getElementById("symptomSearch").addEventListener("input", function() {
+    const keyword = this.value.toLowerCase();
+    const rows = document.querySelectorAll("#herbTable tbody tr");
+    for (let i = 0; i < rows.length; i += 2) {
+        const herbRow = rows[i];
+        const expandRow = rows[i + 1];
+        const combinedText = herbRow.innerText.toLowerCase() + expandRow.innerText.toLowerCase();
+        if (combinedText.includes(keyword)) {
+            herbRow.style.display = "";
+            expandRow.style.display = "";
+        } else {
+            herbRow.style.display = "none";
+            expandRow.style.display = "none";
+        }
+    }
 });
 </script>
-</body></html>
+<footer style="text-align: center; font-size: 0.8rem; padding: 1rem; background: #fafafa; color: #555;">
+        © 2025 Willie B. Randolph III. All rights reserved.
+    </footer>
+<div id="herbModal" style="display:none; position:fixed; top:10%; left:50%; transform:translateX(-50%);
+    background:#fff; padding:1.5rem; border-radius:10px; border:1px solid #ccc; max-width:90%; z-index:10000; max-width:700px; box-shadow:0 4px 30px rgba(0,0,0,0.1);">
+<h3 id="modalHerbName"></h3>
+<p id="modalHerbDetails" style="line-height:1.5;"></p>
+<button onclick="document.getElementById('herbModal').style.display='none';">Close</button>
+</div>
+<div class="herb-entry"><h2>Blue Lotus (Nymphaea caerulea)</h2><ul><li>MOA: May modulate dopamine and serotonin; some MAO inhibitory action suspected.</li><li>Pharmacokinetics: Onset 30–60 min, oral or alcoholic extract. Mild duration (~2–3 hours).</li><li>Therapeutic Uses: Relaxation, aphrodisiac, mild euphoria, sleep aid.</li><li>Side Effects: Drowsiness, dizziness, dry mouth.</li><li>Contraindications: Avoid with MAOIs, sedatives, or alcohol.</li><li>Drug Interactions: May potentiate CNS depressants.</li><li>Toxicity: Low; very high doses can cause nausea and vomiting.</li></ul></div><div class="herb-entry"><h2>Kava (Piper methysticum)</h2><ul><li>MOA: Kavalactones act on GABA-A receptors; anxiolytic without impairing cognition.</li><li>Pharmacokinetics: Orally active; onset in 20–40 min, peak ~1–2 hours.</li><li>Therapeutic Uses: Anxiety, muscle relaxation, sleep aid.</li><li>Side Effects: Liver strain, drowsiness, GI upset.</li><li>Contraindications: Liver disease, alcohol use, barbiturates.</li><li>Drug Interactions: Additive with other depressants.</li><li>Toxicity: Hepatotoxicity possible with chronic high use.</li></ul></div><div class="herb-entry"><h2>Wild Dagga (Leonotis leonurus)</h2><ul><li>MOA: Thought to bind weakly to cannabinoid receptors.</li><li>Pharmacokinetics: Fast onset when smoked. Tea: 30–60 min.</li><li>Therapeutic Uses: Mild euphoria, calming effects, visual enhancement.</li><li>Side Effects: Dry mouth, mild sedation.</li><li>Contraindications: Avoid mixing with strong sedatives.</li><li>Drug Interactions: Synergistic with other CNS relaxants.</li><li>Toxicity: Low toxicity profile.</li></ul></div><div class="herb-entry"><h2>Damiana (Turnera diffusa)</h2><ul><li>MOA: Unknown; theorized to affect serotonin and dopamine.</li><li>Pharmacokinetics: Tea or smoked; onset in 30–45 minutes.</li><li>Therapeutic Uses: Aphrodisiac, mood enhancer, stress relief.</li><li>Side Effects: Mild headaches or insomnia in high doses.</li><li>Contraindications: Avoid during pregnancy or with hypoglycemic meds.</li><li>Drug Interactions: May amplify stimulant or sedative effects.</li><li>Toxicity: Safe in normal doses; excessive use may cause convulsions.</li></ul></div><div class="herb-entry"><h2>Passionflower (Passiflora incarnata)</h2><ul><li>MOA: Inhibits GABA breakdown; increases GABA availability.</li><li>Pharmacokinetics: Active as tea or extract; onset 30–60 min.</li><li>Therapeutic Uses: Anxiety, insomnia, nervous tension.</li><li>Side Effects: Drowsiness, dizziness, confusion.</li><li>Contraindications: Pregnancy, use with sedatives or MAOIs.</li><li>Drug Interactions: Potentiates CNS depressants.</li><li>Toxicity: Low, but high doses may depress the CNS.</li></ul></div><div class="herb-entry"><h2>Akuamma (Picralima nitida)</h2><ul><li>MOA: Primarily acts on opioid receptors; akuammine is a weak mu-opioid agonist.</li><li>Pharmacokinetics: Orally active; effects begin in 30–60 minutes and last 3–5 hours.</li><li>Therapeutic Uses: Analgesic, antidiarrheal, mild sedative.</li><li>Side Effects: Nausea, dizziness, dry mouth.</li><li>Contraindications: Avoid in combination with other opioids.</li><li>Drug Interactions: May potentiate CNS depressants.</li><li>Toxicity: Low in moderate doses; high doses can lead to respiratory depression.</li></ul></div><div class="herb-entry"><h2>Bay Bean (Canavalia maritima)</h2><ul><li>MOA: May contain weak serotonin-like compounds; unclear primary mechanism.</li><li>Pharmacokinetics: Traditionally smoked; onset within minutes.</li><li>Therapeutic Uses: Mild psychoactive effects, often used in ceremonial blends.</li><li>Side Effects: Rare; possible mild GI upset.</li><li>Contraindications: Avoid if allergic to legumes.</li><li>Drug Interactions: May interact with serotonergic substances.</li><li>Toxicity: Very low toxicity profile.</li></ul></div><div class="herb-entry"><h2>Mugwort (Artemisia vulgaris)</h2><ul><li>MOA: Contains thujone; GABA-A receptor antagonist and mild hallucinogen.</li><li>Pharmacokinetics: Smoked or taken as tea; onset in 20–40 minutes.</li><li>Therapeutic Uses: Lucid dreaming, menstrual aid, digestive tonic.</li><li>Side Effects: Headaches, nausea, dizziness in high doses.</li><li>Contraindications: Pregnancy, epilepsy, or seizure disorders.</li><li>Drug Interactions: May reduce effectiveness of anticonvulsants.</li><li>Toxicity: Thujone is neurotoxic in high doses; avoid long-term overuse.</li></ul></div><div class="herb-entry"><h2>Skullcap (Scutellaria lateriflora)</h2><ul><li>MOA: Enhances GABA binding; anxiolytic and sedative properties.</li><li>Pharmacokinetics: Active as tea or extract; onset 20–30 min.</li><li>Therapeutic Uses: Anxiety, insomnia, nervous tension.</li><li>Side Effects: Drowsiness, confusion, potential liver enzyme elevation.</li><li>Contraindications: Use caution with liver disease or sedatives.</li><li>Drug Interactions: Additive with CNS depressants.</li><li>Toxicity: Safe in moderate doses; hepatotoxicity possible with impure extracts.</li></ul></div><div class="herb-entry"><h2>Bala (Sida cordifolia)</h2><ul><li>MOA: Contains ephedrine alkaloids; sympathomimetic effects (stimulant).</li><li>Pharmacokinetics: Orally active; fast-acting stimulant, peak ~1–2 hours.</li><li>Therapeutic Uses: Energy boost, thermogenic, bronchodilator.</li><li>Side Effects: Increased heart rate, anxiety, insomnia.</li><li>Contraindications: Heart conditions, hypertension, anxiety disorders.</li><li>Drug Interactions: Potentiates stimulants and MAOIs.</li><li>Toxicity: High doses may lead to cardiovascular stress.</li></ul></div><div class="herb-entry"><h2>Moringa (Moringa oleifera)</h2><ul><li>MOA: Contains flavonoids, isothiocyanates; antioxidant and neuroprotective effects.</li><li>Pharmacokinetics: Orally consumed; onset within 30–90 minutes.</li><li>Therapeutic Uses: Cognitive support, anti-inflammatory, nutritional supplement.</li><li>Side Effects: Rare; possible GI discomfort in large amounts.</li><li>Contraindications: Pregnancy (high doses); consult physician if on medication.</li><li>Drug Interactions: May lower blood sugar and blood pressure; interacts with diabetes meds.</li><li>Toxicity: Low toxicity; excessive use may cause liver enzyme elevation.</li></ul></div><div class="herb-entry"><h2>Wild Lettuce (Lactuca virosa)</h2><ul><li>MOA: Contains lactucin and lactucopicrin; thought to act on opioid receptors.</li><li>Pharmacokinetics: Orally active as tea, tincture, or smoked; effects in 30–45 min.</li><li>Therapeutic Uses: Mild analgesic, sedative, sleep aid.</li><li>Side Effects: Drowsiness, dizziness, dry mouth.</li><li>Contraindications: Avoid in pregnancy or if allergic to lettuce family.</li><li>Drug Interactions: May potentiate CNS depressants and pain medications.</li><li>Toxicity: Low to moderate toxicity in large doses; nausea and confusion possible.</li></ul></div><div class="herb-entry"><h2>Yohimbe (Pausinystalia johimbe)</h2><ul><li>MOA: Alpha-2 adrenergic receptor antagonist; increases norepinephrine release.</li><li>Pharmacokinetics: Orally active; onset in 30–60 minutes.</li><li>Therapeutic Uses: Aphrodisiac, stimulant, erectile dysfunction treatment.</li><li>Side Effects: Increased heart rate, anxiety, hypertension, insomnia.</li><li>Contraindications: Heart disease, hypertension, psychiatric disorders.</li><li>Drug Interactions: Potentiates stimulants and MAOIs.</li><li>Toxicity: High doses may cause seizures or cardiac issues.</li></ul></div><div class="herb-entry"><h2>Betel Nut (Areca catechu)</h2><ul><li>MOA: Arecoline acts on muscarinic receptors; stimulant and parasympathomimetic.</li><li>Pharmacokinetics: Chewed; rapid onset of stimulation.</li><li>Therapeutic Uses: Mild stimulant, social use in Southeast Asia.</li><li>Side Effects: Staining of teeth, dependence, mouth irritation.</li><li>Contraindications: Pregnancy, heart conditions, psychiatric disorders.</li><li>Drug Interactions: May interact with cholinergic and cardiovascular meds.</li><li>Toxicity: Carcinogenic with long-term use; associated with oral cancer.</li></ul></div><div class="herb-entry"><h2>Salvia divinorum</h2><ul><li>MOA: Potent kappa-opioid receptor agonist; hallucinogenic.</li><li>Pharmacokinetics: Smoked or sublingual; onset in seconds to minutes.</li><li>Therapeutic Uses: Visionary experiences, spiritual exploration.</li><li>Side Effects: Disorientation, anxiety, dysphoria, altered time perception.</li><li>Contraindications: Psychiatric disorders, operating machinery.</li><li>Drug Interactions: May intensify with other dissociatives or CNS agents.</li><li>Toxicity: Very low toxicity; intense effects can be psychologically overwhelming.</li></ul></div><div class="herb-entry"><h2>Kratom (Mitragyna speciosa)</h2><ul><li>MOA: Acts on mu-opioid receptors; mitragynine is primary active alkaloid.</li><li>Pharmacokinetics: Orally active; onset in 15–45 min, lasts 3–6 hours.</li><li>Therapeutic Uses: Pain relief, mood boost, energy or sedation (dose-dependent).</li><li>Side Effects: Constipation, nausea, dependency potential.</li><li>Contraindications: Avoid mixing with other depressants or MAOIs.</li><li>Drug Interactions: Potentiates opioids and sedatives.</li><li>Toxicity: Low-to-moderate; long-term use can lead to dependence and withdrawal.</li></ul></div><div class="herb-entry"><h2>Heimia (Heimia salicifolia)</h2><ul><li>MOA: Unclear; may affect acetylcholine and serotonin systems.</li><li>Pharmacokinetics: Traditionally prepared as tea; onset in 1–2 hours.</li><li>Therapeutic Uses: Mild auditory alterations, tranquil state.</li><li>Side Effects: Dry mouth, slowed cognition, dizziness.</li><li>Contraindications: Avoid when driving or operating machinery.</li><li>Drug Interactions: May interact with anticholinergic drugs.</li><li>Toxicity: Low toxicity in ceremonial doses.</li></ul></div><div class="herb-entry"><h2>Celastrus paniculatus (Intellect Tree)</h2><ul><li>MOA: Unknown; believed to modulate acetylcholine and monoamine neurotransmitters.</li><li>Pharmacokinetics: Seeds consumed orally or as oil; onset ~1 hour.</li><li>Therapeutic Uses: Cognitive enhancement, memory aid, antidepressant effects.</li><li>Side Effects: Mild headache, GI upset, stimulation at high doses.</li><li>Contraindications: None well-documented.</li><li>Drug Interactions: May interact with MAOIs or nootropics.</li><li>Toxicity: Generally safe in moderate doses.</li></ul></div><div class="herb-entry"><h2>Syrian Rue (Peganum harmala)</h2><ul><li>MOA: Potent reversible MAOI (harmaline, harmine).</li><li>Pharmacokinetics: Orally active; onset in 30–90 min, long duration (4–8 hrs).</li><li>Therapeutic Uses: MAOI for ayahuasca analogues, lucid dreaming, meditation.</li><li>Side Effects: Nausea, vomiting, tremors, serotonin syndrome (if misused).</li><li>Contraindications: SSRI/SNRI/MAOI use, pregnancy, liver disease.</li><li>Drug Interactions: Strongly potentiates serotonergic and psychedelic compounds.</li><li>Toxicity: Moderate; can cause serotonin syndrome if mixed incorrectly.</li></ul></div><div class="herb-entry"><h2>Calea zacatechichi (Dream Herb)</h2><ul><li>MOA: Unknown; may act on serotonin and cholinergic systems.</li><li>Pharmacokinetics: Smoked or brewed; onset in 20–45 min.</li><li>Therapeutic Uses: Dream enhancement, lucid dreaming.</li><li>Side Effects: Bitter taste, nausea, vivid dreams, drowsiness.</li><li>Contraindications: Pregnancy, avoid driving afterward.</li><li>Drug Interactions: May potentiate sedatives.</li><li>Toxicity: Low toxicity.</li></ul></div><div class="herb-entry"><h2>Guarana (Paullinia cupana)</h2><ul><li>MOA: Contains caffeine and other xanthines; stimulates CNS via adenosine receptor antagonism.</li><li>Pharmacokinetics: Orally active; onset within 30–60 minutes, effects can last 4–6 hours.</li><li>Therapeutic Uses: Energy boost, cognitive enhancement, appetite suppression.</li><li>Side Effects: Insomnia, jitteriness, elevated heart rate.</li><li>Contraindications: Heart issues, anxiety, insomnia disorders.</li><li>Drug Interactions: Stimulants, MAOIs, blood pressure meds.</li><li>Toxicity: Low in moderation; high doses risk cardiac strain or anxiety.</li></ul></div><div class="herb-entry"><h2>Nutmeg (Myristica fragrans)</h2><ul><li>MOA: Contains myristicin and elemicin; mild hallucinogenic effects via anticholinergic action.</li><li>Pharmacokinetics: Orally active; onset delayed (3–6 hours), long duration (~12 hours).</li><li>Therapeutic Uses: Deliriant, dream enhancement, traditional aphrodisiac.</li><li>Side Effects: Nausea, dry mouth, anxiety, delirium, hallucinations.</li><li>Contraindications: Psychiatric history, liver issues.</li><li>Drug Interactions: CNS depressants, MAOIs.</li><li>Toxicity: Moderate to high at psychoactive doses; avoid overdose due to potential toxicity.</li></ul></div><div class="herb-entry"><h2>African Dream Root (Silene capensis)</h2><ul><li>MOA: Unknown; thought to enhance REM sleep and dream vividness.</li><li>Pharmacokinetics: Traditionally consumed as cold water infusion; onset over hours.</li><li>Therapeutic Uses: Lucid dreaming, spiritual rituals.</li><li>Side Effects: Bloating, nausea if taken in large amounts.</li><li>Contraindications: None documented.</li><li>Drug Interactions: Unknown.</li><li>Toxicity: Considered safe in traditional use.</li></ul></div><div class="herb-entry"><h2>White Sage (Salvia apiana)</h2><ul><li>MOA: Contains eucalyptol, camphor; antimicrobial, mildly psychoactive when burned.</li><li>Pharmacokinetics: Inhaled via smoke or used topically.</li><li>Therapeutic Uses: Cleansing rituals, calming effect, antimicrobial.</li><li>Side Effects: Irritation from smoke inhalation.</li><li>Contraindications: Asthma, respiratory conditions.</li><li>Drug Interactions: None significant.</li><li>Toxicity: Very low.</li></ul></div><div class="herb-entry"><h2>Lion’s Mane (Hericium erinaceus)</h2><ul><li>MOA: Stimulates NGF (nerve growth factor) via hericenones and erinacines.</li><li>Pharmacokinetics: Orally consumed; slow-building cognitive effects over weeks.</li><li>Therapeutic Uses: Nootropic, neuroprotective, mood support.</li><li>Side Effects: Mild GI upset in some individuals.</li><li>Contraindications: Allergies to mushrooms.</li><li>Drug Interactions: None well-known.</li><li>Toxicity: Extremely low.</li></ul></div><div class="herb-entry"><h2>Reishi Mushroom (Ganoderma lucidum)</h2><ul><li>MOA: Immunomodulatory, anti-inflammatory; triterpenoids may affect histamine release.</li><li>Pharmacokinetics: Best as extract or decoction; cumulative effect.</li><li>Therapeutic Uses: Stress reduction, immune support, adaptogen.</li><li>Side Effects: Dry mouth, dizziness, GI upset.</li><li>Contraindications: Bleeding disorders, pre-surgery.</li><li>Drug Interactions: Anticoagulants, immunosuppressants.</li><li>Toxicity: Very low; long-term use is generally safe.</li></ul></div><div class="herb-entry"><h2>Chaga (Inonotus obliquus)</h2><ul><li>MOA: High in antioxidants; may modulate cytokines and reduce oxidative stress.</li><li>Pharmacokinetics: Typically consumed as tea or extract.</li><li>Therapeutic Uses: Immune booster, antioxidant, anti-inflammatory.</li><li>Side Effects: Rare; may lower blood sugar.</li><li>Contraindications: Diabetes medications, surgery.</li><li>Drug Interactions: Immunosuppressants, anticoagulants.</li><li>Toxicity: Very low.</li></ul></div><div class="herb-entry"><h2>Cordyceps (Cordyceps militaris/sinensis)</h2><ul><li>MOA: May increase ATP production; acts on adrenal and immune systems.</li><li>Pharmacokinetics: Orally consumed; effects build with regular use.</li><li>Therapeutic Uses: Energy enhancement, stamina, libido.</li><li>Side Effects: Mild GI discomfort possible.</li><li>Contraindications: Autoimmune conditions (theoretical).</li><li>Drug Interactions: Immunosuppressive drugs.</li><li>Toxicity: Very low toxicity.</li></ul></div><div class="herb-entry"><h2>Ma Huang (Ephedra sinica)</h2><ul><li>MOA: Ephedrine is a potent sympathomimetic; increases norepinephrine release.</li><li>Pharmacokinetics: Fast-acting stimulant; onset 20–40 min orally.</li><li>Therapeutic Uses: Energy, thermogenesis, bronchodilation.</li><li>Side Effects: Tachycardia, hypertension, anxiety.</li><li>Contraindications: Heart disease, hypertension, anxiety disorders.</li><li>Drug Interactions: Stimulants, MAOIs, beta blockers.</li><li>Toxicity: Moderate to high; banned in some countries due to cardiac events.</li></ul></div><div class="herb-entry"><h2>Calamus (Acorus calamus)</h2><ul><li>MOA: Contains beta-asarone; potential GABA modulating and anticholinergic effects.</li><li>Pharmacokinetics: Tea or chewed root; onset in 30–90 min.</li><li>Therapeutic Uses: Lucid dreaming, stomach tonic, mild hallucinogen.</li><li>Side Effects: Nausea, sedation, toxicity with high doses of beta-asarone.</li><li>Contraindications: Pregnancy, liver issues.</li><li>Drug Interactions: Sedatives, alcohol.</li><li>Toxicity: Moderate; beta-asarone is carcinogenic in high doses (found in some strains).</li></ul></div><div class="herb-entry"><h2>Gotu Kola (Centella asiatica)</h2><ul><li>MOA: Modulates collagen synthesis, improves circulation, may influence GABA.</li><li>Pharmacokinetics: Orally active as tea or capsule; takes days to weeks for cognitive benefits.</li><li>Therapeutic Uses: Cognitive enhancer, wound healing, anxiety relief.</li><li>Side Effects: Headache, nausea, skin irritation.</li><li>Contraindications: Liver disease, pregnancy in high doses.</li><li>Drug Interactions: Sedatives, diuretics, anticonvulsants.</li><li>Toxicity: Low; liver strain with prolonged high-dose use.</li></ul></div><div class="herb-entry"><h2>Hops (Humulus lupulus)</h2><ul><li>MOA: Contains xanthohumol and humulene; GABA-A modulator with sedative properties.</li><li>Pharmacokinetics: Consumed in teas or extracts; onset 30–60 minutes.</li><li>Therapeutic Uses: Insomnia, anxiety, restlessness.</li><li>Side Effects: Drowsiness, hormonal effects, allergic reactions.</li><li>Contraindications: Hormone-sensitive conditions, pregnancy.</li><li>Drug Interactions: Sedatives, CNS depressants.</li><li>Toxicity: Low.</li></ul></div><div class="herb-entry"><h2>Valerian Root (Valeriana officinalis)</h2><ul><li>MOA: Enhances GABA transmission; sedative and anxiolytic.</li><li>Pharmacokinetics: Onset 30–60 min; peak in 1–2 hrs.</li><li>Therapeutic Uses: Insomnia, anxiety, nervous tension.</li><li>Side Effects: Headache, dizziness, vivid dreams.</li><li>Contraindications: Pregnancy, use with alcohol or sedatives.</li><li>Drug Interactions: CNS depressants, barbiturates.</li><li>Toxicity: Low; possible dependency with long-term use.</li></ul></div><div class="herb-entry"><h2>Indian Warrior (Pedicularis densiflora)</h2><ul><li>MOA: Unknown; likely acts on musculoskeletal relaxation pathways.</li><li>Pharmacokinetics: Smoked or tea; fast onset, short duration.</li><li>Therapeutic Uses: Muscle relaxant, anxiety relief, dream enhancement.</li><li>Side Effects: Drowsiness, mild dry mouth.</li><li>Contraindications: None documented.</li><li>Drug Interactions: Sedatives.</li><li>Toxicity: Low.</li></ul></div><div class="herb-entry"><h2>Kanna (Sceletium tortuosum)</h2><ul><li>MOA: Selective serotonin reuptake inhibitor (SSRI); may also affect PDE4.</li><li>Pharmacokinetics: Sublingual, smoked, or oral; onset 15–60 minutes.</li><li>Therapeutic Uses: Mood enhancement, social anxiety, focus.</li><li>Side Effects: Headache, nausea, serotonin syndrome (if mixed).</li><li>Contraindications: SSRIs, MAOIs, pregnancy.</li><li>Drug Interactions: Antidepressants, stimulants.</li><li>Toxicity: Low–moderate; safe alone, dangerous with SSRIs/MAOIs.</li></ul></div><div class="herb-entry"><h2>Ashwagandha (Withania somnifera)</h2><ul><li>MOA: Adaptogenic; reduces cortisol, modulates GABA and serotonin.</li><li>Pharmacokinetics: Orally consumed; takes days to weeks to take full effect.</li><li>Therapeutic Uses: Stress relief, anxiety, testosterone boost, sleep.</li><li>Side Effects: GI upset, drowsiness, thyroid hormone changes.</li><li>Contraindications: Thyroid disorders, pregnancy.</li><li>Drug Interactions: Sedatives, thyroid meds.</li><li>Toxicity: Low.</li></ul></div><div class="herb-entry"><h2>Tulsi (Ocimum sanctum)</h2><ul><li>MOA: Adaptogen; modulates cortisol, acetylcholine, and dopamine.</li><li>Pharmacokinetics: Tea or capsule; daily use builds benefit.</li><li>Therapeutic Uses: Stress reduction, cognitive clarity, respiratory support.</li><li>Side Effects: None common; mild GI issues possible.</li><li>Contraindications: Fertility concerns, blood sugar meds.</li><li>Drug Interactions: Blood sugar and blood thinner medications.</li><li>Toxicity: Very low.</li></ul></div><div class="herb-entry"><h2>Damiana (Turnera diffusa) [Extended]</h2><ul><li>MOA: May affect GABA, dopamine, and serotonin; unclear primary target.</li><li>Pharmacokinetics: Tea or smoked; fast onset with short duration.</li><li>Therapeutic Uses: Libido boost, anxiety relief, uplifting mood.</li><li>Side Effects: Mild GI distress, headache at high doses.</li><li>Contraindications: Pregnancy, hypoglycemia.</li><li>Drug Interactions: Diabetic medications, alcohol.</li><li>Toxicity: Low–moderate in very high doses.</li></ul></div><div class="herb-entry"><h2>Sakae Naa (Combretum quadrangulare)</h2><ul><li>MOA: May bind to opioid receptors; similar to kratom effects.</li><li>Pharmacokinetics: Tea or extract; onset 20–60 min.</li><li>Therapeutic Uses: Stimulant, pain relief, traditional kratom substitute.</li><li>Side Effects: Nausea, jitteriness, sedation (high doses).</li><li>Contraindications: Liver conditions, opioid sensitivity.</li><li>Drug Interactions: CNS depressants, alcohol.</li><li>Toxicity: Unknown; considered lower toxicity than kratom.</li></ul></div><div class="herb-entry"><h2>Mulungu (Erythrina mulungu)</h2><ul><li>MOA: Modulates GABAergic activity; sedative and anxiolytic.</li><li>Pharmacokinetics: Consumed as tea or decoction; onset in 30–60 min.</li><li>Therapeutic Uses: Anxiety, insomnia, blood pressure regulation.</li><li>Side Effects: Drowsiness, dizziness, GI upset.</li><li>Contraindications: Pregnancy, hypotension.</li><li>Drug Interactions: Sedatives, blood pressure medications.</li><li>Toxicity: Low in moderate amounts; limited long-term data.</li></ul></div><div class="herb-entry"><h2>Sweet Flag (Acorus calamus var. americanus)</h2><ul><li>MOA: Contains alpha-asarone; thought to have GABA modulation and dopaminergic effects.</li><li>Pharmacokinetics: Chewed, smoked, or tea; onset in 30–60 min.</li><li>Therapeutic Uses: Calmative, dream enhancement, mild stimulant.</li><li>Side Effects: GI upset, dizziness at high doses.</li><li>Contraindications: Avoid with epilepsy or pregnancy.</li><li>Drug Interactions: Sedatives, alcohol.</li><li>Toxicity: Low to moderate; some varieties contain carcinogenic beta-asarone.</li></ul></div><div class="herb-entry"><h2>Wild Mint (Mentha arvensis)</h2><ul><li>MOA: Menthol modulates TRPM8 and GABA-A; calming and cooling effect.</li><li>Pharmacokinetics: Consumed as tea or inhaled; rapid onset.</li><li>Therapeutic Uses: Digestive aid, stress relief, respiratory support.</li><li>Side Effects: Heartburn, allergic reaction.</li><li>Contraindications: GERD, gallbladder issues.</li><li>Drug Interactions: Antacids, CYP450-metabolized drugs.</li><li>Toxicity: Very low.</li></ul></div><div class="herb-entry"><h2>Blue Vervain (Verbena hastata)</h2><ul><li>MOA: Mild GABAergic and anti-inflammatory activity.</li><li>Pharmacokinetics: Tea or tincture; onset 30–60 min.</li><li>Therapeutic Uses: Nervous tension, insomnia, menstrual support.</li><li>Side Effects: Nausea, vomiting in high doses.</li><li>Contraindications: Pregnancy.</li><li>Drug Interactions: Sedatives.</li><li>Toxicity: Low.</li></ul></div><div class="herb-entry"><h2>Peppermint (Mentha piperita)</h2><ul><li>MOA: Menthol acts on calcium channels and GABA-A; antispasmodic.</li><li>Pharmacokinetics: Tea, oil, or inhalation; fast onset.</li><li>Therapeutic Uses: Digestive issues, headaches, mental clarity.</li><li>Side Effects: Heartburn, rash (topical).</li><li>Contraindications: GERD, infants.</li><li>Drug Interactions: Antacids, CYP450 inhibitors.</li><li>Toxicity: Very low.</li></ul></div><div class="herb-entry"><h2>Holy Basil (Ocimum tenuiflorum)</h2><ul><li>MOA: Adaptogenic; modulates stress via cortisol and neurotransmitters.</li><li>Pharmacokinetics: Orally as tea or tincture; builds over time.</li><li>Therapeutic Uses: Stress, immune support, anti-inflammatory.</li><li>Side Effects: Possible drop in blood sugar.</li><li>Contraindications: Fertility concerns, pregnancy.</li><li>Drug Interactions: Blood thinners, diabetes meds.</li><li>Toxicity: Very low.</li></ul></div><div class="herb-entry"><h2>Rhodiola (Rhodiola rosea)</h2><ul><li>MOA: Adaptogen; modulates serotonin, norepinephrine, dopamine.</li><li>Pharmacokinetics: Oral; stimulant-like onset within 30–60 min.</li><li>Therapeutic Uses: Fatigue, cognitive performance, stress resilience.</li><li>Side Effects: Irritability, overstimulation.</li><li>Contraindications: Bipolar disorder, pregnancy.</li><li>Drug Interactions: Antidepressants, stimulants.</li><li>Toxicity: Low.</li></ul></div><div class="herb-entry"><h2>Maca (Lepidium meyenii)</h2><ul><li>MOA: May influence endocrine and dopamine systems; energizing.</li><li>Pharmacokinetics: Consumed as powder; daily use builds benefit.</li><li>Therapeutic Uses: Energy, libido, hormonal balance.</li><li>Side Effects: Gas, insomnia, hormonal shifts.</li><li>Contraindications: Hormone-sensitive conditions.</li><li>Drug Interactions: Hormone therapies.</li><li>Toxicity: Low.</li></ul></div><div class="herb-entry"><h2>Yerba Mate (Ilex paraguariensis)</h2><ul><li>MOA: Caffeine and theobromine content stimulate CNS via adenosine antagonism.</li><li>Pharmacokinetics: Tea; onset within 30 min.</li><li>Therapeutic Uses: Energy, mental focus, appetite suppression.</li><li>Side Effects: Insomnia, rapid heart rate, anxiety.</li><li>Contraindications: Heart conditions, anxiety disorders.</li><li>Drug Interactions: Stimulants, MAOIs.</li><li>Toxicity: Low; very high intake linked to certain cancers (hot infusions).</li></ul></div><div class="herb-entry"><h2>Ephedra viridis (Green Ephedra)</h2><ul><li>MOA: Contains ephedrine-like alkaloids; stimulates CNS and bronchial dilation.</li><li>Pharmacokinetics: Tea or capsules; onset 20–45 min.</li><li>Therapeutic Uses: Energy, sinus decongestant, weight loss.</li><li>Side Effects: Palpitations, anxiety, increased BP.</li><li>Contraindications: Heart disease, pregnancy.</li><li>Drug Interactions: Stimulants, MAOIs, beta blockers.</li><li>Toxicity: Moderate to high.</li></ul></div><div class="herb-entry"><h2>Lobelia (Lobelia inflata)</h2><ul><li>MOA: Acts on nicotinic receptors; may stimulate or depress respiration.</li><li>Pharmacokinetics: Oral or smoked; onset fast.</li><li>Therapeutic Uses: Respiratory aid, anti-asthmatic, emetic.</li><li>Side Effects: Nausea, vomiting, dizziness.</li><li>Contraindications: Pregnancy, heart conditions.</li><li>Drug Interactions: Nicotine, anticholinergics.</li><li>Toxicity: Moderate; low margin between effective and toxic dose.</li></ul></div><div class="herb-entry"><h2>Uva Ursi (Arctostaphylos uva-ursi)</h2><ul><li>MOA: Arbutin metabolized into hydroquinone; antimicrobial action in urinary tract.</li><li>Pharmacokinetics: Orally active; peak in 1–2 hours, cleared via kidneys.</li><li>Therapeutic Uses: Urinary tract infections, diuretic.</li><li>Side Effects: Nausea, vomiting, greenish urine.</li><li>Contraindications: Pregnancy, kidney disorders.</li><li>Drug Interactions: Diuretics, acidic urine medications.</li><li>Toxicity: Moderate in long-term use due to hydroquinone.</li></ul></div><div class="herb-entry"><h2>Wild Lettuce (Lactuca virosa)</h2><ul><li>MOA: Acts on opioid receptors; contains lactucin and lactucopicrin.</li><li>Pharmacokinetics: Tea or resin; onset 20–60 min.</li><li>Therapeutic Uses: Pain relief, mild sedation, cough suppression.</li><li>Side Effects: Nausea, dizziness, allergic reactions.</li><li>Contraindications: Pregnancy, glaucoma.</li><li>Drug Interactions: Sedatives, CNS depressants.</li><li>Toxicity: Low to moderate; avoid excessive intake.</li></ul></div><div class="herb-entry"><h2>Eleuthero (Eleutherococcus senticosus)</h2><ul><li>MOA: Adaptogen; modulates adrenal function and neurotransmitters.</li><li>Pharmacokinetics: Oral use; takes days to weeks to build effect.</li><li>Therapeutic Uses: Fatigue, immunity, stress resilience.</li><li>Side Effects: Insomnia, agitation, elevated BP (rare).</li><li>Contraindications: Hypertension, pregnancy.</li><li>Drug Interactions: Stimulants, anticoagulants.</li><li>Toxicity: Low.</li></ul></div><div class="herb-entry"><h2>Motherwort (Leonurus cardiaca)</h2><ul><li>MOA: Modulates GABA and serotonin; also affects heart rhythm.</li><li>Pharmacokinetics: Tea or tincture; 30–60 min onset.</li><li>Therapeutic Uses: Anxiety, heart palpitations, menstrual cramps.</li><li>Side Effects: Uterine stimulation, GI upset.</li><li>Contraindications: Pregnancy, anticoagulant use.</li><li>Drug Interactions: Blood thinners, sedatives.</li><li>Toxicity: Low to moderate.</li></ul></div><div class="herb-entry"><h2>Chamomile (Matricaria chamomilla)</h2><ul><li>MOA: Binds benzodiazepine receptors; modulates GABA-A activity.</li><li>Pharmacokinetics: Tea or extract; onset within 30 min.</li><li>Therapeutic Uses: Anxiety, sleep aid, digestive support.</li><li>Side Effects: Allergic reactions (especially ragweed family).</li><li>Contraindications: Allergy to daisy family, pregnancy (in high doses).</li><li>Drug Interactions: Anticoagulants, sedatives.</li><li>Toxicity: Very low.</li></ul></div><div class="herb-entry"><h2>Ginkgo (Ginkgo biloba)</h2><ul><li>MOA: Improves circulation, modulates neurotransmitters; antioxidant properties.</li><li>Pharmacokinetics: Taken daily; effects accumulate over time.</li><li>Therapeutic Uses: Cognitive enhancement, memory, circulation.</li><li>Side Effects: Headache, nausea, dizziness.</li><li>Contraindications: Bleeding disorders, epilepsy.</li><li>Drug Interactions: Blood thinners, MAOIs.</li><li>Toxicity: Low–moderate; high doses linked to seizures.</li></ul></div><div class="herb-entry"><h2>Lavender (Lavandula angustifolia)</h2><ul><li>MOA: Enhances GABAergic activity; anxiolytic and sedative.</li><li>Pharmacokinetics: Aromatherapy, oral, or topical; onset within 30 minutes.</li><li>Therapeutic Uses: Anxiety, insomnia, mood stabilization.</li><li>Side Effects: Hormonal effects, nausea.</li><li>Contraindications: Hormone-sensitive conditions, children (long-term).</li><li>Drug Interactions: Sedatives, anticoagulants.</li><li>Toxicity: Very low.</li></ul></div><div class="herb-entry"><h2>Mugwort (Artemisia vulgaris) [Extended]</h2><ul><li>MOA: Contains thujone; modulates GABA-A and affects dreaming.</li><li>Pharmacokinetics: Smoked or tea; onset in 30–60 minutes.</li><li>Therapeutic Uses: Lucid dreaming, menstruation aid, GI support.</li><li>Side Effects: Seizures in high doses, nausea.</li><li>Contraindications: Pregnancy, epilepsy.</li><li>Drug Interactions: Anticonvulsants, sedatives.</li><li>Toxicity: Moderate; thujone is neurotoxic in large doses.</li></ul></div><div class="herb-entry"><h2>Guayusa (Ilex guayusa)</h2><ul><li>MOA: Caffeine-rich; antagonizes adenosine receptors to stimulate CNS.</li><li>Pharmacokinetics: Consumed as tea; onset in 20–40 min.</li><li>Therapeutic Uses: Energy, alertness, dream enhancement.</li><li>Side Effects: Anxiety, rapid heartbeat, insomnia.</li><li>Contraindications: Heart conditions, anxiety disorders.</li><li>Drug Interactions: Stimulants, MAOIs.</li><li>Toxicity: Low.</li></ul></div><div class="herb-entry"><h2>Catnip (Nepeta cataria)</h2><ul><li>MOA: Nepetalactone may bind to opioid receptors and modulate GABA.</li><li>Pharmacokinetics: Tea or smoked; onset 15–30 minutes.</li><li>Therapeutic Uses: Relaxation, digestive aid, mild euphoria.</li><li>Side Effects: Drowsiness, GI upset.</li><li>Contraindications: Pregnancy (uterine stimulant).</li><li>Drug Interactions: Sedatives, CNS depressants.</li><li>Toxicity: Very low.</li></ul></div><div class="herb-entry"><h2>Bay Bean (Canavalia maritima)</h2><ul><li>MOA: Contains canavanine; unclear mechanism but may have mild serotonergic effects.</li><li>Pharmacokinetics: Smoked or brewed; mild onset in 30–60 min.</li><li>Therapeutic Uses: Mild euphoria, traditional use as cannabis substitute.</li><li>Side Effects: Limited data; may cause nausea or allergic reactions.</li><li>Contraindications: Unknown; avoid during pregnancy.</li><li>Drug Interactions: Unknown.</li><li>Toxicity: Low; very limited data.</li></ul></div><div class="herb-entry"><h2>Passionflower (Passiflora incarnata)</h2><ul><li>MOA: Enhances GABA activity; anxiolytic and sedative.</li><li>Pharmacokinetics: Tea, tincture; onset within 30–60 minutes.</li><li>Therapeutic Uses: Anxiety, insomnia, muscle tension.</li><li>Side Effects: Drowsiness, dizziness.</li><li>Contraindications: Pregnancy, MAOI use.</li><li>Drug Interactions: Sedatives, CNS depressants.</li><li>Toxicity: Very low.</li></ul></div><div class="herb-entry"><h2>Calea Zacatechichi (Dream Herb)</h2><ul><li>MOA: Unknown; increases dream vividness and recall.</li><li>Pharmacokinetics: Smoked or tea; onset 1–2 hours before sleep.</li><li>Therapeutic Uses: Lucid dreaming, shamanic practice.</li><li>Side Effects: Nausea, bitterness, drowsiness.</li><li>Contraindications: Pregnancy, liver issues.</li><li>Drug Interactions: Sedatives.</li><li>Toxicity: Low to moderate; not well-studied long-term.</li></ul></div><div class="herb-entry"><h2>Heimia salicifolia (Sinicuichi)</h2><ul><li>MOA: Contains vertine and lyfoline; may affect auditory and visual processing.</li><li>Pharmacokinetics: Tea or sun-fermented juice; onset 1–3 hours.</li><li>Therapeutic Uses: Auditory hallucinations, relaxation.</li><li>Side Effects: Muscle weakness, yellow vision.</li><li>Contraindications: Driving, pregnancy.</li><li>Drug Interactions: CNS depressants.</li><li>Toxicity: Moderate in high doses.</li></ul></div><div class="herb-entry"><h2>Skullcap (Scutellaria lateriflora)</h2><ul><li>MOA: Acts on GABA receptors; anxiolytic and mild sedative.</li><li>Pharmacokinetics: Tea or extract; onset 30–60 minutes.</li><li>Therapeutic Uses: Anxiety, muscle tension, sleep aid.</li><li>Side Effects: Drowsiness, liver strain (rare).</li><li>Contraindications: Pregnancy, liver conditions.</li><li>Drug Interactions: Sedatives, alcohol.</li><li>Toxicity: Low.</li></ul></div><div class="herb-entry"><h2>Wild Dagga (Leonotis leonurus)</h2><ul><li>MOA: Leonurine may act as a mild cannabinoid receptor modulator.</li><li>Pharmacokinetics: Smoked or tea; onset within 20–40 minutes.</li><li>Therapeutic Uses: Relaxation, mild euphoria, traditional cannabis alternative.</li><li>Side Effects: Dry mouth, lightheadedness.</li><li>Contraindications: Pregnancy.</li><li>Drug Interactions: CNS depressants.</li><li>Toxicity: Low.</li></ul></div><div class="herb-entry"><h2>Silene undulata (African Dream Herb)</h2><ul><li>MOA: Unknown; enhances REM sleep and vivid dreaming.</li><li>Pharmacokinetics: Cold water infusion; taken before bed.</li><li>Therapeutic Uses: Lucid dreaming, spiritual rituals.</li><li>Side Effects: Nausea, bloating in large amounts.</li><li>Contraindications: None known.</li><li>Drug Interactions: None known.</li><li>Toxicity: Very low.</li></ul></div><div class="herb-entry"><h2>Celastrus paniculatus (Intellect Tree)</h2><ul><li>MOA: Enhances acetylcholine activity; neuroprotective and nootropic.</li><li>Pharmacokinetics: Seed oil or capsules; builds effects over days.</li><li>Therapeutic Uses: Memory enhancement, focus, anxiety.</li><li>Side Effects: Headache, vivid dreams.</li><li>Contraindications: Pregnancy, epilepsy.</li><li>Drug Interactions: Cholinergic medications.</li><li>Toxicity: Low.</li></ul></div><div class="herb-entry"><h2>Betel Nut (Areca catechu)</h2><ul><li>MOA: Arecoline acts as a muscarinic agonist; stimulant effects.</li><li>Pharmacokinetics: Chewed; onset rapid (5–15 min).</li><li>Therapeutic Uses: Stimulant, mild euphoria, appetite suppressant.</li><li>Side Effects: Staining of teeth, dependency, increased cancer risk.</li><li>Contraindications: Pregnancy, GI disorders.</li><li>Drug Interactions: Cholinergic agents, MAOIs.</li><li>Toxicity: Moderate to high; linked to oral cancers with chronic use.</li></ul></div><div class="herb-entry"><h2>Peganum harmala (Syrian Rue)</h2><ul><li>MOA: Contains harmala alkaloids; reversible MAO-A inhibitor.</li><li>Pharmacokinetics: Oral; onset within 30–60 min, lasts 4–6 hrs.</li><li>Therapeutic Uses: MAOI for ayahuasca analogs, psychoactive potentiator.</li><li>Side Effects: Nausea, vomiting, bradycardia.</li><li>Contraindications: SSRIs, tyramine-rich foods.</li><li>Drug Interactions: Antidepressants, stimulants, psychedelics.</li><li>Toxicity: Moderate to high; requires dietary precautions.</li></ul></div><div class="herb-entry"><h2>Yohimbe (Pausinystalia johimbe)</h2><ul><li>MOA: Alpha-2 adrenergic antagonist; increases norepinephrine release.</li><li>Pharmacokinetics: Oral use; onset in 30–60 min, peak in 1–2 hrs.</li><li>Therapeutic Uses: Aphrodisiac, erectile dysfunction, stimulant.</li><li>Side Effects: Anxiety, high blood pressure, rapid heartbeat.</li><li>Contraindications: Heart disease, anxiety, psychiatric disorders.</li><li>Drug Interactions: MAOIs, stimulants, antidepressants.</li><li>Toxicity: Moderate to high; narrow therapeutic index.</li></ul></div><div class="herb-entry"><h2>Chaga (Inonotus obliquus)</h2><ul><li>MOA: Immunomodulatory polysaccharides and antioxidants (betulinic acid).</li><li>Pharmacokinetics: Tea or extract; effects accumulate over time.</li><li>Therapeutic Uses: Immune support, antioxidant, anti-inflammatory.</li><li>Side Effects: Oxalate-related kidney risk in large amounts.</li><li>Contraindications: Kidney issues, bleeding disorders.</li><li>Drug Interactions: Anticoagulants, immunosuppressants.</li><li>Toxicity: Low to moderate.</li></ul></div><div class="herb-entry"><h2>Reishi (Ganoderma lucidum)</h2><ul><li>MOA: Immunomodulatory; affects cytokines and histamine release.</li><li>Pharmacokinetics: Oral; chronic use builds effect over days.</li><li>Therapeutic Uses: Immunity, stress resilience, sleep aid.</li><li>Side Effects: Dry mouth, nosebleeds, dizziness.</li><li>Contraindications: Low BP, surgery (bleeding risk).</li><li>Drug Interactions: Anticoagulants, antihypertensives.</li><li>Toxicity: Low.</li></ul></div><div class="herb-entry"><h2>Cordyceps (Cordyceps militaris)</h2><ul><li>MOA: Increases ATP production, modulates cortisol and inflammation.</li><li>Pharmacokinetics: Oral; effects accumulate over time.</li><li>Therapeutic Uses: Endurance, energy, respiratory support.</li><li>Side Effects: GI upset, dry mouth.</li><li>Contraindications: Autoimmune conditions.</li><li>Drug Interactions: Immunosuppressants, antidiabetics.</li><li>Toxicity: Very low.</li></ul></div><div class="herb-entry"><h2>Kratom (Mitragyna speciosa)</h2><ul><li>MOA: Partial mu-opioid agonist; also acts on adrenergic and serotonergic systems.</li><li>Pharmacokinetics: Oral; onset 30–45 min, duration 3–6 hours.</li><li>Therapeutic Uses: Pain relief, stimulation (low doses), sedation (high doses).</li><li>Side Effects: Constipation, nausea, dependency.</li><li>Contraindications: Pregnancy, liver issues, with other CNS depressants.</li><li>Drug Interactions: Opioids, benzodiazepines, MAOIs.</li><li>Toxicity: Moderate to high in heavy/chronic use.</li></ul></div><div class="herb-entry"><h2>Sakae Naa (Combretum quadrangulare)</h2><ul><li>MOA: May affect opioid receptors and acetylcholine; poorly studied.</li><li>Pharmacokinetics: Tea or powder; onset within 30 min.</li><li>Therapeutic Uses: Stimulant, focus enhancer, mood booster.</li><li>Side Effects: Dry mouth, restlessness.</li><li>Contraindications: High blood pressure, heart conditions.</li><li>Drug Interactions: Stimulants.</li><li>Toxicity: Unknown; use with caution.</li></ul></div><div class="herb-entry"><h2>Mulungu (Erythrina mulungu)</h2><ul><li>MOA: Modulates GABA and serotonin; sedative and anxiolytic.</li><li>Pharmacokinetics: Tea or tincture; onset in 30–60 minutes.</li><li>Therapeutic Uses: Anxiety, sleep aid, blood pressure support.</li><li>Side Effects: Drowsiness, low blood pressure.</li><li>Contraindications: Hypotension, sedative use.</li><li>Drug Interactions: Sedatives, antihypertensives.</li><li>Toxicity: Low to moderate.</li></ul></div><div class="herb-entry"><h2>Tulsi (Ocimum sanctum)</h2><ul><li>MOA: Adaptogen; modulates cortisol and dopamine, antioxidant effects.</li><li>Pharmacokinetics: Tea or extract; builds effects over time.</li><li>Therapeutic Uses: Stress, immunity, inflammation.</li><li>Side Effects: Mild GI upset, hypoglycemia.</li><li>Contraindications: Fertility issues, pregnancy.</li><li>Drug Interactions: Diabetes meds, anticoagulants.</li><li>Toxicity: Very low.</li></ul></div><div class="herb-entry"><h2>Ashwagandha (Withania somnifera)</h2><ul><li>MOA: Modulates cortisol and GABA; adaptogen and neuroprotective.</li><li>Pharmacokinetics: Oral; takes several days to weeks to show full effects.</li><li>Therapeutic Uses: Anxiety, fatigue, hormone balance.</li><li>Side Effects: Drowsiness, headache, GI discomfort.</li><li>Contraindications: Thyroid conditions, pregnancy.</li><li>Drug Interactions: Sedatives, thyroid meds.</li><li>Toxicity: Low.</li></ul></div><div class="herb-entry"><h2>Indian Warrior (Pedicularis densiflora)</h2><ul><li>MOA: Muscle relaxant; potential GABAergic activity.</li><li>Pharmacokinetics: Smoked or tea; fast onset.</li><li>Therapeutic Uses: Muscle tension, pain, sleep aid.</li><li>Side Effects: Drowsiness, dizziness.</li><li>Contraindications: Pregnancy, with other sedatives.</li><li>Drug Interactions: Sedatives, CNS depressants.</li><li>Toxicity: Low; limited long-term data.</li></ul></div><div class="herb-entry"><h2>Gotu Kola (Centella asiatica)</h2><ul><li>MOA: Improves circulation, modulates collagen production, neuroprotective.</li><li>Pharmacokinetics: Oral; builds effects with daily use.</li><li>Therapeutic Uses: Cognitive function, wound healing, anxiety.</li><li>Side Effects: Headache, GI upset.</li><li>Contraindications: Liver disease, pregnancy (high doses).</li><li>Drug Interactions: Sedatives, hepatotoxic drugs.</li><li>Toxicity: Low.</li></ul></div><div class="herb-entry"><h2>Valerian (Valeriana officinalis)</h2><ul><li>MOA: Inhibits GABA breakdown; binds to GABA-A receptors.</li><li>Pharmacokinetics: Tea or capsules; onset 30–60 min.</li><li>Therapeutic Uses: Sleep aid, anxiety, muscle tension.</li><li>Side Effects: Grogginess, vivid dreams, headache.</li><li>Contraindications: Pregnancy, liver disorders.</li><li>Drug Interactions: CNS depressants, alcohol.</li><li>Toxicity: Low.</li></ul></div><div class="herb-entry"><h2>Hops (Humulus lupulus)</h2><ul><li>MOA: Enhances GABA activity, modulates estrogen receptors.</li><li>Pharmacokinetics: Tea, tincture, or smoked; onset 20–40 minutes.</li><li>Therapeutic Uses: Sleep aid, anxiety, digestive support.</li><li>Side Effects: Drowsiness, hormone sensitivity.</li><li>Contraindications: Hormone-sensitive cancers.</li><li>Drug Interactions: Sedatives, alcohol.</li><li>Toxicity: Low.</li></ul></div><div class="herb-entry"><h2>White Sage (Salvia apiana)</h2><ul><li>MOA: Antioxidant and antimicrobial properties; possible acetylcholine esterase inhibition.</li><li>Pharmacokinetics: Burned for smudging or brewed; inhaled effect immediate.</li><li>Therapeutic Uses: Purification, antimicrobial, clarity of mind.</li><li>Side Effects: Irritation of mucous membranes if smoked.</li><li>Contraindications: Pregnancy, asthma.</li><li>Drug Interactions: None known.</li><li>Toxicity: Low.</li></ul></div></body>
+</html>
