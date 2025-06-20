@@ -72,8 +72,8 @@ const herbData = [
     "Side Effects":"Headache, nausea, dizziness; risk in pregnancy and seizure disorders [9, 9].",
     "Contraindications":"Pregnancy, allergies to ragweed, epilepsy [9, 9].",
     "Drug Interactions":"Avoid with CNS depressants and anticonvulsants [9, 9].",
-    "Toxicity":"Thujone neurotoxic in high doses; chronic overuse dangerous [9, 9].",
-    "Toxicity \/ LD50":""
+    "Toxicity":"Contains thujone and other essential oils that are toxic in high doses.",
+    "Toxicity \/ LD50":"Thujone LD50 ~87\u2013120 mg\/kg in mice; caution advised at high doses or chronic use."
   },
   {
     "Herb":"Heimia salicifolia (Sinicuichi)",
@@ -92,7 +92,7 @@ const herbData = [
     "Contraindications":"Avoid with alcohol or CNS depressants, pregnancy [9, 4].",
     "Drug Interactions":"None known; caution with psychiatric medications [9, 4].",
     "Toxicity":"Low toxicity; high doses may cause mild sedation or nausea [9, 4].",
-    "Toxicity \/ LD50":""
+    "Toxicity \/ LD50":"Not well established; no fatal doses reported in traditional use."
   },
   {
     "Herb":"Sceletium tortuosum (Kanna)",
@@ -111,7 +111,7 @@ const herbData = [
     "Contraindications":"Do not combine with other serotonergic substances; pregnancy [9, 4].",
     "Drug Interactions":"SSRIs, MAOIs, stimulants [9, 4].",
     "Toxicity":"Low toxicity at traditional doses [9, 4].",
-    "Toxicity \/ LD50":""
+    "Toxicity \/ LD50":"Not established in humans; high safety margin observed in animal studies."
   },
   {
     "Herb":"Blue Lotus (Nymphaea caerulea)",
@@ -123,14 +123,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\udf0e Unknown \/ Global",
     "Tags":"\ud83c\udf2c\ufe0f Smokable, \u2615 Brewable, \ud83e\uddd8 Sedation, \u2705 Safe",
-    "Mechanism of Action":"",
-    "Pharmacokinetics":"",
-    "Therapeutic Uses":"",
-    "Side Effects":"",
-    "Contraindications":"",
-    "Drug Interactions":"",
-    "Toxicity":"",
-    "Toxicity \/ LD50":""
+    "Mechanism of Action":"Contains aporphine and nuciferine; dopamine receptor modulation and mild sedative effect.",
+    "Pharmacokinetics":"Smoked or soaked in wine; onset rapid (5\u201320 min); duration ~1\u20133 hrs.",
+    "Therapeutic Uses":"Mild euphoria, anxiety relief, and aphrodisiac in traditional use.",
+    "Side Effects":"Drowsiness, mild dizziness at high doses.",
+    "Contraindications":"Pregnancy, avoid with dopaminergic drugs.",
+    "Drug Interactions":"Potential additive effects with CNS depressants.",
+    "Toxicity":"Low toxicity; no serious effects reported from traditional use.",
+    "Toxicity \/ LD50":"Not established; no reported lethal doses."
   },
   {
     "Herb":"Wild Dagga",
@@ -161,14 +161,14 @@ const herbData = [
     "Legal Status":"Legal, banned in some countries",
     "Region":"\ud83c\uddf2\ud83c\uddfd Latin America",
     "Tags":"\ud83c\udf2c\ufe0f Smokable, \u2615 Brewable, \ud83d\udcab Euphoria, \u2705 Safe",
-    "Mechanism of Action":"",
+    "Mechanism of Action":"Mild MAOI activity and possible CB1 receptor modulation.",
     "Pharmacokinetics":"Oral ingestion as tea or extract: onset ~30\u201360\u202fmin; detailed kinetic data limited.",
     "Therapeutic Uses":"Aphrodisiac, mood enhancer, anxiolytic, gastrointestinal tonic; used in liqueurs and smoking blends for mild psychoactive effects [1, 10, 1, 7].",
     "Side Effects":"None significant reported; excessive doses may cause insomnia or headache [1, 5].",
     "Contraindications":"Pregnancy and lactation due to insufficient safety data; avoid in individuals sensitive to caffeine [1, 5].",
     "Drug Interactions":"Potential additive effects with sedatives and stimulants; caution with hypoglycemic and hypotensive medications [1, 7].",
     "Toxicity":"Low; no lethal toxicity reported at traditional doses [1, 5].",
-    "Toxicity \/ LD50":""
+    "Toxicity \/ LD50":"No established LD50; considered non-toxic in traditional use."
   },
   {
     "Herb":"Nelumbo nucifera (Sacred Lotus)",
@@ -206,7 +206,7 @@ const herbData = [
     "Contraindications":"Psychiatric disorders, cardiovascular instability; avoid in those at risk for psychosis [3, 2].",
     "Drug Interactions":"CNS depressants may potentiate sedative effects; caution when coadministered [3, 3].",
     "Toxicity":"Low toxicity; animal studies show minimal organ damage even at high doses [3, 3].",
-    "Toxicity \/ LD50":""
+    "Toxicity \/ LD50":"LD50 not established; salvinorin A active at microgram levels with no evidence of physical toxicity."
   },
   {
     "Herb":"Wild Lettuce",
@@ -301,7 +301,7 @@ const herbData = [
     "Contraindications":"Pregnancy, cardiovascular conditions.",
     "Drug Interactions":"Other serotonergic or cholinergic agents.",
     "Toxicity":"Toxic in high doses; caution advised.",
-    "Toxicity \/ LD50":""
+    "Toxicity \/ LD50":"LD50 not established; considered mildly toxic in large doses due to cholinergic effects."
   },
   {
     "Herb":"Wormwood",
@@ -351,14 +351,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\udf10 Global \/ Ritual",
     "Tags":"\ud83d\udd6f\ufe0f Ritual, \ud83d\udd2e Ritual, \u2705 Safe",
-    "Mechanism of Action":"",
+    "Mechanism of Action":"Boswellic acids inhibit 5-lipoxygenase enzyme; anti-inflammatory and neuroprotective.",
     "Pharmacokinetics":"Oral extracts: peak plasma boswellic acids ~2\u202fh post-dose; hepatic metabolism; urinary excretion of metabolites [0, 12].",
     "Therapeutic Uses":"Anti-inflammatory for arthritis, ulcerative colitis, asthma; wound healing; cognitive support [0, 7, 0, 2].",
     "Side Effects":"GI upset, allergic reactions; rare hepatotoxicity [0, 7].",
     "Contraindications":"Pregnancy, bleeding disorders, surgery (increased bleeding risk) [0, 7].",
     "Drug Interactions":"Anticoagulants, immunosuppressants; may potentiate anti\u2011inflammatories [0, 7].",
-    "Toxicity":"Low; high doses may cause mild GI symptoms [0, 7].",
-    "Toxicity \/ LD50":""
+    "Toxicity":"Generally well tolerated; high doses may cause stomach upset or hepatotoxicity in rare cases.",
+    "Toxicity \/ LD50":"LD50 (boswellic acid) not well established; no known fatal dose in humans."
   },
   {
     "Herb":"Mapacho",
@@ -377,7 +377,7 @@ const herbData = [
     "Contraindications":"Cardiovascular disease, pregnancy.",
     "Drug Interactions":"Other nicotinic agonists and MAO inhibitors.",
     "Toxicity":"High risk of nicotine overdose; very toxic.",
-    "Toxicity \/ LD50":""
+    "Toxicity \/ LD50":"LD50 (nicotine) ~0.5\u20131.0 mg\/kg in humans (oral); overdose via smoke is rare but possible."
   },
   {
     "Herb":"Datura \/ Brugmansia",
@@ -389,14 +389,14 @@ const herbData = [
     "Legal Status":"Dangerous \/ Toxic \/ Controlled",
     "Region":"\ud83c\udf0e Unknown \/ Global",
     "Tags":"\u2620\ufe0f Toxic",
-    "Mechanism of Action":"",
+    "Mechanism of Action":"Antagonist at muscarinic acetylcholine receptors (M1\u2013M5); causes anticholinergic delirium.",
     "Pharmacokinetics":"Oral ingestion: onset 30\u201360\u202fmin; peak levels ~1\u20132\u202fh; extensively metabolized hepatically; excretion via urine [0, 0].",
     "Therapeutic Uses":"Historically used as antispasmodic, analgesic, and hypnotic; in modern medicine for motion sickness and as pre-anesthetic [0, 5].",
     "Side Effects":"Dry mouth, tachycardia, blurred vision, urinary retention, confusion, hallucinations; anticholinergic toxidrome at high doses [0, 15].",
     "Contraindications":"Glaucoma, prostatic hypertrophy, cardiovascular disease, psychiatric disorders, pregnancy [0, 5].",
     "Drug Interactions":"Additive anticholinergic effects with antihistamines, tricyclic antidepressants, antipsychotics [0, 5].",
-    "Toxicity":"Human fatal dose ~10\u202fmg\/kg atropine equivalent; rodent LD50 ~450\u202fmg\/kg (oral) [1, 9].",
-    "Toxicity \/ LD50":"Human fatal dose ~10\u202fmg\/kg atropine equivalent; rodent LD50 ~450\u202fmg\/kg (oral) [1, 9]."
+    "Toxicity":"Extremely toxic; unpredictable alkaloid content (atropine, scopolamine) can cause fatal overdose.",
+    "Toxicity \/ LD50":"Human LD50 (atropine) ~10 mg\/kg; child fatalities at ~50 seeds reported."
   },
   {
     "Herb":"Nutmeg (high dose)",
@@ -415,7 +415,7 @@ const herbData = [
     "Contraindications":"Psychiatric disorders, liver disease, pregnancy [0, 21].",
     "Drug Interactions":"Additive CNS effects with depressants and MAOIs [0, 21].",
     "Toxicity":"Moderate-to-high toxicity at psychoactive doses; overdose risk for anticholinergic delirium [0, 21].",
-    "Toxicity \/ LD50":""
+    "Toxicity \/ LD50":"Estimated LD50 (myristicin) ~5600 mg\/kg in rats; toxic threshold in humans ~5g+ of nutmeg powder."
   },
   {
     "Herb":"Asparagus racemosus (Shatavari)",
@@ -522,14 +522,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\udf0e Unknown \/ Global",
     "Tags":"\u2615 Brewable, \ud83d\udc8a Oral, \ud83d\udcab Euphoria, \u26a1 Stimulant, \u2705 Safe",
-    "Mechanism of Action":"",
-    "Pharmacokinetics":"",
-    "Therapeutic Uses":"",
-    "Side Effects":"",
-    "Contraindications":"",
-    "Drug Interactions":"",
-    "Toxicity":"",
-    "Toxicity \/ LD50":""
+    "Mechanism of Action":"Mitragynine-like alkaloids; mild adrenergic and dopaminergic stimulation.",
+    "Pharmacokinetics":"Oral (tea\/capsule); onset 20\u201340 min; effects last ~3\u20134 hrs.",
+    "Therapeutic Uses":"Used as stimulant, mood enhancer, and mild analgesic.",
+    "Side Effects":"Mild stimulation, jitteriness, GI upset at high doses.",
+    "Contraindications":"Avoid with stimulants or heart issues.",
+    "Drug Interactions":"May interact with MAOIs, stimulants, and certain SSRIs.",
+    "Toxicity":"Low, but less studied than kratom.",
+    "Toxicity \/ LD50":"Not established; no fatalities reported in isolated use."
   },
   {
     "Herb":"Nelumbo nucifera",
@@ -541,14 +541,14 @@ const herbData = [
     "Legal Status":"Legal, low concern",
     "Region":"\ud83c\udf0e Unknown \/ Global",
     "Tags":"\ud83c\udf2c\ufe0f Smokable, \u2615 Brewable, \ud83d\udcab Euphoria, \ud83e\uddd8 Sedation, \u2705 Safe",
-    "Mechanism of Action":"",
-    "Pharmacokinetics":"",
-    "Therapeutic Uses":"",
-    "Side Effects":"",
-    "Contraindications":"",
-    "Drug Interactions":"",
-    "Toxicity":"",
-    "Toxicity \/ LD50":""
+    "Mechanism of Action":"Contains nuciferine (dopamine receptor modulator) and aporphine alkaloids.",
+    "Pharmacokinetics":"Smoked or tea; onset rapid (5\u201315 min); duration ~2\u20133 hrs.",
+    "Therapeutic Uses":"Mild euphoria, stress reduction, dream enhancement.",
+    "Side Effects":"Mild dizziness or nausea if overused.",
+    "Contraindications":"Pregnancy, hypotension.",
+    "Drug Interactions":"Possible additive effects with MAOIs and dopamine agents.",
+    "Toxicity":"Low toxicity in traditional doses.",
+    "Toxicity \/ LD50":"Not well-established; estimated to be >500 mg\/kg (safe range)."
   },
   {
     "Herb":"Scullcap (Scutellaria)",
@@ -560,14 +560,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\udf0e Unknown \/ Global",
     "Tags":"\u2615 Brewable, \ud83c\udf00 Dissociation, \u2705 Safe",
-    "Mechanism of Action":"",
-    "Pharmacokinetics":"",
-    "Therapeutic Uses":"",
-    "Side Effects":"",
-    "Contraindications":"",
-    "Drug Interactions":"",
-    "Toxicity":"",
-    "Toxicity \/ LD50":""
+    "Mechanism of Action":"Flavonoids and baicalin modulate GABA-A receptors and inhibit inflammation.",
+    "Pharmacokinetics":"Taken orally; onset ~30 min; effects last ~2\u20134 hrs.",
+    "Therapeutic Uses":"Calming, anticonvulsant, neuroprotective.",
+    "Side Effects":"Rarely causes liver enzyme elevation or drowsiness.",
+    "Contraindications":"Liver issues; consult provider before long-term use.",
+    "Drug Interactions":"Additive effects with sedatives or anxiolytics.",
+    "Toxicity":"Generally safe, though adulterants in supplements have caused concern.",
+    "Toxicity \/ LD50":"No standard LD50 data; high therapeutic margin."
   },
   {
     "Herb":"California Poppy",
@@ -579,14 +579,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\udf0e Unknown \/ Global",
     "Tags":"\u2615 Brewable, \ud83c\udf00 Dissociation, \ud83e\uddd8 Sedation, \u2705 Safe",
-    "Mechanism of Action":"",
-    "Pharmacokinetics":"",
-    "Therapeutic Uses":"",
-    "Side Effects":"",
-    "Contraindications":"",
-    "Drug Interactions":"",
-    "Toxicity":"",
-    "Toxicity \/ LD50":""
+    "Mechanism of Action":"Mild GABAergic activity and opioid receptor affinity (non-narcotic).",
+    "Pharmacokinetics":"Oral (tea or tincture); onset ~30 min; lasts 2\u20133 hrs.",
+    "Therapeutic Uses":"Used for anxiety, insomnia, and pain management.",
+    "Side Effects":"Drowsiness, vivid dreams, dizziness.",
+    "Contraindications":"Not for use in pregnancy or with other CNS depressants.",
+    "Drug Interactions":"May amplify effects of benzodiazepines and alcohol.",
+    "Toxicity":"Low toxicity; non-habit-forming.",
+    "Toxicity \/ LD50":"No known LD50 in humans; safe at standard doses."
   },
   {
     "Herb":"Hop Flowers",
@@ -598,14 +598,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\udf0e Unknown \/ Global",
     "Tags":"\u2615 Brewable, \ud83c\udf00 Dissociation, \u2705 Safe",
-    "Mechanism of Action":"",
-    "Pharmacokinetics":"",
-    "Therapeutic Uses":"",
-    "Side Effects":"",
-    "Contraindications":"",
-    "Drug Interactions":"",
-    "Toxicity":"",
-    "Toxicity \/ LD50":""
+    "Mechanism of Action":"Binds to GABA-A receptors, promoting sedation and relaxation.",
+    "Pharmacokinetics":"Oral or inhaled; onset ~20\u201340 min; duration ~2\u20134 hrs.",
+    "Therapeutic Uses":"Used as a mild sleep aid, anxiety reducer, and dream enhancer.",
+    "Side Effects":"Drowsiness, mild headache, possible hormonal effects in large doses.",
+    "Contraindications":"Pregnancy, estrogen-sensitive conditions (e.g. breast cancer).",
+    "Drug Interactions":"May enhance sedatives, alcohol, and hypnotics.",
+    "Toxicity":"Very low toxicity; generally regarded as safe.",
+    "Toxicity \/ LD50":"No human LD50; high safety margin reported in herbal use."
   },
   {
     "Herb":"Copal",
@@ -712,14 +712,14 @@ const herbData = [
     "Legal Status":"Controlled \/ Toxic",
     "Region":"\ud83c\udf0e Unknown \/ Global",
     "Tags":"\u2620\ufe0f Toxic",
-    "Mechanism of Action":"",
-    "Pharmacokinetics":"",
-    "Therapeutic Uses":"",
-    "Side Effects":"",
-    "Contraindications":"",
-    "Drug Interactions":"",
-    "Toxicity":"",
-    "Toxicity \/ LD50":""
+    "Mechanism of Action":"Tropane alkaloids block acetylcholine; causes anticholinergic delirium.",
+    "Pharmacokinetics":"Oral or topical; onset ~30\u201390 mins; effects last 4\u201312 hrs.",
+    "Therapeutic Uses":"Historically used for pain, muscle spasms, and cosmetic dilation.",
+    "Side Effects":"Dry mouth, hallucinations, delirium, elevated pulse.",
+    "Contraindications":"Cardiovascular disease, glaucoma, pregnancy.",
+    "Drug Interactions":"CNS depressants, anticholinergic drugs.",
+    "Toxicity":"Highly toxic; accidental ingestion can be fatal.",
+    "Toxicity \/ LD50":"Atropine LD50 (rat, oral): ~453 mg\/kg."
   },
   {
     "Herb":"Mandrake Root",
@@ -731,14 +731,14 @@ const herbData = [
     "Legal Status":"Controlled \/ Toxic",
     "Region":"\ud83c\udf0e Unknown \/ Global",
     "Tags":"\u2620\ufe0f Toxic",
-    "Mechanism of Action":"",
-    "Pharmacokinetics":"",
-    "Therapeutic Uses":"",
-    "Side Effects":"",
-    "Contraindications":"",
-    "Drug Interactions":"",
-    "Toxicity":"",
-    "Toxicity \/ LD50":""
+    "Mechanism of Action":"Contains tropane alkaloids (scopolamine, atropine); anticholinergic deliriant.",
+    "Pharmacokinetics":"Oral or transdermal; slow absorption; long-lasting (6\u201312 hrs).",
+    "Therapeutic Uses":"Historically used as anesthetic, antispasmodic, and in witchcraft.",
+    "Side Effects":"Dry mouth, confusion, hallucinations, elevated heart rate.",
+    "Contraindications":"Pregnancy, glaucoma, heart conditions.",
+    "Drug Interactions":"Potentiates other anticholinergics, CNS depressants.",
+    "Toxicity":"Highly toxic in moderate doses.",
+    "Toxicity \/ LD50":"Scopolamine LD50 (rat, oral): ~310 mg\/kg."
   },
   {
     "Herb":"Anadenanthera peregrina (Yopo)",
@@ -757,7 +757,7 @@ const herbData = [
     "Contraindications":"Cardiovascular disease, psychiatric disorders, pregnancy.",
     "Drug Interactions":"Serotonergic medications may potentiate effects.",
     "Toxicity":"High concentrations potentially embryotoxic and angiogenic; human toxicity data limited.",
-    "Toxicity \/ LD50":""
+    "Toxicity \/ LD50":"Bufotenin LD50 (mice, intraperitoneal): ~200\u2013300 mg\/kg; relatively safe at ritual doses."
   },
   {
     "Herb":"Anadenanthera colubrina (Ceb\u00edl)",
@@ -788,14 +788,14 @@ const herbData = [
     "Legal Status":"Restricted \/ Controlled",
     "Region":"\ud83c\uddf2\ud83c\uddfd Latin America",
     "Tags":"\u26a0\ufe0f Restricted",
-    "Mechanism of Action":"",
-    "Pharmacokinetics":"",
-    "Therapeutic Uses":"",
-    "Side Effects":"",
-    "Contraindications":"",
-    "Drug Interactions":"",
-    "Toxicity":"",
-    "Toxicity \/ LD50":""
+    "Mechanism of Action":"Contains DMT, 5-MeO-DMT, and beta-carbolines; classic tryptamine entheogen profile.",
+    "Pharmacokinetics":"Insufflated or oral with MAOIs; fast onset if smoked or snuffed.",
+    "Therapeutic Uses":"Used in Amazonian shamanic healing rituals; possible antidepressant potential.",
+    "Side Effects":"Nausea, intense hallucinations, elevated heart rate.",
+    "Contraindications":"Mental health disorders, heart issues, MAOI interactions.",
+    "Drug Interactions":"Dangerous with SSRIs, MAOIs, and other serotonergic substances.",
+    "Toxicity":"Can be overwhelming; physical toxicity low but psychological risks high.",
+    "Toxicity \/ LD50":"No established LD50 for DMT in humans; low systemic toxicity at typical doses."
   },
   {
     "Herb":"Acorus gramineus",
@@ -807,14 +807,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\udde8\ud83c\uddf3 East Asia",
     "Tags":"\u2615 Brewable, \ud83d\udc8a Oral, \ud83e\udde0 Cognitive, \u2705 Safe",
-    "Mechanism of Action":"",
-    "Pharmacokinetics":"",
-    "Therapeutic Uses":"",
-    "Side Effects":"",
-    "Contraindications":"",
-    "Drug Interactions":"",
-    "Toxicity":"",
-    "Toxicity \/ LD50":""
+    "Mechanism of Action":"Contains \u03b2-asarone; may modulate acetylcholine and GABA pathways; traditional use for cognition.",
+    "Pharmacokinetics":"Oral tea or tincture; slow onset (~1 hr); mild duration (2\u20133 hrs).",
+    "Therapeutic Uses":"Cognitive enhancement, anxiety, neuroprotective potential.",
+    "Side Effects":"Nausea at high doses, possible carcinogenic risk with long-term \u03b2-asarone exposure.",
+    "Contraindications":"Pregnancy, long-term use caution due to \u03b2-asarone.",
+    "Drug Interactions":"May enhance CNS depressants.",
+    "Toxicity":"Concerns over \u03b2-asarone carcinogenicity in some studies.",
+    "Toxicity \/ LD50":"\u03b2-asarone LD50 (rat, oral): ~310 mg\/kg."
   },
   {
     "Herb":"Celastrus paniculatus (Intellect Tree)",
@@ -921,14 +921,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\udf0e Unknown \/ Global",
     "Tags":"\ud83c\udf2c\ufe0f Smokable, \u2615 Brewable, \ud83c\udf00 Dissociation, \ud83e\uddd8 Sedation, \u2705 Safe",
-    "Mechanism of Action":"",
+    "Mechanism of Action":"Contains lactucopicrin and lactucin; thought to act as mild opioid receptor agonists.",
     "Pharmacokinetics":"Oral ingestion onset 30\u201360\u202fmin; duration ~4\u202fh; metabolites excreted renally [0, 6].",
     "Therapeutic Uses":"Sedative, analgesic, sleep aid, antitussive [0, 6].",
     "Side Effects":"Mydriasis, dizziness, GI upset at high doses [0, 6].",
     "Contraindications":"Pregnancy, concurrent opioid use [0, 6].",
     "Drug Interactions":"CNS depressants [0, 6].",
     "Toxicity":"Low; hospitalizations reported but recovery common [0, 6].",
-    "Toxicity \/ LD50":""
+    "Toxicity \/ LD50":"Not established; presumed low. No acute toxicity reported in human use."
   },
   {
     "Herb":"Artemisia absinthium (Wormwood)",
@@ -978,14 +978,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\udf0e Unknown \/ Global",
     "Tags":"\ud83c\udf2c\ufe0f Smokable, \u2615 Brewable, \ud83d\udcab Euphoria, \u2705 Safe",
-    "Mechanism of Action":"",
+    "Mechanism of Action":"Contains coumarin and umbelliferone; mild monoamine modulation; relaxant properties.",
     "Pharmacokinetics":"Oral infusion onset 30\u201360\u202fmin; metabolites via hepatic pathways; urinary excretion [0, 10].",
     "Therapeutic Uses":"Gastroprotective, anti-inflammatory, antispasmodic, anxiolytic; used as snuff admixture [0, 2, 0, 10].",
     "Side Effects":"Rare; possible sedation, GI discomfort [0, 10].",
     "Contraindications":"Pregnancy; MAOI coadministration [0, 18].",
     "Drug Interactions":"MAO inhibitors, sedatives [0, 18].",
     "Toxicity":"Low; safe at traditional doses [0, 10].",
-    "Toxicity \/ LD50":""
+    "Toxicity \/ LD50":"Low; no established LD50, but considered safe in traditional use."
   },
   {
     "Herb":"Viola odorata (Sweet violet)",
@@ -997,14 +997,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\uddea\ud83c\uddfa Europe",
     "Tags":"\u2615 Brewable, \ud83c\udf00 Dissociation, \ud83e\uddd8 Sedation, \u2705 Safe",
-    "Mechanism of Action":"",
-    "Pharmacokinetics":"",
-    "Therapeutic Uses":"",
-    "Side Effects":"",
-    "Contraindications":"",
-    "Drug Interactions":"",
-    "Toxicity":"",
-    "Toxicity \/ LD50":""
+    "Mechanism of Action":"Mild central sedative via salicylates and alkaloids; may influence serotonin and prostaglandin pathways.",
+    "Pharmacokinetics":"Taken as tea or syrup; onset ~30 min; short duration.",
+    "Therapeutic Uses":"Cough suppressant, mild anxiolytic, anti-inflammatory, gentle sleep aid.",
+    "Side Effects":"Very rare; may include mild drowsiness or nausea.",
+    "Contraindications":"None known in normal amounts; avoid if allergic.",
+    "Drug Interactions":"Minimal; theoretically additive with CNS depressants.",
+    "Toxicity":"Regarded as very safe in traditional herbalism.",
+    "Toxicity \/ LD50":"No human LD50 data; extremely low toxicity reported."
   },
   {
     "Herb":"Piper auritum (Root beer plant)",
@@ -1016,14 +1016,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\udf0e Unknown \/ Global",
     "Tags":"\u2615 Brewable, \ud83d\udcab Euphoria, \ud83e\uddd8 Sedation, \u2705 Safe",
-    "Mechanism of Action":"",
+    "Mechanism of Action":"Contains safrole and other volatile oils; possible mild dopaminergic stimulation and GI modulation.",
     "Pharmacokinetics":"Oral infusion or extract onset 30\u201360\u202fmin; hepatic metabolism; renal excretion [0, 11].",
     "Therapeutic Uses":"Digestive aid, anti-inflammatory, antimutagen, diuretic, antipyretic [0, 11].",
     "Side Effects":"High doses may cause GI upset; safrole is a potential carcinogen [1, 11].",
     "Contraindications":"Pregnancy; safrole-containing extracts discouraged [1, 11].",
     "Drug Interactions":"CYP450 substrates; caution with anticoagulants [0, 19].",
     "Toxicity":"Safrole hepatotoxic; use sparingly [1, 11].",
-    "Toxicity \/ LD50":""
+    "Toxicity \/ LD50":"LD50 (rats, oral) safrole ~1,950 mg\/kg; safrole is hepatotoxic at high doses."
   },
   {
     "Herb":"Eschscholzia californica (California poppy)",
@@ -1149,14 +1149,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\uddee\ud83c\uddf3 India",
     "Tags":"\u2615 Brewable, \ud83d\udd6f\ufe0f Ritual, \ud83d\udcab Euphoria, \ud83e\uddd8 Sedation, \u2705 Safe",
-    "Mechanism of Action":"",
-    "Pharmacokinetics":"",
-    "Therapeutic Uses":"",
-    "Side Effects":"",
-    "Contraindications":"",
-    "Drug Interactions":"",
-    "Toxicity":"",
-    "Toxicity \/ LD50":""
+    "Mechanism of Action":"Modulates cortisol, inflammation, and neurotransmitters; contains eugenol, ursolic acid, and apigenin.",
+    "Pharmacokinetics":"Rapid absorption via oral tea\/tincture; hepatic metabolism.",
+    "Therapeutic Uses":"Adaptogen, anxiety, spiritual focus, blood sugar balance.",
+    "Side Effects":"May lower blood sugar, mild sedation, mild nausea.",
+    "Contraindications":"Pregnancy, diabetes medication.",
+    "Drug Interactions":"May potentiate anti-diabetic, anticoagulant, or sedative drugs.",
+    "Toxicity":"Pending",
+    "Toxicity \/ LD50":"Pending"
   },
   {
     "Herb":"Rhodiola rosea",
@@ -1168,14 +1168,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\udf0e Unknown \/ Global",
     "Tags":"\ud83d\udc8a Oral, \ud83d\udcab Euphoria, \ud83e\udde0 Cognitive, \u2705 Safe",
-    "Mechanism of Action":"",
-    "Pharmacokinetics":"",
-    "Therapeutic Uses":"",
-    "Side Effects":"",
-    "Contraindications":"",
-    "Drug Interactions":"",
-    "Toxicity":"",
-    "Toxicity \/ LD50":""
+    "Mechanism of Action":"Influences serotonin, norepinephrine, dopamine; modulates HPA axis and stress adaptation via rosavins and salidroside.",
+    "Pharmacokinetics":"Absorbed orally; peak plasma ~1-2 hours; active compounds metabolized in liver, excreted renally.",
+    "Therapeutic Uses":"Fatigue, stress resilience, cognitive enhancement, mild depression.",
+    "Side Effects":"Irritability, dry mouth, dizziness (rare, dose-dependent).",
+    "Contraindications":"Bipolar disorder, stimulants, pregnancy.",
+    "Drug Interactions":"May affect antidepressants, stimulants, or MAOIs.",
+    "Toxicity":"Mild toxicity; high doses may cause irritability or insomnia.",
+    "Toxicity \/ LD50":"LD50 (rats, oral) >28,000 mg\/kg; very low toxicity."
   },
   {
     "Herb":"Withania somnifera (Ashwagandha)",
@@ -1187,14 +1187,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\uddee\ud83c\uddf3 India",
     "Tags":"\u2615 Brewable, \ud83d\udc8a Oral, \ud83c\udf00 Dissociation, \ud83e\uddd8 Sedation, \u2705 Safe",
-    "Mechanism of Action":"",
+    "Mechanism of Action":"Modulates GABAergic and serotonergic activity; reduces cortisol; withanolides are primary active compounds.",
     "Pharmacokinetics":"Oral onset 30\u201360\u202fmin; withanolides bioavailable; hepatic metabolism; renal excretion [0, 17].",
     "Therapeutic Uses":"Adaptogen, anti-stress, anxiolytic, neuroprotective, anti-inflammatory, immune support [0, 1, 0, 17].",
     "Side Effects":"GI upset, drowsiness, rare thyroid hormone changes [0, 9].",
     "Contraindications":"Pregnancy, hyperthyroidism, autoimmune diseases [0, 1].",
     "Drug Interactions":"Immunosuppressants, sedatives, thyroid medications [0, 24].",
     "Toxicity":"Low; well-tolerated in clinical studies [0, 1].",
-    "Toxicity \/ LD50":""
+    "Toxicity \/ LD50":"LD50 (rats, oral) ~4650 mg\/kg; relatively low acute toxicity."
   },
   {
     "Herb":"Bacopa monnieri",
@@ -1225,13 +1225,13 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\udde8\ud83c\uddf3 East Asia",
     "Tags":"\u2615 Brewable, \ud83d\udcab Euphoria, \u2705 Safe",
-    "Mechanism of Action":"",
-    "Pharmacokinetics":"",
-    "Therapeutic Uses":"",
-    "Side Effects":"",
-    "Contraindications":"",
-    "Drug Interactions":"",
-    "Toxicity":"",
-    "Toxicity \/ LD50":""
+    "Mechanism of Action":"Adaptogenic modulation of HPA axis and immune response; contains eleutherosides influencing stress resilience.",
+    "Pharmacokinetics":"Oral onset in 30\u201360 minutes; active glycosides metabolized hepatically.",
+    "Therapeutic Uses":"Fatigue, immune support, cognitive performance under stress.",
+    "Side Effects":"Mild insomnia, irritability, nervousness in high doses.",
+    "Contraindications":"Hypertension, pregnancy, hormone-sensitive conditions.",
+    "Drug Interactions":"May interact with stimulants, immunosuppressants, and anticoagulants.",
+    "Toxicity":"Generally considered safe when used short-term. Long-term effects less studied.",
+    "Toxicity \/ LD50":"No established LD50; high doses in animals show minimal acute toxicity."
   }
 ];
