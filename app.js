@@ -1,25 +1,27 @@
-// ─── 1) Load your data ─────────────────────────────────────────────────────────
-/* global herbData */  // assumes you’ve loaded psychoactive_herb_index_data_MASTER_UPDATED.js first
+// Debugging App.js: logs steps to console
+/* global herbData */
 
-// ─── 2) State & Helpers ──────────────────────────────────────────────────────
+console.log("Debug App.js loaded. herbData length:", Array.isArray(herbData) ? herbData.length : herbData);
+
 let currentFilter = '';
 let showFavoritesOnly = false;
 let currentSort = 'alphabetical';
 
 function getFavorites() {
+  console.log("getFavorites called");
   return JSON.parse(localStorage.getItem('favorites') || '[]');
 }
 
 function saveFavorites(favs) {
+  console.log("saveFavorites:", favs);
   localStorage.setItem('favorites', JSON.stringify(favs));
 }
 
-// ─── 3) Create a herb card ────────────────────────────────────────────────────
 function createHerbCard(herb) {
+  console.log("Creating card for herb:", herb.Herb);
   const section = document.createElement('section');
   section.className = 'herb-card';
 
-  // build inner HTML with details wrapped in <details>
   section.innerHTML = `
     <h2>
       ${herb.Herb}
@@ -39,10 +41,10 @@ function createHerbCard(herb) {
     <details><summary>Toxicity</summary><p>${herb.Toxicity || 'N/A'}</p></details>
   `;
 
-  // Favorite button handler
   const favBtn = section.querySelector('.favorite-btn');
   favBtn.addEventListener('click', e => {
     e.stopPropagation();
+    console.log("Favorite button clicked for:", herb.Herb);
     let favs = getFavorites();
     if (favs.includes(herb.Herb)) {
       favs = favs.filter(h => h !== herb.Herb);
@@ -54,31 +56,42 @@ function createHerbCard(herb) {
     saveFavorites(favs);
   });
 
-  // Header click toggles all details
   const header = section.querySelector('h2');
   header.style.cursor = 'pointer';
   header.addEventListener('click', () => {
+    console.log("Header clicked for:", herb.Herb);
     const details = section.querySelectorAll('details');
     const anyClosed = Array.from(details).some(d => !d.open);
+    console.log("Toggling details, anyClosed:", anyClosed);
     details.forEach(d => d.open = anyClosed);
   });
 
   return section;
 }
 
-// ─── 4) Render logic ──────────────────────────────────────────────
 function renderHerbs() {
+  console.log("renderHerbs called with filter:", currentFilter, "favoritesOnly:", showFavoritesOnly, "sort:", currentSort);
   const container = document.getElementById('herb-list');
+  if (!container) {
+    console.error("Container #herb-list not found!");
+    return;
+  }
   container.innerHTML = '';
 
-  let list = herbData.filter(h => {
+  let list = Array.isArray(herbData) ? herbData : [];
+  if (!Array.isArray(herbData)) {
+    console.error("herbData is not an array:", herbData);
+  }
+
+  list = list.filter(h => {
     const hay = (h.Herb + h.Effects + h.Tags + h.Category).toLowerCase();
     const bySearch = !currentFilter || hay.includes(currentFilter.toLowerCase());
     const byFav = !showFavoritesOnly || getFavorites().includes(h.Herb);
     return bySearch && byFav;
   });
 
-  // Sorting
+  console.log("Filtered list length:", list.length);
+
   if (currentSort === 'alphabetical') {
     list.sort((a, b) => a.Herb.localeCompare(b.Herb));
   } else {
@@ -89,34 +102,28 @@ function renderHerbs() {
   list.forEach(h => container.appendChild(createHerbCard(h)));
 }
 
-// ─── 5) Wire up controls ──────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   renderHerbs();
 
-  // Search
   document.getElementById('searchInput').addEventListener('input', e => {
     currentFilter = e.target.value;
     renderHerbs();
   });
 
-  // Favorites only
   document.getElementById('favoritesToggle').addEventListener('click', () => {
     showFavoritesOnly = !showFavoritesOnly;
     renderHerbs();
   });
 
-  // Sort
   document.getElementById('sortSelect').addEventListener('change', e => {
     currentSort = e.target.value;
     renderHerbs();
   });
 
-  // Dark mode
   document.getElementById('darkModeToggle').addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
   });
 
-  // Random herb
   const rnd = document.getElementById('randomHerb');
   if (rnd) {
     rnd.addEventListener('click', () => {
