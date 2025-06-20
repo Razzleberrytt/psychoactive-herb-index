@@ -2,34 +2,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Psychoactive Herb Index</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>Psychoactive Herb Index (Responsive Full)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    body { font-family: Georgia, serif; background: #fdf8f1; color: #2b2b2b; padding: 1em; }
-    table { width: 100%; border-collapse: collapse; margin-top: 1em; }
-    th, td { border: 1px solid #aaa; padding: 0.6em; text-align: left; font-size: 0.9em; }
-    th { background: #eee; position: sticky; top: 0; z-index: 2; }
-    tr:nth-child(even) { background: #f9f6f0; }
-    input[type="text"] { width: 100%; padding: 0.5em; margin-top: 1em; }
-    @media (max-width: 768px) {
-      table, thead, tbody, th, td, tr { display: block; }
-      tr { margin-bottom: 1em; border: 1px solid #ccc; padding: 0.5em; }
-      td { border: none; position: relative; padding-left: 50%; }
-      td::before {
-        position: absolute; top: 0; left: 0; width: 45%; white-space: nowrap; font-weight: bold;
-        content: attr(data-label);
-      }
-      thead { display: none; }
-    }
-  </style>
+body {
+  font-family: Georgia, serif;
+  background: #fdf8f1;
+  color: #2b2b2b;
+  padding: 1em;
+}
+input[type="text"] {
+  width: 100%;
+  padding: 0.6em;
+  margin-bottom: 1em;
+}
+.herb-card {
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+  background: #fffefb;
+  border-radius: 6px;
+  padding: 0.5em 1em;
+}
+.herb-card summary {
+  font-size: 1.1em;
+  cursor: pointer;
+}
+.herb-content p {
+  margin: 0.3em 0;
+}
+</style>
 </head>
 <body>
   <h1>Psychoactive Herb Index</h1>
   <input type="text" id="searchBox" placeholder="Search herbs, effects, or regions...">
   <div id="herbTable">Loading...</div>
-
-  <script>var herbData = [
+  <script>
+    var herbData = [
   {
     "Herb": "Calea zacatechichi",
     "Category": "Oneirogen",
@@ -1265,28 +1274,42 @@
     "Toxicity": "Generally considered safe when used short-term. Long-term effects less studied.",
     "Toxicity \\/ LD50": "No established LD50; high doses in animals show minimal acute toxicity."
   }
-];</script>
-  <script>
-    const container = document.getElementById("herbTable");
-    const searchBox = document.getElementById("searchBox");
-    const columns = Object.keys(herbData[0]);
+];
 
-    function renderTable(data) {
-      let html = '<table><thead><tr>' + columns.map(col => '<th>' + col + '</th>').join('') + '</tr></thead><tbody>';
-      data.forEach(row => {
-        html += '<tr>' + columns.map(col => `<td data-label="${col}">${row[col] || ''}</td>`).join('') + '</tr>';
+    function renderHerbCards(data) {
+      const container = document.getElementById("herbTable");
+      let html = "";
+      data.forEach(herb => {
+        html += `
+        <details class="herb-card">
+          <summary><strong>${herb.Herb || 'Unknown'}</strong> – <em>${herb.Category || ''}</em></summary>
+          <div class="herb-content">
+            <p><strong>Effects:</strong> ${herb.Effects || ''}</p>
+            <p><strong>Preparation:</strong> ${herb.Preparation || ''}</p>
+            <p><strong>Intensity:</strong> ${herb.Intensity || ''}</p>
+            <p><strong>Onset:</strong> ${herb.Onset || ''}</p>
+            <p><strong>Region:</strong> ${herb.Region || ''}</p>
+            <p><strong>Legal Status:</strong> ${herb["Legal Status"] || ''}</p>
+            <p><strong>Mechanism of Action:</strong> ${herb["Mechanism of Action"] || ''}</p>
+            <p><strong>Tags:</strong> ${herb.Tags || ''}</p>
+          </div>
+        </details>
+        `;
       });
-      html += '</tbody></table>';
       container.innerHTML = html;
     }
 
-    searchBox.addEventListener("input", () => {
-      const term = searchBox.value.toLowerCase();
-      const filtered = herbData.filter(row => Object.values(row).some(v => v && v.toString().toLowerCase().includes(term)));
-      renderTable(filtered);
+    document.addEventListener("DOMContentLoaded", function () {
+      const searchBox = document.getElementById("searchBox");
+      searchBox.addEventListener("input", () => {
+        const term = searchBox.value.toLowerCase();
+        const filtered = herbData.filter(h =>
+          Object.values(h).some(v => v && v.toString().toLowerCase().includes(term))
+        );
+        renderHerbCards(filtered);
+      });
+      renderHerbCards(herbData);
     });
-
-    renderTable(herbData);
   </script>
 </body>
 </html>
