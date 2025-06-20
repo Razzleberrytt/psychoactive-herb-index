@@ -2,16 +2,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Psychoactive Herb Index</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Herb Index (Standalone)</title>
+  <style>
+    body { font-family: Georgia, serif; background: #fdf8f1; color: #2b2b2b; padding: 2em; }
+    table { width: 100%; border-collapse: collapse; margin-top: 1em; }
+    th, td { border: 1px solid #aaa; padding: 0.5em; text-align: left; }
+    th { background: #eee; }
+  </style>
 </head>
 <body>
-  <h1>Psychoactive Herb Index</h1>
-  <p>Explore 65+ natural plants with psychoactive properties. Data loads dynamically below:</p>
+  <h1>Herb Index (Test Mode)</h1>
   <div id="herbTable">Loading...</div>
+  <script>
+  
+var herbData = [
+  {
+    "Herb": "Calea zacatechichi",
+    "Category": "Oneirogen",
+    "Effects": "Vivid\\/lucid dreams, dream recall",
+    "Preparation": "Bitter tea or smoke",
+    "Intensity": "Mild",
+    "Onset": "1-5 min",
+    "Legal Status": "Legal \\/ Unregulated",
+    "Region": "\ud83c\uddf2\ud83c\uddfd Latin America",
+    "Tags": "\ud83c\udf2c\ufe0f Smokable, \u2615 Brewable, \ud83e\udde0 Dream, \u2705 Safe",
+    "Mechanism of Action": "Effects attributed to flavones and germacrolides modulating cholinergic and possibly serotonergic pathways, enhancing dream-related neurochemistry [0, 1, 0, 11].",
+    "Pharmacokinetics": "Consumed as bitter tea or smoked: onset 20\u201345\u202fmin; duration ~2\u20133\u202fh; likely metabolized hepatically [0, 1, 0, 21].",
+    "Therapeutic Uses": "Traditional Mexican use for dream enhancement, divination, and improvement of dream recall [0, 6].",
+    "Side Effects": "Bitter taste, nausea, vomiting; mild sedation [0, 6].",
+    "Contraindications": "Avoid during pregnancy and combine cautiously with sedatives [0, 16].",
+    "Drug Interactions": "Potentiates CNS depressants [0, 21].",
+    "Toxicity": "Low reported toxicity; high doses may cause dizziness or vomiting [0, 16].",
+    "Toxicity \\/ LD50": null
+  },
+  {
+    "Herb": "Silene capensis",
+    "Category": "Oneirogen",
+    "Effects": "Deep dreaming, ancestor contact",
+    "Preparation": "Cold water root brew",
+    "Intensity": "Mild",
+    "Onset": "15-45 min",
+    "Legal Status": "Legal \\/ Unregulated",
+    "Region": "\ud83c\udf0d Africa",
+    "Tags": "\u2615 Brewable, \ud83e\udde0 Dream, \u2705 Safe",
+    "Mechanism of Action": "Contains triterpene saponins, alkaloids, and diterpenoids that may modulate cholinergic and GABAergic activity, enhancing REM sleep and dream vividness [0, 2, 0, 22].",
+    "Pharmacokinetics": "Traditionally consumed as cold water infusion: onset ~30\u201360\u202fmin; effects last several hours [0, 7].",
+    "Therapeutic Uses": "Promotes vivid and lucid dreaming; used in traditional Xhosa dream rituals [0, 2, 0, 7].",
+    "Side Effects": "Rare; mild gastrointestinal upset and drowsiness in high amounts [0, 2].",
+    "Contraindications": "Pregnancy and use with CNS depressants [0, 12].",
+    "Drug Interactions": "May potentiate sedative effects of other herbs or medications [0, 22].",
+    "Toxicity": "Low; no significant toxicity reported in traditional use [0, 2].",
+    "Toxicity \\/ LD50": null
+  },
+  {
+    "Herb": "Entada rheedii",
+    "Category": "Oneirogen",
+    "Effects": "Dream enhancement, trance",
+    "Preparation": "Seed powder or chew",
+    "Intensity": "Moderate",
+    "Onset": "30-60 min",
+    "Legal Status": "Legal \\/ Unregulated",
+    "Region": "\ud83c\uddf2\ud83c\uddfd Latin America",
+    "Tags": "\ud83d\udc8a Oral, \ud83e\udde0 Dream, \u2705 Safe",
+    "Mechanism of Action": null,
+    "Pharmacokinetics": "Traditionally consumed as cold water infusion; onset ~1\u20132\u202fh; effects last ~6\u20138\u202fh [0, 11].",
+    "Therapeutic Uses": "Dream enhancement, lucid dreaming, traditional remedy for diarrhea and stomach aches [0, 6, 0, 11].",
+    "Side Effects": "Mild GI upset, drowsiness; rare nausea [0, 6].",
+    "Contraindications": "Pregnancy, lactation, hypersensitivity [0, 6].",
+    "Drug Interactions": "May potentiate CNS depressants; caution with anticholinergics [0, 6].",
+    "Toxicity": "Low; no severe toxicity reported in traditional use [0, 6].",
+    "Toxicity \\/ LD50": null
+  }
+];
 
-  <script src="psychoactive_herb_index_data_FIXED.js"></script>
-  <script src="app.js"></script>
+const columns = Object.keys(herbData[0]);
+
+let html = '<table><thead><tr>' + columns.map(col => '<th>' + col + '</th>').join('') + '</tr></thead><tbody>';
+herbData.forEach(row => {
+  html += '<tr>' + columns.map(col => '<td>' + (row[col] || '') + '</td>').join('') + '</tr>';
+});
+html += '</tbody></table>';
+document.getElementById("herbTable").innerHTML = html;
+
+  </script>
 </body>
 </html>
