@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Debug Data Load</title>
+  <script src="psychoactive_herb_index_data_MASTER_UPDATED.js"></script>
+  <script>
+    // Will pop up either the number of herbs or “no herbData”
+    alert('DEBUG: herbData = ' + (Array.isArray(window.herbData) 
+      ? herbData.length + ' items' 
+      : 'not defined'));
+  </script>
+</head>
+<body>
+  <p>Check the alert for debug info.</p>
+</body>
+</html>
