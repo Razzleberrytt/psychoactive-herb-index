@@ -19,49 +19,39 @@ function createHerbCard(herb) {
   const section = document.createElement('section');
   section.className = 'herb-card';
 
-  // build inner HTML with details wrapped in <details>
+  // build inner HTML without relying on herb-header class
   section.innerHTML = `
-    <h2 class="herb-header">
+    <h2>
       ${herb.Herb}
-      <button class="favorite-btn ${getFavorites().includes(herb.Herb)? 'active' : ''}"
+      <button class="favorite-btn ${getFavorites().includes(herb.Herb) ? 'active' : ''}"
               title="Toggle Favorite"
       >★</button>
     </h2>
     <p><strong>Category:</strong> ${herb.Category}</p>
     <p><strong>Tags:</strong> ${herb.Tags || ''}</p>
     <p><strong>Effects:</strong> ${herb.Effects}</p>
-    <details><summary>Mechanism of Action</summary><p>${herb["Mechanism of Action"]||'N/A'}</p></details>
-    <details><summary>Pharmacokinetics</summary><p>${herb.Pharmacokinetics||'N/A'}</p></details>
-    <details><summary>Therapeutic Uses</summary><p>${herb["Therapeutic Uses"]||'N/A'}</p></details>
-    <details><summary>Side Effects</summary><p>${herb["Side Effects"]||'N/A'}</p></details>
-    <details><summary>Contraindications</summary><p>${herb.Contraindications||'N/A'}</p></details>
-    <details><summary>Drug Interactions</summary><p>${herb["Drug Interactions"]||'N/A'}</p></details>
-    <details><summary>Toxicity</summary><p>${herb.Toxicity||'N/A'}</p></details>
+    <details><summary>Mechanism of Action</summary><p>${herb["Mechanism of Action"] || 'N/A'}</p></details>
+    <details><summary>Pharmacokinetics</summary><p>${herb.Pharmacokinetics || 'N/A'}</p></details>
+    <details><summary>Therapeutic Uses</summary><p>${herb["Therapeutic Uses"] || 'N/A'}</p></details>
+    <details><summary>Side Effects</summary><p>${herb["Side Effects"] || 'N/A'}</p></details>
+    <details><summary>Contraindications</summary><p>${herb.Contraindications || 'N/A'}</p></details>
+    <details><summary>Drug Interactions</summary><p>${herb["Drug Interactions"] || 'N/A'}</p></details>
+    <details><summary>Toxicity</summary><p>${herb.Toxicity || 'N/A'}</p></details>
   `;
 
-  // ─── 3a) Favorite button handler ─────────────────────────
+  // favorite button handler
   const favBtn = section.querySelector('.favorite-btn');
   favBtn.addEventListener('click', e => {
     e.stopPropagation();
     let favs = getFavorites();
     if (favs.includes(herb.Herb)) {
-      favs = favs.filter(h=>h!==herb.Herb);
+      favs = favs.filter(h => h !== herb.Herb);
       favBtn.classList.remove('active');
     } else {
       favs.push(herb.Herb);
       favBtn.classList.add('active');
     }
     saveFavorites(favs);
-  });
-
-  // ─── 3b) Header click toggles all details ────────────────────
-  const hdr = section.querySelector('.herb-header');
-  hdr.style.cursor = 'pointer';
-  hdr.addEventListener('click', () => {
-    const details = section.querySelectorAll('details');
-    // decide whether to open or close
-    const anyClosed = Array.from(details).some(d=>!d.open);
-    details.forEach(d=>d.open = anyClosed);
   });
 
   return section;
@@ -72,7 +62,7 @@ function renderHerbs() {
   const container = document.getElementById('herb-list');
   container.innerHTML = '';
 
-  let list = herbData.filter(h=>{
+  let list = herbData.filter(h => {
     const hay = (h.Herb + h.Effects + h.Tags + h.Category).toLowerCase();
     const bySearch = !currentFilter || hay.includes(currentFilter.toLowerCase());
     const byFav = !showFavoritesOnly || getFavorites().includes(h.Herb);
@@ -81,48 +71,61 @@ function renderHerbs() {
 
   // sorting
   if (currentSort === 'alphabetical') {
-    list.sort((a,b)=>a.Herb.localeCompare(b.Herb));
+    list.sort((a, b) => a.Herb.localeCompare(b.Herb));
   } else {
-    const order = ['Mild','Moderate','High'];
-    list.sort((a,b)=>order.indexOf(a.Intensity) - order.indexOf(b.Intensity));
+    const order = ['Mild', 'Moderate', 'High'];
+    list.sort((a, b) => order.indexOf(a.Intensity) - order.indexOf(b.Intensity));
   }
 
-  list.forEach(h=>container.appendChild(createHerbCard(h)));
+  list.forEach(h => container.appendChild(createHerbCard(h)));
 }
 
-// ─── 5) Wire up controls ──────────────────────────────────────────
+// ─── 5) Global Event Listeners ────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   renderHerbs();
 
-  document.getElementById('searchInput')
-    .addEventListener('input', e => {
-      currentFilter = e.target.value;
-      renderHerbs();
-    });
+  // search
+  document.getElementById('searchInput').addEventListener('input', e => {
+    currentFilter = e.target.value;
+    renderHerbs();
+  });
 
-  document.getElementById('favoritesToggle')
-    .addEventListener('click', () => {
-      showFavoritesOnly = !showFavoritesOnly;
-      renderHerbs();
-    });
+  // favorites only
+  document.getElementById('favoritesToggle').addEventListener('click', () => {
+    showFavoritesOnly = !showFavoritesOnly;
+    renderHerbs();
+  });
 
-  document.getElementById('sortSelect')
-    .addEventListener('change', e => {
-      currentSort = e.target.value;
-      renderHerbs();
-    });
+  // sort
+  document.getElementById('sortSelect').addEventListener('change', e => {
+    currentSort = e.target.value;
+    renderHerbs();
+  });
 
-  document.getElementById('darkModeToggle')
-    .addEventListener('click', () => document.body.classList.toggle('dark-mode'));
+  // dark mode
+  document.getElementById('darkModeToggle').addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+  });
 
-  // random herb shortcut (if you still have that nav button)
+  // random herb
   const rnd = document.getElementById('randomHerb');
   if (rnd) {
-    rnd.addEventListener('click', ()=> {
-      const pick = herbData[Math.floor(Math.random()*herbData.length)].Herb;
+    rnd.addEventListener('click', () => {
+      const pick = herbData[Math.floor(Math.random() * herbData.length)].Herb;
       currentFilter = pick;
       document.getElementById('searchInput').value = pick;
       renderHerbs();
     });
   }
+
+  // delegate click on H2 to toggle details
+  document.getElementById('herb-list').addEventListener('click', e => {
+    const hdr = e.target.closest('h2');
+    if (!hdr) return;
+    const section = hdr.closest('section.herb-card');
+    if (!section) return;
+    const details = section.querySelectorAll('details');
+    const anyClosed = Array.from(details).some(d => !d.open);
+    details.forEach(d => d.open = anyClosed);
+  });
 });
