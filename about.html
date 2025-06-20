@@ -1,39 +1,70 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About – The Hippie Scientist</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="favicon.ico" />
+  <style>
+    body {
+      font-family: Georgia, serif;
+      background: #fdf8f1;
+      color: #2b2b2b;
+      padding: 2em;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1, h2 {
+      color: #356859;
+    }
+    nav {
+      margin-bottom: 2em;
+    }
+    nav a {
+      margin-right: 1em;
+      text-decoration: none;
+      color: #2f4f4f;
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      margin-top: 3em;
+      font-size: 0.9em;
+      color: #666;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <div class="logo">🔬 The Hippie Scientist</div>
-    <nav class="navbar">
-      <a href="index.html">All Herbs</a>
-      <a href="about.html">About</a>
-      <button id="darkModeToggle">🌓 Dark Mode</button>
-    </nav>
-  </header>
+  <nav>
+    <a href="index.html">Herb Index</a>
+    <a href="about.html">About</a>
+  </nav>
 
-  <main class="about">
-    <h1>About The Hippie Scientist</h1>
-    <p><strong>Explore Legally. Elevate Naturally.</strong> We combine sacred geometry, botanical art, and molecular insight to guide you through a safe, informed, and elevated herbal journey.</p>
-    <p>Our mission is to educate herbal enthusiasts, psychonauts, and nootropics users on legal, natural psychoactives—backed by science and steeped in tradition.</p>
+  <h1>About The Hippie Scientist 🌿🧪</h1>
+  <p>
+    The Hippie Scientist project is a lovingly curated index of psychoactive plants with a focus on safety,
+    legality, and traditional ethnobotanical use. Our mission is to bring clarity and curiosity to the often
+    misunderstood world of plant consciousness modifiers.
+  </p>
 
-    <section class="boards">
-      <img src="assets/boards.png" alt="Mood board collage" />
-    </section>
-  </main>
+  <h2>Why This Index?</h2>
+  <p>
+    Many natural compounds have shaped human consciousness for centuries. This guide focuses on legally accessible
+    herbs with interesting neuroactive properties — compiled from ethnographic texts, scientific journals,
+    and folk traditions.
+  </p>
+
+  <h2>Disclaimer</h2>
+  <p>
+    This site is for educational purposes only. None of the information should be considered medical advice. Always
+    consult professionals before ingesting any substances.
+  </p>
 
   <footer>
-    <p>Explore Legally. Elevate Naturally. 🌿 | © 2025 The Hippie Scientist</p>
+    © 2025 The Hippie Scientist. All rights reserved.
   </footer>
-
-  <script>
-    document.getElementById('darkModeToggle').addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-    });
-  </script>
 </body>
 </html>
