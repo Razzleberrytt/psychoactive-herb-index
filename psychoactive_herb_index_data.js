@@ -16,7 +16,7 @@ const herbData = [
     "Contraindications":"",
     "Drug Interactions":"",
     "Toxicity":"",
-    "Toxicity \/ LD50":"Not Available"
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Silene capensis",
@@ -35,7 +35,7 @@ const herbData = [
     "Contraindications":"",
     "Drug Interactions":"",
     "Toxicity":"",
-    "Toxicity \/ LD50":"Not Available"
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Entada rheedii",
@@ -47,14 +47,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\uddf2\ud83c\uddfd Latin America",
     "Tags":"\ud83d\udc8a Oral, \ud83e\udde0 Dream,\u2705 Safe",
-    "Mechanism of Action":"Not Available",
+    "Mechanism of Action":"",
     "Pharmacokinetics":"",
     "Therapeutic Uses":"",
     "Side Effects":"",
     "Contraindications":"",
     "Drug Interactions":"",
     "Toxicity":"",
-    "Toxicity \/ LD50":"Not Available"
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Mugwort",
@@ -73,7 +73,7 @@ const herbData = [
     "Contraindications":"",
     "Drug Interactions":"",
     "Toxicity":"",
-    "Toxicity \/ LD50":"Not Available"
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Heimia salicifolia (Sinicuichi)",
@@ -92,7 +92,7 @@ const herbData = [
     "Contraindications":"",
     "Drug Interactions":"",
     "Toxicity":"",
-    "Toxicity \/ LD50":"Not Available"
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Sceletium tortuosum (Kanna)",
@@ -111,7 +111,7 @@ const herbData = [
     "Contraindications":"",
     "Drug Interactions":"",
     "Toxicity":"",
-    "Toxicity \/ LD50":"Not Available"
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Blue Lotus (Nymphaea caerulea)",
@@ -123,14 +123,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\udf0e Unknown \/ Global",
     "Tags":"\ud83c\udf2c\ufe0f Smokable,\u2615 Brewable,\ud83e\uddd8 Sedation,\u2705 Safe",
-    "Mechanism of Action":"Not Available",
+    "Mechanism of Action":"",
     "Pharmacokinetics":"Onset 30\u201360 min, oral or alcoholic extract. Mild duration (~2\u20133 hours).",
     "Therapeutic Uses":"Relaxation, aphrodisiac, mild euphoria, sleep aid.",
     "Side Effects":"Drowsiness, dizziness, dry mouth.",
     "Contraindications":"Avoid with MAOIs, sedatives, or alcohol.",
     "Drug Interactions":"May potentiate CNS depressants.",
     "Toxicity":"Low; very high doses can cause nausea and vomiting.",
-    "Toxicity \/ LD50":"Not Available"
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Wild Dagga",
@@ -161,14 +161,14 @@ const herbData = [
     "Legal Status":"Legal, banned in some countries",
     "Region":"\ud83c\uddf2\ud83c\uddfd Latin America",
     "Tags":"\ud83c\udf2c\ufe0f Smokable,\u2615 Brewable,\ud83d\udcab Euphoria,\u2705 Safe",
-    "Mechanism of Action":"Not Available",
+    "Mechanism of Action":"",
     "Pharmacokinetics":"",
     "Therapeutic Uses":"",
     "Side Effects":"",
     "Contraindications":"",
     "Drug Interactions":"",
     "Toxicity":"",
-    "Toxicity \/ LD50":"Not Available"
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Nelumbo nucifera (Sacred Lotus)",
@@ -180,14 +180,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\udf0e Unknown \/ Global",
     "Tags":"\ud83c\udf2c\ufe0f Smokable,\u2615 Brewable,\ud83e\udde0 Cognitive,\ud83e\uddd8 Sedation,\u2705 Safe",
-    "Mechanism of Action":"Not Available",
+    "Mechanism of Action":"",
     "Pharmacokinetics":"",
     "Therapeutic Uses":"",
     "Side Effects":"",
     "Contraindications":"",
     "Drug Interactions":"",
     "Toxicity":"",
-    "Toxicity \/ LD50":"Not Available"
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Salvia divinorum",
@@ -199,14 +199,14 @@ const herbData = [
     "Legal Status":"Restricted in many regions",
     "Region":"\ud83c\uddf2\ud83c\uddfd Latin America",
     "Tags":"\ud83c\udf2c\ufe0f Smokable,\ud83c\udf00 Dissociation,\u26a0\ufe0f Restricted",
-    "Mechanism of Action":"Not Available",
+    "Mechanism of Action":"",
     "Pharmacokinetics":"",
     "Therapeutic Uses":"",
     "Side Effects":"",
     "Contraindications":"",
     "Drug Interactions":"",
     "Toxicity":"",
-    "Toxicity \/ LD50":"Not Available"
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Wild Lettuce",
@@ -225,7 +225,7 @@ const herbData = [
     "Contraindications":"",
     "Drug Interactions":"",
     "Toxicity":"",
-    "Toxicity \/ LD50":"Not Available"
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Valerian Root",
@@ -237,14 +237,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\uddea\ud83c\uddfa Europe",
     "Tags":"\u2615 Brewable,\ud83c\udf00 Dissociation,\u2705 Safe",
-    "Mechanism of Action":"Not Available",
+    "Mechanism of Action":"",
     "Pharmacokinetics":"",
     "Therapeutic Uses":"",
     "Side Effects":"",
     "Contraindications":"",
     "Drug Interactions":"",
     "Toxicity":"",
-    "Toxicity \/ LD50":"Not Available"
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Kava Kava",
@@ -282,7 +282,7 @@ const herbData = [
     "Contraindications":"",
     "Drug Interactions":"",
     "Toxicity":"",
-    "Toxicity \/ LD50":"Not Available"
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Chiric Sanango",
@@ -301,7 +301,7 @@ const herbData = [
     "Contraindications":"",
     "Drug Interactions":"",
     "Toxicity":"",
-    "Toxicity \/ LD50":"Not Available"
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Wormwood",
@@ -351,14 +351,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\udf10 Global \/ Ritual",
     "Tags":"\ud83d\udd6f\ufe0f Ritual,\ud83d\udd2e Ritual,\u2705 Safe",
-    "Mechanism of Action":"Not Available",
+    "Mechanism of Action":"",
     "Pharmacokinetics":"",
     "Therapeutic Uses":"",
     "Side Effects":"",
     "Contraindications":"",
     "Drug Interactions":"",
     "Toxicity":"",
-    "Toxicity \/ LD50":"Not Available"
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Mapacho",
@@ -377,7 +377,7 @@ const herbData = [
     "Contraindications":"",
     "Drug Interactions":"",
     "Toxicity":"",
-    "Toxicity \/ LD50":"Not Available"
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Datura \/ Brugmansia",
@@ -389,7 +389,7 @@ const herbData = [
     "Legal Status":"Dangerous \/ Toxic \/ Controlled",
     "Region":"\ud83c\udf0e Unknown \/ Global",
     "Tags":"\u2620\ufe0f Toxic",
-    "Mechanism of Action":"Not Available",
+    "Mechanism of Action":"",
     "Pharmacokinetics":"",
     "Therapeutic Uses":"",
     "Side Effects":"",
@@ -415,7 +415,7 @@ const herbData = [
     "Contraindications":"",
     "Drug Interactions":"",
     "Toxicity":"",
-    "Toxicity \/ LD50":"Not Available"
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Asparagus racemosus (Shatavari)",
@@ -434,7 +434,7 @@ const herbData = [
     "Contraindications":"",
     "Drug Interactions":"",
     "Toxicity":"",
-    "Toxicity \/ LD50":"Not Available"
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Tagetes lucida (Mexican Tarragon)",
@@ -453,7 +453,7 @@ const herbData = [
     "Contraindications":"",
     "Drug Interactions":"",
     "Toxicity":"",
-    "Toxicity \/ LD50":"Not Available"
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Turnera diffusa",
@@ -472,7 +472,7 @@ const herbData = [
     "Contraindications":"",
     "Drug Interactions":"",
     "Toxicity":"",
-    "Toxicity \/ LD50":"Not Available"
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Kratom (Mitragyna speciosa)",
@@ -491,7 +491,7 @@ const herbData = [
     "Contraindications":"",
     "Drug Interactions":"",
     "Toxicity":"",
-    "Toxicity \/ LD50":"Not Available"
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Kra Thum Na \/ Kok",
@@ -503,14 +503,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\udf0e Unknown \/ Global",
     "Tags":"\u2615 Brewable,\ud83d\udc8a Oral,\ud83d\udcab Euphoria,\u2705 Safe",
-    "Mechanism of Action":"Not Available",
-    "Pharmacokinetics":"Not Available",
-    "Therapeutic Uses":"Not Available",
-    "Side Effects":"Not Available",
-    "Contraindications":"Not Available",
-    "Drug Interactions":"Not Available",
-    "Toxicity":"Not Available",
-    "Toxicity \/ LD50":"Not Available"
+    "Mechanism of Action":"",
+    "Pharmacokinetics":"",
+    "Therapeutic Uses":"",
+    "Side Effects":"",
+    "Contraindications":"",
+    "Drug Interactions":"",
+    "Toxicity":"",
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Sakae Naa",
@@ -522,14 +522,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\udf0e Unknown \/ Global",
     "Tags":"\u2615 Brewable,\ud83d\udc8a Oral,\ud83d\udcab Euphoria,\u26a1 Stimulant,\u2705 Safe",
-    "Mechanism of Action":"Not Available",
-    "Pharmacokinetics":"Not Available",
-    "Therapeutic Uses":"Not Available",
-    "Side Effects":"Not Available",
-    "Contraindications":"Not Available",
-    "Drug Interactions":"Not Available",
-    "Toxicity":"Not Available",
-    "Toxicity \/ LD50":"Not Available"
+    "Mechanism of Action":"",
+    "Pharmacokinetics":"",
+    "Therapeutic Uses":"",
+    "Side Effects":"",
+    "Contraindications":"",
+    "Drug Interactions":"",
+    "Toxicity":"",
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Nelumbo nucifera",
@@ -541,14 +541,14 @@ const herbData = [
     "Legal Status":"Legal, low concern",
     "Region":"\ud83c\udf0e Unknown \/ Global",
     "Tags":"\ud83c\udf2c\ufe0f Smokable,\u2615 Brewable,\ud83d\udcab Euphoria,\ud83e\uddd8 Sedation,\u2705 Safe",
-    "Mechanism of Action":"Not Available",
-    "Pharmacokinetics":"Not Available",
-    "Therapeutic Uses":"Not Available",
-    "Side Effects":"Not Available",
-    "Contraindications":"Not Available",
-    "Drug Interactions":"Not Available",
-    "Toxicity":"Not Available",
-    "Toxicity \/ LD50":"Not Available"
+    "Mechanism of Action":"",
+    "Pharmacokinetics":"",
+    "Therapeutic Uses":"",
+    "Side Effects":"",
+    "Contraindications":"",
+    "Drug Interactions":"",
+    "Toxicity":"",
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Scullcap (Scutellaria)",
@@ -560,14 +560,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\udf0e Unknown \/ Global",
     "Tags":"\u2615 Brewable,\ud83c\udf00 Dissociation,\u2705 Safe",
-    "Mechanism of Action":"Not Available",
-    "Pharmacokinetics":"Not Available",
-    "Therapeutic Uses":"Not Available",
-    "Side Effects":"Not Available",
-    "Contraindications":"Not Available",
-    "Drug Interactions":"Not Available",
-    "Toxicity":"Not Available",
-    "Toxicity \/ LD50":"Not Available"
+    "Mechanism of Action":"",
+    "Pharmacokinetics":"",
+    "Therapeutic Uses":"",
+    "Side Effects":"",
+    "Contraindications":"",
+    "Drug Interactions":"",
+    "Toxicity":"",
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"California Poppy",
@@ -579,14 +579,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\udf0e Unknown \/ Global",
     "Tags":"\u2615 Brewable,\ud83c\udf00 Dissociation,\ud83e\uddd8 Sedation,\u2705 Safe",
-    "Mechanism of Action":"Not Available",
-    "Pharmacokinetics":"Not Available",
-    "Therapeutic Uses":"Not Available",
-    "Side Effects":"Not Available",
-    "Contraindications":"Not Available",
-    "Drug Interactions":"Not Available",
-    "Toxicity":"Not Available",
-    "Toxicity \/ LD50":"Not Available"
+    "Mechanism of Action":"",
+    "Pharmacokinetics":"",
+    "Therapeutic Uses":"",
+    "Side Effects":"",
+    "Contraindications":"",
+    "Drug Interactions":"",
+    "Toxicity":"",
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Hop Flowers",
@@ -598,14 +598,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\udf0e Unknown \/ Global",
     "Tags":"\u2615 Brewable,\ud83c\udf00 Dissociation,\u2705 Safe",
-    "Mechanism of Action":"Not Available",
-    "Pharmacokinetics":"Not Available",
-    "Therapeutic Uses":"Not Available",
-    "Side Effects":"Not Available",
-    "Contraindications":"Not Available",
-    "Drug Interactions":"Not Available",
-    "Toxicity":"Not Available",
-    "Toxicity \/ LD50":"Not Available"
+    "Mechanism of Action":"",
+    "Pharmacokinetics":"",
+    "Therapeutic Uses":"",
+    "Side Effects":"",
+    "Contraindications":"",
+    "Drug Interactions":"",
+    "Toxicity":"",
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Copal",
@@ -617,14 +617,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\udf10 Global \/ Ritual",
     "Tags":"\ud83d\udd6f\ufe0f Ritual,\ud83d\udd2e Ritual,\u2705 Safe",
-    "Mechanism of Action":"Not Available",
-    "Pharmacokinetics":"Not Available",
-    "Therapeutic Uses":"Not Available",
-    "Side Effects":"Not Available",
-    "Contraindications":"Not Available",
-    "Drug Interactions":"Not Available",
-    "Toxicity":"Not Available",
-    "Toxicity \/ LD50":"Not Available"
+    "Mechanism of Action":"",
+    "Pharmacokinetics":"",
+    "Therapeutic Uses":"",
+    "Side Effects":"",
+    "Contraindications":"",
+    "Drug Interactions":"",
+    "Toxicity":"",
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Sweetgrass",
@@ -636,14 +636,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\udf10 Global \/ Ritual",
     "Tags":"\ud83d\udd2e Ritual,\u2705 Safe",
-    "Mechanism of Action":"Not Available",
-    "Pharmacokinetics":"Not Available",
-    "Therapeutic Uses":"Not Available",
-    "Side Effects":"Not Available",
-    "Contraindications":"Not Available",
-    "Drug Interactions":"Not Available",
-    "Toxicity":"Not Available",
-    "Toxicity \/ LD50":"Not Available"
+    "Mechanism of Action":"",
+    "Pharmacokinetics":"",
+    "Therapeutic Uses":"",
+    "Side Effects":"",
+    "Contraindications":"",
+    "Drug Interactions":"",
+    "Toxicity":"",
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"White Sage",
@@ -662,7 +662,7 @@ const herbData = [
     "Contraindications":"",
     "Drug Interactions":"",
     "Toxicity":"",
-    "Toxicity \/ LD50":"Not Available"
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Frankincense (Boswellia)",
@@ -674,14 +674,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\udf10 Global \/ Ritual",
     "Tags":"\u2705 Safe",
-    "Mechanism of Action":"Not Available",
-    "Pharmacokinetics":"Not Available",
-    "Therapeutic Uses":"Not Available",
-    "Side Effects":"Not Available",
-    "Contraindications":"Not Available",
-    "Drug Interactions":"Not Available",
-    "Toxicity":"Not Available",
-    "Toxicity \/ LD50":"Not Available"
+    "Mechanism of Action":"",
+    "Pharmacokinetics":"",
+    "Therapeutic Uses":"",
+    "Side Effects":"",
+    "Contraindications":"",
+    "Drug Interactions":"",
+    "Toxicity":"",
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Henbane",
@@ -693,14 +693,14 @@ const herbData = [
     "Legal Status":"Controlled \/ Toxic",
     "Region":"\ud83c\udf0e Unknown \/ Global",
     "Tags":"\ud83d\udd6f\ufe0f Ritual,\u2620\ufe0f Toxic",
-    "Mechanism of Action":"Not Available",
-    "Pharmacokinetics":"Not Available",
-    "Therapeutic Uses":"Not Available",
-    "Side Effects":"Not Available",
-    "Contraindications":"Not Available",
-    "Drug Interactions":"Not Available",
-    "Toxicity":"Not Available",
-    "Toxicity \/ LD50":"Not Available"
+    "Mechanism of Action":"",
+    "Pharmacokinetics":"",
+    "Therapeutic Uses":"",
+    "Side Effects":"",
+    "Contraindications":"",
+    "Drug Interactions":"",
+    "Toxicity":"",
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Belladonna",
@@ -712,14 +712,14 @@ const herbData = [
     "Legal Status":"Controlled \/ Toxic",
     "Region":"\ud83c\udf0e Unknown \/ Global",
     "Tags":"\u2620\ufe0f Toxic",
-    "Mechanism of Action":"Not Available",
-    "Pharmacokinetics":"Not Available",
-    "Therapeutic Uses":"Not Available",
-    "Side Effects":"Not Available",
-    "Contraindications":"Not Available",
-    "Drug Interactions":"Not Available",
-    "Toxicity":"Not Available",
-    "Toxicity \/ LD50":"Not Available"
+    "Mechanism of Action":"",
+    "Pharmacokinetics":"",
+    "Therapeutic Uses":"",
+    "Side Effects":"",
+    "Contraindications":"",
+    "Drug Interactions":"",
+    "Toxicity":"",
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Mandrake Root",
@@ -731,14 +731,14 @@ const herbData = [
     "Legal Status":"Controlled \/ Toxic",
     "Region":"\ud83c\udf0e Unknown \/ Global",
     "Tags":"\u2620\ufe0f Toxic",
-    "Mechanism of Action":"Not Available",
-    "Pharmacokinetics":"Not Available",
-    "Therapeutic Uses":"Not Available",
-    "Side Effects":"Not Available",
-    "Contraindications":"Not Available",
-    "Drug Interactions":"Not Available",
-    "Toxicity":"Not Available",
-    "Toxicity \/ LD50":"Not Available"
+    "Mechanism of Action":"",
+    "Pharmacokinetics":"",
+    "Therapeutic Uses":"",
+    "Side Effects":"",
+    "Contraindications":"",
+    "Drug Interactions":"",
+    "Toxicity":"",
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Anadenanthera peregrina (Yopo)",
@@ -757,7 +757,7 @@ const herbData = [
     "Contraindications":"",
     "Drug Interactions":"",
     "Toxicity":"",
-    "Toxicity \/ LD50":"Not Available"
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Anadenanthera colubrina (Ceb\u00edl)",
@@ -788,14 +788,14 @@ const herbData = [
     "Legal Status":"Restricted \/ Controlled",
     "Region":"\ud83c\uddf2\ud83c\uddfd Latin America",
     "Tags":"\u26a0\ufe0f Restricted",
-    "Mechanism of Action":"Not Available",
-    "Pharmacokinetics":"Not Available",
-    "Therapeutic Uses":"Not Available",
-    "Side Effects":"Not Available",
-    "Contraindications":"Not Available",
-    "Drug Interactions":"Not Available",
-    "Toxicity":"Not Available",
-    "Toxicity \/ LD50":"Not Available"
+    "Mechanism of Action":"",
+    "Pharmacokinetics":"",
+    "Therapeutic Uses":"",
+    "Side Effects":"",
+    "Contraindications":"",
+    "Drug Interactions":"",
+    "Toxicity":"",
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Acorus gramineus",
@@ -807,14 +807,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\udde8\ud83c\uddf3 East Asia",
     "Tags":"\u2615 Brewable,\ud83d\udc8a Oral,\ud83e\udde0 Cognitive,\u2705 Safe",
-    "Mechanism of Action":"Not Available",
-    "Pharmacokinetics":"Not Available",
-    "Therapeutic Uses":"Not Available",
-    "Side Effects":"Not Available",
-    "Contraindications":"Not Available",
-    "Drug Interactions":"Not Available",
-    "Toxicity":"Not Available",
-    "Toxicity \/ LD50":"Not Available"
+    "Mechanism of Action":"",
+    "Pharmacokinetics":"",
+    "Therapeutic Uses":"",
+    "Side Effects":"",
+    "Contraindications":"",
+    "Drug Interactions":"",
+    "Toxicity":"",
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Celastrus paniculatus (Intellect Tree)",
@@ -826,14 +826,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\udf0e Unknown \/ Global",
     "Tags":"\ud83e\udde0 Cognitive,\u2705 Safe",
-    "Mechanism of Action":"Not Available",
-    "Pharmacokinetics":"Not Available",
-    "Therapeutic Uses":"Not Available",
-    "Side Effects":"Not Available",
-    "Contraindications":"Not Available",
-    "Drug Interactions":"Not Available",
-    "Toxicity":"Not Available",
-    "Toxicity \/ LD50":"Not Available"
+    "Mechanism of Action":"",
+    "Pharmacokinetics":"",
+    "Therapeutic Uses":"",
+    "Side Effects":"",
+    "Contraindications":"",
+    "Drug Interactions":"",
+    "Toxicity":"",
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Silphium (extinct)",
@@ -845,14 +845,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\udf0e Unknown \/ Global",
     "Tags":"\u2705 Safe",
-    "Mechanism of Action":"Not Available",
-    "Pharmacokinetics":"Not Available",
-    "Therapeutic Uses":"Not Available",
-    "Side Effects":"Not Available",
-    "Contraindications":"Not Available",
-    "Drug Interactions":"Not Available",
-    "Toxicity":"Not Available",
-    "Toxicity \/ LD50":"Not Available"
+    "Mechanism of Action":"",
+    "Pharmacokinetics":"",
+    "Therapeutic Uses":"",
+    "Side Effects":"",
+    "Contraindications":"",
+    "Drug Interactions":"",
+    "Toxicity":"",
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Nymphaea ampla",
@@ -864,14 +864,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\udf0e Unknown \/ Global",
     "Tags":"\ud83c\udf2c\ufe0f Smokable,\u2615 Brewable,\ud83d\udcab Euphoria,\u2705 Safe",
-    "Mechanism of Action":"Not Available",
-    "Pharmacokinetics":"Not Available",
-    "Therapeutic Uses":"Not Available",
-    "Side Effects":"Not Available",
-    "Contraindications":"Not Available",
-    "Drug Interactions":"Not Available",
-    "Toxicity":"Not Available",
-    "Toxicity \/ LD50":"Not Available"
+    "Mechanism of Action":"",
+    "Pharmacokinetics":"",
+    "Therapeutic Uses":"",
+    "Side Effects":"",
+    "Contraindications":"",
+    "Drug Interactions":"",
+    "Toxicity":"",
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Pedicularis densiflora (Indian warrior)",
@@ -890,7 +890,7 @@ const herbData = [
     "Contraindications":"",
     "Drug Interactions":"",
     "Toxicity":"",
-    "Toxicity \/ LD50":"Not Available"
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Pedicularis groenlandica",
@@ -902,14 +902,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\udf0d Africa",
     "Tags":"\ud83c\udf2c\ufe0f Smokable,\u2615 Brewable,\ud83c\udf00 Dissociation,\u2705 Safe",
-    "Mechanism of Action":"Not Available",
+    "Mechanism of Action":"",
     "Pharmacokinetics":"",
     "Therapeutic Uses":"",
     "Side Effects":"",
     "Contraindications":"",
     "Drug Interactions":"",
     "Toxicity":"",
-    "Toxicity \/ LD50":"Not Available"
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Lactuca canadensis",
@@ -921,14 +921,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\udf0e Unknown \/ Global",
     "Tags":"\ud83c\udf2c\ufe0f Smokable,\u2615 Brewable,\ud83c\udf00 Dissociation,\ud83e\uddd8 Sedation,\u2705 Safe",
-    "Mechanism of Action":"Not Available",
+    "Mechanism of Action":"",
     "Pharmacokinetics":"",
     "Therapeutic Uses":"",
     "Side Effects":"",
     "Contraindications":"",
     "Drug Interactions":"",
     "Toxicity":"",
-    "Toxicity \/ LD50":"Not Available"
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Artemisia absinthium (Wormwood)",
@@ -959,14 +959,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\uddea\ud83c\uddfa Europe",
     "Tags":"\ud83c\udf2c\ufe0f Smokable,\u2615 Brewable,\ud83d\udd6f\ufe0f Ritual, \ud83e\udde0 Dream,\u2705 Safe",
-    "Mechanism of Action":"Not Available",
-    "Pharmacokinetics":"Not Available",
-    "Therapeutic Uses":"Not Available",
-    "Side Effects":"Not Available",
-    "Contraindications":"Not Available",
-    "Drug Interactions":"Not Available",
-    "Toxicity":"Not Available",
-    "Toxicity \/ LD50":"Not Available"
+    "Mechanism of Action":"",
+    "Pharmacokinetics":"",
+    "Therapeutic Uses":"",
+    "Side Effects":"",
+    "Contraindications":"",
+    "Drug Interactions":"",
+    "Toxicity":"",
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Justicia pectoralis",
@@ -978,14 +978,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\udf0e Unknown \/ Global",
     "Tags":"\ud83c\udf2c\ufe0f Smokable,\u2615 Brewable,\ud83d\udcab Euphoria,\u2705 Safe",
-    "Mechanism of Action":"Not Available",
+    "Mechanism of Action":"",
     "Pharmacokinetics":"",
     "Therapeutic Uses":"",
     "Side Effects":"",
     "Contraindications":"",
     "Drug Interactions":"",
     "Toxicity":"",
-    "Toxicity \/ LD50":"Not Available"
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Viola odorata (Sweet violet)",
@@ -997,14 +997,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\uddea\ud83c\uddfa Europe",
     "Tags":"\u2615 Brewable,\ud83c\udf00 Dissociation,\ud83e\uddd8 Sedation,\u2705 Safe",
-    "Mechanism of Action":"Not Available",
-    "Pharmacokinetics":"Not Available",
-    "Therapeutic Uses":"Not Available",
-    "Side Effects":"Not Available",
-    "Contraindications":"Not Available",
-    "Drug Interactions":"Not Available",
-    "Toxicity":"Not Available",
-    "Toxicity \/ LD50":"Not Available"
+    "Mechanism of Action":"",
+    "Pharmacokinetics":"",
+    "Therapeutic Uses":"",
+    "Side Effects":"",
+    "Contraindications":"",
+    "Drug Interactions":"",
+    "Toxicity":"",
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Piper auritum (Root beer plant)",
@@ -1016,14 +1016,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\udf0e Unknown \/ Global",
     "Tags":"\u2615 Brewable,\ud83d\udcab Euphoria,\ud83e\uddd8 Sedation,\u2705 Safe",
-    "Mechanism of Action":"Not Available",
+    "Mechanism of Action":"",
     "Pharmacokinetics":"",
     "Therapeutic Uses":"",
     "Side Effects":"",
     "Contraindications":"",
     "Drug Interactions":"",
     "Toxicity":"",
-    "Toxicity \/ LD50":"Not Available"
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Eschscholzia californica (California poppy)",
@@ -1035,14 +1035,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\udf0e Unknown \/ Global",
     "Tags":"\u2615 Brewable,\ud83c\udf00 Dissociation,\ud83e\uddd8 Sedation,\u2705 Safe",
-    "Mechanism of Action":"Not Available",
+    "Mechanism of Action":"",
     "Pharmacokinetics":"",
     "Therapeutic Uses":"",
     "Side Effects":"",
     "Contraindications":"",
     "Drug Interactions":"",
     "Toxicity":"",
-    "Toxicity \/ LD50":"Not Available"
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Rivea corymbosa",
@@ -1054,14 +1054,14 @@ const herbData = [
     "Legal Status":"Restricted in some countries",
     "Region":"\ud83c\udf0e Unknown \/ Global",
     "Tags":"\u26a0\ufe0f Restricted",
-    "Mechanism of Action":"Not Available",
+    "Mechanism of Action":"",
     "Pharmacokinetics":"",
     "Therapeutic Uses":"",
     "Side Effects":"",
     "Contraindications":"",
     "Drug Interactions":"",
     "Toxicity":"",
-    "Toxicity \/ LD50":"Not Available"
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Ipomoea tricolor (Heavenly Blue)",
@@ -1073,14 +1073,14 @@ const herbData = [
     "Legal Status":"Restricted in some countries",
     "Region":"\ud83c\udf0e Unknown \/ Global",
     "Tags":"\u26a0\ufe0f Restricted",
-    "Mechanism of Action":"Not Available",
+    "Mechanism of Action":"",
     "Pharmacokinetics":"",
     "Therapeutic Uses":"",
     "Side Effects":"",
     "Contraindications":"",
     "Drug Interactions":"",
     "Toxicity":"",
-    "Toxicity \/ LD50":"Not Available"
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Argyreia nervosa (Hawaiian Baby Woodrose)",
@@ -1099,7 +1099,7 @@ const herbData = [
     "Contraindications":"",
     "Drug Interactions":"",
     "Toxicity":"",
-    "Toxicity \/ LD50":"Not Available"
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Tilia europaea (Linden flower)",
@@ -1111,14 +1111,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\uddea\ud83c\uddfa Europe",
     "Tags":"\u2615 Brewable,\ud83c\udf00 Dissociation,\ud83e\uddd8 Sedation,\u2705 Safe",
-    "Mechanism of Action":"Not Available",
-    "Pharmacokinetics":"Not Available",
-    "Therapeutic Uses":"Not Available",
-    "Side Effects":"Not Available",
-    "Contraindications":"Not Available",
-    "Drug Interactions":"Not Available",
-    "Toxicity":"Not Available",
-    "Toxicity \/ LD50":"Not Available"
+    "Mechanism of Action":"",
+    "Pharmacokinetics":"",
+    "Therapeutic Uses":"",
+    "Side Effects":"",
+    "Contraindications":"",
+    "Drug Interactions":"",
+    "Toxicity":"",
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Melissa officinalis (Lemon balm)",
@@ -1130,14 +1130,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\udf0e Unknown \/ Global",
     "Tags":"\ud83c\udf2c\ufe0f Smokable,\u2615 Brewable,\ud83c\udf00 Dissociation,\ud83e\udde0 Cognitive,\ud83e\uddd8 Sedation,\u2705 Safe",
-    "Mechanism of Action":"Not Available",
+    "Mechanism of Action":"",
     "Pharmacokinetics":"",
     "Therapeutic Uses":"",
     "Side Effects":"",
     "Contraindications":"",
     "Drug Interactions":"",
     "Toxicity":"",
-    "Toxicity \/ LD50":"Not Available"
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Ocimum sanctum (Holy Basil \/ Tulsi)",
@@ -1149,14 +1149,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\uddee\ud83c\uddf3 India",
     "Tags":"\u2615 Brewable,\ud83d\udd6f\ufe0f Ritual,\ud83d\udcab Euphoria,\ud83e\uddd8 Sedation,\u2705 Safe",
-    "Mechanism of Action":"Not Available",
-    "Pharmacokinetics":"Not Available",
-    "Therapeutic Uses":"Not Available",
-    "Side Effects":"Not Available",
-    "Contraindications":"Not Available",
-    "Drug Interactions":"Not Available",
-    "Toxicity":"Not Available",
-    "Toxicity \/ LD50":"Not Available"
+    "Mechanism of Action":"",
+    "Pharmacokinetics":"",
+    "Therapeutic Uses":"",
+    "Side Effects":"",
+    "Contraindications":"",
+    "Drug Interactions":"",
+    "Toxicity":"",
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Rhodiola rosea",
@@ -1168,14 +1168,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\udf0e Unknown \/ Global",
     "Tags":"\ud83d\udc8a Oral,\ud83d\udcab Euphoria,\ud83e\udde0 Cognitive,\u2705 Safe",
-    "Mechanism of Action":"Not Available",
-    "Pharmacokinetics":"Not Available",
-    "Therapeutic Uses":"Not Available",
-    "Side Effects":"Not Available",
-    "Contraindications":"Not Available",
-    "Drug Interactions":"Not Available",
-    "Toxicity":"Not Available",
-    "Toxicity \/ LD50":"Not Available"
+    "Mechanism of Action":"",
+    "Pharmacokinetics":"",
+    "Therapeutic Uses":"",
+    "Side Effects":"",
+    "Contraindications":"",
+    "Drug Interactions":"",
+    "Toxicity":"",
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Withania somnifera (Ashwagandha)",
@@ -1187,14 +1187,14 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\uddee\ud83c\uddf3 India",
     "Tags":"\u2615 Brewable,\ud83d\udc8a Oral,\ud83c\udf00 Dissociation,\ud83e\uddd8 Sedation,\u2705 Safe",
-    "Mechanism of Action":"Not Available",
+    "Mechanism of Action":"",
     "Pharmacokinetics":"",
     "Therapeutic Uses":"",
     "Side Effects":"",
     "Contraindications":"",
     "Drug Interactions":"",
     "Toxicity":"",
-    "Toxicity \/ LD50":"Not Available"
+    "Toxicity \/ LD50":""
   },
   {
     "Herb":"Bacopa monnieri",
@@ -1225,13 +1225,13 @@ const herbData = [
     "Legal Status":"Legal \/ Unregulated",
     "Region":"\ud83c\udde8\ud83c\uddf3 East Asia",
     "Tags":"\u2615 Brewable,\ud83d\udcab Euphoria,\u2705 Safe",
-    "Mechanism of Action":"Not Available",
-    "Pharmacokinetics":"Not Available",
-    "Therapeutic Uses":"Not Available",
-    "Side Effects":"Not Available",
-    "Contraindications":"Not Available",
-    "Drug Interactions":"Not Available",
-    "Toxicity":"Not Available",
-    "Toxicity \/ LD50":"Not Available"
+    "Mechanism of Action":"",
+    "Pharmacokinetics":"",
+    "Therapeutic Uses":"",
+    "Side Effects":"",
+    "Contraindications":"",
+    "Drug Interactions":"",
+    "Toxicity":"",
+    "Toxicity \/ LD50":""
   }
 ];
