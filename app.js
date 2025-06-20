@@ -6,28 +6,25 @@ document.addEventListener("DOMContentLoaded", function () {
     return;
   }
 
+  const columns = [
+    "Herb",
+    "Category",
+    "Effects",
+    "Preparation",
+    "Region",
+    "Legal Status",
+    "Therapeutic Uses",
+    "Side Effects"
+  ];
+
   let html = `<table border="1" cellpadding="8" cellspacing="0" style="width:100%;border-collapse:collapse;">
     <thead>
-      <tr>
-        <th>Name</th>
-        <th>Scientific Name</th>
-        <th>Effects</th>
-        <th>Active Compounds</th>
-        <th>Usage</th>
-        <th>Legal Status</th>
-      </tr>
+      <tr>${columns.map(col => `<th>${col}</th>`).join('')}</tr>
     </thead>
     <tbody>`;
 
   herbData.forEach(h => {
-    html += `<tr>
-      <td>${h.common_name || ''}</td>
-      <td>${h.scientific_name || ''}</td>
-      <td>${h.effects || ''}</td>
-      <td>${h.active_compounds || ''}</td>
-      <td>${h.traditional_usage || ''}</td>
-      <td>${h.legal_status || ''}</td>
-    </tr>`;
+    html += "<tr>" + columns.map(col => `<td>${h[col] || ''}</td>`).join('') + "</tr>";
   });
 
   html += "</tbody></table>";
