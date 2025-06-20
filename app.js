@@ -1,4 +1,3 @@
-
 /* global herbData */
 let currentFilter = '';
 let showFavoritesOnly = false;
@@ -26,19 +25,20 @@ function exportFavorites() {
 function createHerbCard(herb) {
   const section = document.createElement('section');
   section.className = 'herb-card';
-  section.innerHTML = \`
-    <h2>\${herb.Herb}<button class="favorite-btn \${getFavorites().includes(herb.Herb) ? 'active' : ''}">★</button></h2>
-    <p><strong>Category:</strong> \${herb.Category}</p>
-    <p><strong>Tags:</strong> \${herb.Tags || ''}</p>
-    <p><strong>Effects:</strong> \${herb.Effects}</p>
-    <details><summary>Mechanism of Action</summary><p>\${herb['Mechanism of Action'] || 'N/A'}</p></details>
-    <details><summary>Pharmacokinetics</summary><p>\${herb.Pharmacokinetics || 'N/A'}</p></details>
-    <details><summary>Therapeutic Uses</summary><p>\${herb['Therapeutic Uses'] || 'N/A'}</p></details>
-    <details><summary>Side Effects</summary><p>\${herb['Side Effects'] || 'N/A'}</p></details>
-    <details><summary>Contraindications</summary><p>\${herb.Contraindications || 'N/A'}</p></details>
-    <details><summary>Drug Interactions</summary><p>\${herb['Drug Interactions'] || 'N/A'}</p></details>
-    <details><summary>Toxicity</summary><p>\${herb.Toxicity || 'N/A'}</p></details>
-  \`;
+  section.innerHTML = `
+    <h2>${herb.Herb}<button class="favorite-btn ${getFavorites().includes(herb.Herb) ? 'active' : ''}">★</button></h2>
+    <p><strong>Category:</strong> ${herb.Category}</p>
+    <p><strong>Tags:</strong> ${herb.Tags || ''}</p>
+    <p><strong>Effects:</strong> ${herb.Effects}</p>
+    <details><summary>Mechanism of Action</summary><p>${herb['Mechanism of Action'] || 'N/A'}</p></details>
+    <details><summary>Pharmacokinetics</summary><p>${herb.Pharmacokinetics || 'N/A'}</p></details>
+    <details><summary>Therapeutic Uses</summary><p>${herb['Therapeutic Uses'] || 'N/A'}</p></details>
+    <details><summary>Side Effects</summary><p>${herb['Side Effects'] || 'N/A'}</p></details>
+    <details><summary>Contraindications</summary><p>${herb.Contraindications || 'N/A'}</p></details>
+    <details><summary>Drug Interactions</summary><p>${herb['Drug Interactions'] || 'N/A'}</p></details>
+    <details><summary>Toxicity</summary><p>${herb.Toxicity || 'N/A'}</p></details>
+  `;
+
   const favBtn = section.querySelector('.favorite-btn');
   favBtn.addEventListener('click', e => {
     e.stopPropagation();
@@ -52,6 +52,7 @@ function createHerbCard(herb) {
     }
     saveFavorites(favs);
   });
+
   const header = section.querySelector('h2');
   header.style.cursor = 'pointer';
   header.addEventListener('click', () => {
@@ -59,6 +60,7 @@ function createHerbCard(herb) {
     const anyClosed = Array.from(details).some(d => !d.open);
     details.forEach(d => d.open = anyClosed);
   });
+
   return section;
 }
 
