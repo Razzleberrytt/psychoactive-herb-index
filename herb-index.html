@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Index</title>
+  <title>Herb Index</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -19,7 +19,12 @@
     </nav>
   </header>
   <main>
-    <h2>Welcome to the Hippie Scientist</h2><p>We blend ancient botanical wisdom with modern science. Discover natural allies that support wellness, curiosity, and clarity.</p><p><a href='products.html'>View Products</a> or <a href='blog/index.html'>Read the Blog</a></p>
+    
+<h2>Interactive Herb Index</h2>
+<input type="text" id="searchBox" placeholder="Search by name or effect..." onkeyup="filterHerbs()" style="width:100%;padding:0.5em;margin-bottom:1em;">
+<div id="herbTable"></div>
+<script src="assets/js/herb-index-interactive.js"></script>
+
   </main>
   <footer>
     <p>&copy; 2025 Hippie Scientist | All content for educational purposes</p>
