@@ -2,6 +2,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Plausible Analytics -->
+<script async defer data-domain="razzleberrytt.github.io" src="https://plausible.io/js/plausible.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "The Hippie Scientist Herb Index",
+  "url": "https://razzleberrytt.github.io/psychoactive-herb-index/"
+}
+</script>
+
   <link rel="icon" href="favicon.ico" />
   <meta property="og:image" content="https://razzleberrytt.github.io/og-image.png">
   <meta property="og:title" content="The Hippie Scientist Herb Index">
@@ -1361,5 +1373,16 @@ document.addEventListener("DOMContentLoaded", function () {
   render(herbData);
 });
 </script>
+
+<section style="margin-top:2em; padding:1em; background:#e6f2dc; border:1px solid #bcd7a1; border-radius:6px;">
+  <h2>🌿 Stay in the Loop</h2>
+  <p>Get occasional herb updates, new entries, and plant science drops.</p>
+  <form action="https://buttondown.email/api/emails/embed-subscribe/YOUR_USERNAME" method="post" target="popupwindow"
+        onsubmit="window.open('https://buttondown.email/YOUR_USERNAME', 'popupwindow')">
+    <input type="email" name="email" placeholder="you@example.com" required style="padding:0.5em; width:60%;">
+    <input type="submit" value="Subscribe" style="padding:0.5em;">
+  </form>
+</section>
+
 </body>
 </html>
