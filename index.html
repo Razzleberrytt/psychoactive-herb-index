@@ -1,37 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>The Hippie Scientist – Psychoactive Herb Index</title>
-  <!-- Core site CSS -->
-  <link rel="stylesheet" href="styles.css" />
-  <!-- Herb data -->
-  <script src="psychoactive_herb_index_data_MASTER_UPDATED.js"></script>
-  <!-- Main app logic -->
-  <script src="app.js" defer></script>
+  <title>Psychoactive Herb Index</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="logo">🔬 The Hippie Scientist</div>
-    <nav class="navbar">
-      <a href="#" onclick="renderHerbs()">All Herbs</a>
-      <button id="favoritesToggle">⭐ Favorites Only</button>
-      <button id="randomHerb">✨ Random Herb</button>
-      <input type="text" id="searchInput" placeholder="Search herbs..." />
-      <select id="sortSelect">
-        <option value="alphabetical">Sort A–Z</option>
-        <option value="intensity">Sort by Intensity</option>
-      </select>
-      <button id="darkModeToggle">🌓 Dark Mode</button>
-      <button onclick="exportFavorites()">⬇️ Export Favorites</button>
-    </nav>
-  </header>
+  <h1>Psychoactive Herb Index</h1>
+  <p>Explore 65+ natural plants with psychoactive properties. Data loads dynamically below:</p>
+  <div id="herbTable">Loading...</div>
 
-  <main id="herb-list"></main>
-
-  <footer>
-    <p>Explore Legally. Elevate Naturally. 🌿 | © 2025 The Hippie Scientist</p>
-  </footer>
+  <script src="psychoactive_herb_index_data_FIXED.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
