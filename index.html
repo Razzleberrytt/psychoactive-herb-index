@@ -3,26 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Index</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <title>The Hippie Scientist – Psychoactive Herb Index</title>
+  <!-- Core site CSS -->
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Herb data -->
+  <script src="psychoactive_herb_index_data_MASTER_UPDATED.js"></script>
+  <!-- Main app logic -->
+  <script src="app.js" defer></script>
 </head>
 <body>
   <header>
-    <h1>Hippie Scientist</h1>
-    <p>Exploring Consciousness Through Nature and Science</p>
-    <nav>
-      <a href="index.html">Home</a> |
-      <a href="products.html">Products</a> |
-      <a href="herb-index.html">Herb Index</a> |
-      <a href="blog/index.html">Blog</a> |
-      <a href="contact.html">Contact</a>
+    <div class="logo">🔬 The Hippie Scientist</div>
+    <nav class="navbar">
+      <a href="#" onclick="renderHerbs()">All Herbs</a>
+      <button id="favoritesToggle">⭐ Favorites Only</button>
+      <button id="randomHerb">✨ Random Herb</button>
+      <input type="text" id="searchInput" placeholder="Search herbs..." />
+      <select id="sortSelect">
+        <option value="alphabetical">Sort A–Z</option>
+        <option value="intensity">Sort by Intensity</option>
+      </select>
+      <button id="darkModeToggle">🌓 Dark Mode</button>
+      <button onclick="exportFavorites()">⬇️ Export Favorites</button>
     </nav>
   </header>
-  <main>
-    <h2>Welcome to the Hippie Scientist</h2><p>We blend ancient botanical wisdom with modern science. Discover natural allies that support wellness, curiosity, and clarity.</p><p><a href='products.html'>View Products</a> or <a href='blog/index.html'>Read the Blog</a></p>
-  </main>
+
+  <main id="herb-list"></main>
+
   <footer>
-    <p>&copy; 2025 Hippie Scientist | All content for educational purposes</p>
+    <p>Explore Legally. Elevate Naturally. 🌿 | © 2025 The Hippie Scientist</p>
   </footer>
 </body>
 </html>
