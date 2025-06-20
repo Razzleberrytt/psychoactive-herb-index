@@ -71,6 +71,7 @@
         color: #666;
       }
       .herb-detail {
+  display: none;
         display: none;
         font-size: 0.85rem;
         margin-top: 0.75rem;
@@ -158,7 +159,12 @@
           const card = document.createElement("div");
           card.className = "herb-card";
           card.innerHTML = `
-            <div class="herb-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+            <div class="herb-header" onclick="
+    const detail = this.parentElement.querySelector('.herb-detail');
+    if (detail) {
+      detail.style.display = detail.style.display === 'block' ? 'none' : 'block';
+    }
+    ">
               <span>${herb.Herb}</span>
               <span class="favorite-star" onclick="event.stopPropagation(); toggleFavorite(this)">☆</span>
             </div>
