@@ -3,42 +3,56 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Psychoactive Herb Index (Responsive Full)</title>
+  <title>Psychoactive Herb Index (Interactive Filters)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-body {
-  font-family: Georgia, serif;
-  background: #fdf8f1;
-  color: #2b2b2b;
-  padding: 1em;
-}
-input[type="text"] {
-  width: 100%;
-  padding: 0.6em;
-  margin-bottom: 1em;
-}
-.herb-card {
-  margin-bottom: 1em;
-  border: 1px solid #ccc;
-  background: #fffefb;
-  border-radius: 6px;
-  padding: 0.5em 1em;
-}
-.herb-card summary {
-  font-size: 1.1em;
-  cursor: pointer;
-}
-.herb-content p {
-  margin: 0.3em 0;
-}
-</style>
+    body {
+      font-family: Georgia, serif;
+      background: #fdf8f1;
+      color: #2b2b2b;
+      padding: 1em;
+    }
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5em;
+      margin-bottom: 1em;
+    }
+    select, input[type="text"] {
+      padding: 0.5em;
+      font-size: 1em;
+    }
+    .herb-card {
+      margin-bottom: 1em;
+      border: 1px solid #ccc;
+      background: #fffefb;
+      border-radius: 6px;
+      padding: 0.5em 1em;
+      transition: all 0.3s ease;
+    }
+    .herb-card[open] {
+      background: #f0f9e8;
+    }
+    .herb-card summary {
+      font-size: 1.1em;
+      cursor: pointer;
+    }
+    .herb-content p {
+      margin: 0.3em 0;
+    }
+  </style>
 </head>
 <body>
   <h1>Psychoactive Herb Index</h1>
-  <input type="text" id="searchBox" placeholder="Search herbs, effects, or regions...">
+  <div class="filters">
+    <input type="text" id="searchBox" placeholder="Search...">
+    <select id="filterCategory"><option value="">All Categories</option></select>
+    <select id="filterIntensity"><option value="">All Intensities</option></select>
+    <select id="filterRegion"><option value="">All Regions</option></select>
+  </div>
   <div id="herbTable">Loading...</div>
   <script>
-    var herbData = [
+var herbData = [
   {
     "Herb": "Calea zacatechichi",
     "Category": "Oneirogen",
@@ -1276,40 +1290,66 @@ input[type="text"] {
   }
 ];
 
-    function renderHerbCards(data) {
-      const container = document.getElementById("herbTable");
-      let html = "";
-      data.forEach(herb => {
-        html += `
-        <details class="herb-card">
-          <summary><strong>${herb.Herb || 'Unknown'}</strong> – <em>${herb.Category || ''}</em></summary>
-          <div class="herb-content">
-            <p><strong>Effects:</strong> ${herb.Effects || ''}</p>
-            <p><strong>Preparation:</strong> ${herb.Preparation || ''}</p>
-            <p><strong>Intensity:</strong> ${herb.Intensity || ''}</p>
-            <p><strong>Onset:</strong> ${herb.Onset || ''}</p>
-            <p><strong>Region:</strong> ${herb.Region || ''}</p>
-            <p><strong>Legal Status:</strong> ${herb["Legal Status"] || ''}</p>
-            <p><strong>Mechanism of Action:</strong> ${herb["Mechanism of Action"] || ''}</p>
-            <p><strong>Tags:</strong> ${herb.Tags || ''}</p>
-          </div>
-        </details>
-        `;
-      });
-      container.innerHTML = html;
-    }
+document.addEventListener("DOMContentLoaded", function () {
+  const container = document.getElementById("herbTable");
+  const categoryFilter = document.getElementById("filterCategory");
+  const intensityFilter = document.getElementById("filterIntensity");
+  const regionFilter = document.getElementById("filterRegion");
+  const searchBox = document.getElementById("searchBox");
 
-    document.addEventListener("DOMContentLoaded", function () {
-      const searchBox = document.getElementById("searchBox");
-      searchBox.addEventListener("input", () => {
-        const term = searchBox.value.toLowerCase();
-        const filtered = herbData.filter(h =>
-          Object.values(h).some(v => v && v.toString().toLowerCase().includes(term))
-        );
-        renderHerbCards(filtered);
-      });
-      renderHerbCards(herbData);
+  const unique = (arr) => Array.from(new Set(arr.filter(x => x)));
+
+  function populateFilters() {
+    const categories = unique(herbData.map(h => h.Category));
+    const intensities = unique(herbData.map(h => h.Intensity));
+    const regions = unique(herbData.map(h => h.Region));
+
+    categoryFilter.innerHTML += categories.map(c => `<option value="${c}">${c}</option>`).join('');
+    intensityFilter.innerHTML += intensities.map(i => `<option value="${i}">${i}</option>`).join('');
+    regionFilter.innerHTML += regions.map(r => `<option value="${r}">${r}</option>`).join('');
+  }
+
+  function render(data) {
+    let html = "";
+    data.forEach(herb => {
+      html += `
+      <details class="herb-card">
+        <summary><strong>${herb.Herb || 'Unknown'}</strong> – <em>${herb.Category || ''}</em></summary>
+        <div class="herb-content">
+          <p><strong>🌿 Effects:</strong> ${herb.Effects || ''}</p>
+          <p><strong>☕ Preparation:</strong> ${herb.Preparation || ''}</p>
+          <p><strong>🔥 Intensity:</strong> ${herb.Intensity || ''}</p>
+          <p><strong>⏱️ Onset:</strong> ${herb.Onset || ''}</p>
+          <p><strong>🌍 Region:</strong> ${herb.Region || ''}</p>
+          <p><strong>⚖️ Legal Status:</strong> ${herb["Legal Status"] || ''}</p>
+          <p><strong>🧠 Mechanism:</strong> ${herb["Mechanism of Action"] || ''}</p>
+          <p><strong>🏷️ Tags:</strong> ${herb.Tags || ''}</p>
+        </div>
+      </details>`;
     });
-  </script>
+    container.innerHTML = html || "<p>No matching herbs.</p>";
+  }
+
+  function applyFilters() {
+    const cat = categoryFilter.value;
+    const intn = intensityFilter.value;
+    const reg = regionFilter.value;
+    const term = searchBox.value.toLowerCase();
+
+    const filtered = herbData.filter(h =>
+      (!cat || h.Category === cat) &&
+      (!intn || h.Intensity === intn) &&
+      (!reg || h.Region === reg) &&
+      (!term || Object.values(h).some(v => v && v.toString().toLowerCase().includes(term)))
+    );
+    render(filtered);
+  }
+
+  categoryFilter.onchange = intensityFilter.onchange = regionFilter.onchange = searchBox.oninput = applyFilters;
+
+  populateFilters();
+  render(herbData);
+});
+</script>
 </body>
 </html>
