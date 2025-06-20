@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Kratom",
+    "effects": "Stimulant (low dose), Sedative (high dose)",
+    "activeCompounds": "Mitragynine, 7-HMG",
+    "origin": "Southeast Asia",
+    "legalStatus": "Restricted in some U.S. states"
+  },
+  {
+    "name": "Blue Lotus",
+    "effects": "Relaxation, Mild euphoria",
+    "activeCompounds": "Apomorphine, Nuciferine",
+    "origin": "Egypt",
+    "legalStatus": "Legal in most countries"
+  },
+  {
+    "name": "Kava",
+    "effects": "Anxiolytic, Muscle relaxant",
+    "activeCompounds": "Kavalactones",
+    "origin": "Pacific Islands",
+    "legalStatus": "Restricted in some countries"
+  },
+  {
+    "name": "Amanita Muscaria",
+    "effects": "Delirium, Sedation, Lucid dreaming",
+    "activeCompounds": "Muscimol, Ibotenic acid",
+    "origin": "Northern Hemisphere forests",
+    "legalStatus": "Legal in most countries"
+  },
+  {
+    "name": "Salvia Divinorum",
+    "effects": "Intense dissociation, Time alteration",
+    "activeCompounds": "Salvinorin A",
+    "origin": "Mexico",
+    "legalStatus": "Controlled in many U.S. states"
+  },
+  {
+    "name": "Ayahuasca",
+    "effects": "Visionary, Purging, Spiritual",
+    "activeCompounds": "DMT + MAOIs",
+    "origin": "Amazon Basin",
+    "legalStatus": "Illegal in many countries"
+  },
+  {
+    "name": "Cannabis (THC)",
+    "effects": "Euphoric, Analgesic",
+    "activeCompounds": "THC, CBD",
+    "origin": "Central Asia",
+    "legalStatus": "Varies widely by country/state"
+  },
+  {
+    "name": "Calea Zacatechichi",
+    "effects": "Dream enhancement",
+    "activeCompounds": "Germacranolides",
+    "origin": "Mexico",
+    "legalStatus": "Legal in most regions"
+  },
+  {
+    "name": "Yohimbe",
+    "effects": "Stimulant, Aphrodisiac",
+    "activeCompounds": "Yohimbine",
+    "origin": "Central Africa",
+    "legalStatus": "Restricted in several countries"
+  },
+  {
+    "name": "Iboga",
+    "effects": "Introspective, Detoxifying",
+    "activeCompounds": "Ibogaine",
+    "origin": "West Africa",
+    "legalStatus": "Banned in many countries"
+  }
+]
