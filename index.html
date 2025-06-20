@@ -6,14 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Psychoactive Herb Index</title>
   <style>
-    body { font-family: 'Segoe UI', sans-serif; background: #f9f9f9; margin: 0; padding: 2rem; }
+    body { font-family: 'Segoe UI', sans-serif; background: #f5f5f5; margin: 0; padding: 2rem; }
     table { width: 100%; border-collapse: collapse; background: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
-    th, td { padding: 0.75rem; border-bottom: 1px solid #eee; text-align: left; font-size: 0.9rem; }
+    th, td { padding: 0.75rem; border-bottom: 1px solid #ddd; text-align: left; font-size: 0.9rem; }
     th { background: #f0f0f0; font-weight: 600; }
-    tr:hover { background: #fefefe; }
-    .expand-row td { background: #fff8e1; font-size: 0.85rem; }
+    tr:hover { background: #f9f9f9; }
+    .expand-row td { background: #fffef0; font-size: 0.85rem; line-height: 1.5; }
     .expand-row { display: none; }
     .favorite-star.active { color: gold; }
+    td:first-child { text-align: center; cursor: pointer; }
+    td:nth-child(2) { cursor: pointer; color: #0056a7; text-decoration: underline; }
+    @media screen and (max-width: 768px) {
+      table, thead, tbody, th, td, tr { display: block; }
+      thead { display: none; }
+      td { position: relative; padding-left: 50%; border: none; border-bottom: 1px solid #eee; }
+      td::before {
+        position: absolute; top: 0; left: 6px; width: 45%; white-space: nowrap;
+        font-weight: bold;
+      }
+    }
   </style>
 </head>
 <body>
@@ -57,8 +68,8 @@
       herbData.forEach((herb) => {
         const mainRow = document.createElement("tr");
         mainRow.innerHTML = `
-          <td onclick="toggleFavorite(this)" style="cursor:pointer;text-align:center;">☆</td>
-          <td onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#2b6cb0;">${herb.Herb}</td>
+          <td onclick="toggleFavorite(this)">☆</td>
+          <td onclick="toggleExpandRow(this)">${herb.Herb}</td>
           <td>${herb.Category}</td>
           <td>${herb.Effects}</td>
           <td>${herb.Preparation}</td>
