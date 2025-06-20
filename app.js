@@ -14,7 +14,11 @@ document.addEventListener("DOMContentLoaded", function () {
     "Region",
     "Legal Status",
     "Therapeutic Uses",
-    "Side Effects"
+    "Side Effects",
+    "Contraindications",
+    "Drug Interactions",
+    "Mechanism of Action",
+    "Pharmacokinetics"
   ];
 
   let html = `<table border="1" cellpadding="8" cellspacing="0" style="width:100%;border-collapse:collapse;">
@@ -24,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <tbody>`;
 
   herbData.forEach(h => {
-    html += "<tr>" + columns.map(col => `<td>${h[col] || ''}</td>`).join('') + "</tr>";
+    html += "<tr>" + columns.map(col => `<td>${(h[col] || '').replace(/\\/g, '')}</td>`).join('') + "</tr>";
   });
 
   html += "</tbody></table>";
