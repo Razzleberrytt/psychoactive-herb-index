@@ -1,0 +1,139 @@
+body {
+    font-family: 'Gilroy', sans-serif;
+    background-color: #f7f5ed;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #3d3d3d;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar a {
+    margin: 0 0.75rem;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar input {
+    padding: 0.4rem;
+    border-radius: 4px;
+    border: none;
+}
+
+main {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+footer {
+    background-color: #e0dac5;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+
+.herb-card {
+    background: #fff;
+    border: 2px solid #ddd;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.favorite-btn {
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: gray;
+}
+
+.favorite-btn.active {
+    color: gold;
+}
+
+
+#sortSelect, #favoritesToggle {
+    margin-left: 0.5rem;
+    padding: 0.4rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.tag-filter {
+    margin: 0.2rem;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.85rem;
+    background: #eee;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+
+body.dark-mode {
+    background-color: #1c1c1c;
+    color: #eee;
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+    background-color: #333;
+    color: white;
+}
+
+body.dark-mode .herb-card {
+    background: #2a2a2a;
+    border-color: #555;
+}
+
+.herb-card img {
+    width: 100%;
+    max-width: 150px;
+    border-radius: 6px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .herb-card {
+    font-size: 0.95rem;
+    padding: 0.75rem;
+  }
+
+  .navbar input,
+  #sortSelect,
+  #favoritesToggle,
+  #searchInput {
+    width: 100%;
+    margin: 0.25rem 0;
+  }
+
+  .category-tab {
+    display: inline-block;
+    margin: 0.25rem 0.25rem;
+  }
+}

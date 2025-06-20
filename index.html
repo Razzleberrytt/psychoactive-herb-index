@@ -1,195 +1,42 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Psychoactive Herb Index</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      background: #f8f9fa;
-      color: #222;
-    }
-    h1 {
-      text-align: center;
-      padding: 1rem;
-      background: #343a40;
-      color: white;
-      margin-bottom: 1rem;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: white;
-      box-shadow: 0 0 8px rgba(0,0,0,0.05);
-    }
-    th, td {
-      padding: 0.75rem;
-      border-bottom: 1px solid #ddd;
-      text-align: left;
-      font-size: 0.9rem;
-    }
-    th {
-      background: #f1f1f1;
-      font-weight: bold;
-    }
-    .expand-row {
-      display: none;
-    }
-    tr:hover {
-      background: #f9f9f9;
-    }
-    .favorite-star.active {
-      color: gold;
-    }
-    @media (max-width: 768px) {
-      table, thead {
-        display: none;
-      }
-      .herb-card {
-        background: white;
-        margin: 1rem;
-        padding: 1rem;
-        border-radius: 6px;
-        box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-      }
-      .herb-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-weight: bold;
-        font-size: 1.1rem;
-        margin-bottom: 0.5rem;
-        color: #0074cc;
-        cursor: pointer;
-      }
-      .herb-tags {
-        font-size: 0.85rem;
-        margin-top: 0.5rem;
-        color: #666;
-      }
-      .herb-detail {
-  display: none;
-        display: none;
-        font-size: 0.85rem;
-        margin-top: 0.75rem;
-        line-height: 1.4;
-        background: #fafafa;
-        padding: 0.75rem;
-        border-radius: 4px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Hippie Scientist – Psychoactive Herb Index</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="icon" href="assets/img/favicon.png" type="image/png" />
 </head>
 <body>
-  <h1>Psychoactive Herb Index</h1>
-  <table id="herbTable">
-    <thead>
-      <tr>
-        <th>⭐</th>
-        <th>Herb</th>
-        <th>Category</th>
-        <th>Effects</th>
-        <th>Preparation</th>
-        <th>Intensity</th>
-        <th>Onset</th>
-        <th>Legal Status</th>
-        <th>Region</th>
-        <th>Tags</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
-  <div id="mobileCards"></div>
+    <header>
+        <div class="logo">🔬 The Hippie Scientist</div>
+        <nav class="navbar">
+            <a href="#all-herbs">All Herbs</a>
+            <a href="#favorites">Favorites</a>
+            <a href="#" id="randomHerb">Random Herb</a>
+            <input type="text" id="searchInput" placeholder="Search herbs..." />
+    <button id="favoritesToggle">⭐ Favorites Only</button>
+    <button onclick="toggleDarkMode()">🌓 Dark Mode</button>
+    <button onclick="exportFavorites()">⬇️ Export Favorites</button>
+    <select id="sortSelect">
+      <option value="alphabetical">Sort A-Z</option>
+      <option value="intensity">Sort by Intensity</option>
+    </select>
+        </nav>
+    </header>
 
-  <script src="psychoactive_herb_index_data.js"></script>
-  <script>
-    function toggleExpandRow(cell) {
-      const row = cell.closest("tr");
-      const nextRow = row.nextElementSibling;
-      if (nextRow && nextRow.classList.contains("expand-row")) {
-        nextRow.style.display = nextRow.style.display === "none" ? "table-row" : "none";
-      }
-    }
+    <aside id="alphabet-nav">
+        <!-- A–Z quick nav -->
+    </aside>
 
-    function toggleFavorite(cell) {
-      cell.classList.toggle("active");
-      cell.textContent = cell.classList.contains("active") ? "★" : "☆";
-    }
+    <main id="herb-list">
+        <!-- Herb cards will be rendered here -->
+    </main>
 
-    function renderHerbs() {
-      const isMobile = window.innerWidth <= 768;
-      const tbody = document.querySelector("#herbTable tbody");
-      const mobileCards = document.getElementById("mobileCards");
+    <footer>
+        <p>Explore Legally. Elevate Naturally. 🌿 | © 2025 The Hippie Scientist</p>
+    </footer>
 
-      herbData.forEach(herb => {
-        if (!isMobile) {
-          const row = document.createElement("tr");
-          row.innerHTML = `
-            <td onclick="toggleFavorite(this)">☆</td>
-            <td onclick="toggleExpandRow(this)" style="cursor:pointer; text-decoration:underline; color:#0074cc;">${herb.Herb}</td>
-            <td>${herb.Category}</td>
-            <td>${herb.Effects}</td>
-            <td>${herb.Preparation}</td>
-            <td>${herb.Intensity}</td>
-            <td>${herb.Onset}</td>
-            <td>${herb["Legal Status"]}</td>
-            <td>${herb.Region}</td>
-            <td>${herb.Tags}</td>
-          `;
-          const expand = document.createElement("tr");
-          expand.className = "expand-row";
-          expand.innerHTML = `
-            <td colspan="10">
-              <strong>Mechanism of Action:</strong> ${herb["Mechanism of Action"]}<br/>
-              <strong>Pharmacokinetics:</strong> ${herb.Pharmacokinetics}<br/>
-              <strong>Therapeutic Uses:</strong> ${herb["Therapeutic Uses"]}<br/>
-              <strong>Side Effects:</strong> ${herb["Side Effects"]}<br/>
-              <strong>Contraindications:</strong> ${herb.Contraindications}<br/>
-              <strong>Drug Interactions:</strong> ${herb["Drug Interactions"]}<br/>
-              <strong>Toxicity:</strong> ${herb.Toxicity}<br/>
-              <strong>Toxicity / LD50:</strong> ${herb["Toxicity / LD50"]}
-            </td>
-          `;
-          tbody.appendChild(row);
-          tbody.appendChild(expand);
-        } else {
-          const card = document.createElement("div");
-          card.className = "herb-card";
-          card.innerHTML = `
-            <div class="herb-header" onclick="
-    const detail = this.parentElement.querySelector('.herb-detail');
-    if (detail) {
-      detail.style.display = detail.style.display === 'block' ? 'none' : 'block';
-    }
-    ">
-              <span>${herb.Herb}</span>
-              <span class="favorite-star" onclick="event.stopPropagation(); toggleFavorite(this)">☆</span>
-            </div>
-            <div><strong>Category:</strong> ${herb.Category}</div>
-            <div><strong>Effects:</strong> ${herb.Effects}</div>
-            <div><strong>Preparation:</strong> ${herb.Preparation}</div>
-            <div><strong>Region:</strong> ${herb.Region}</div>
-            <div class="herb-tags">${herb.Tags}</div>
-            <div class="herb-detail">
-              <strong>Mechanism of Action:</strong> ${herb["Mechanism of Action"]}<br/>
-              <strong>Pharmacokinetics:</strong> ${herb.Pharmacokinetics}<br/>
-              <strong>Therapeutic Uses:</strong> ${herb["Therapeutic Uses"]}<br/>
-              <strong>Side Effects:</strong> ${herb["Side Effects"]}<br/>
-              <strong>Contraindications:</strong> ${herb.Contraindications}<br/>
-              <strong>Drug Interactions:</strong> ${herb["Drug Interactions"]}<br/>
-              <strong>Toxicity:</strong> ${herb.Toxicity}<br/>
-              <strong>Toxicity / LD50:</strong> ${herb["Toxicity / LD50"]}
-            </div>
-          `;
-          mobileCards.appendChild(card);
-        }
-      });
-    }
-
-    document.addEventListener("DOMContentLoaded", renderHerbs);
-  </script>
+    <script src="assets/js/app.js"></script>
 </body>
 </html>
