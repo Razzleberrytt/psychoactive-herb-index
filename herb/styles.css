@@ -1,0 +1,17 @@
+
+body {
+  font-family: system-ui, sans-serif;
+  background: #fdfaf5;
+  color: #3d2b1f;
+  padding: 20px;
+}
+h1 {
+  color: #4a2c74;
+}
+.herb {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px 0;
+  background: #fff;
+  border-radius: 8px;
+}
