@@ -1,36 +1,49 @@
+/* global herbData */
+// DEBUG ALERT VERSION
+alert('HERBDATA length: ' + (Array.isArray(herbData) ? herbData.length : 'NOT ARRAY'));
 
-document.addEventListener("DOMContentLoaded", function () {
-  const container = document.getElementById("herbTable");
-  if (!herbData || !Array.isArray(herbData)) {
-    container.innerHTML = "<p>Error loading herb data.</p>";
-    return;
-  }
+let currentFilter = '';
+let showFavoritesOnly = false;
+let currentSort = 'alphabetical';
 
-  const columns = [
-    "Herb",
-    "Category",
-    "Effects",
-    "Preparation",
-    "Region",
-    "Legal Status",
-    "Therapeutic Uses",
-    "Side Effects",
-    "Contraindications",
-    "Drug Interactions",
-    "Mechanism of Action",
-    "Pharmacokinetics"
-  ];
+function getFavorites() {
+  return JSON.parse(localStorage.getItem('favorites') || '[]');
+}
 
-  let html = `<table border="1" cellpadding="8" cellspacing="0" style="width:100%;border-collapse:collapse;">
-    <thead>
-      <tr>${columns.map(col => `<th>${col}</th>`).join('')}</tr>
-    </thead>
-    <tbody>`;
+function saveFavorites(favs) {
+  localStorage.setItem('favorites', JSON.stringify(favs));
+}
 
-  herbData.forEach(h => {
-    html += "<tr>" + columns.map(col => `<td>${(h[col] || '').replace(/\\/g, '')}</td>`).join('') + "</tr>";
+function createHerbCard(herb) {
+  const section = document.createElement('section');
+  section.className = 'herb-card';
+  section.innerHTML = \`
+    <h2>
+      \${herb.Herb}
+      <button class="favorite-btn \${getFavorites().includes(herb.Herb) ? 'active' : ''}" title="Toggle Favorite">★</button>
+    </h2>
+    <p><strong>Category:</strong> \${herb.Category}</p>
+    <p><strong>Effects:</strong> \${herb.Effects}</p>
+    <details><summary>Details</summary><p>More info here</p></details>
+  \`;
+  const header = section.querySelector('h2');
+  header.style.cursor = 'pointer';
+  header.addEventListener('click', () => {
+    alert('HEADER CLICKED: ' + herb.Herb);
+    const details = section.querySelectorAll('details');
+    const anyClosed = Array.from(details).some(d => !d.open);
+    details.forEach(d => d.open = anyClosed);
   });
+  return section;
+}
 
-  html += "</tbody></table>";
-  container.innerHTML = html;
+function renderHerbs() {
+  const container = document.getElementById('herb-list');
+  container.innerHTML = '';
+  if (!Array.isArray(herbData)) return;
+  herbData.forEach(h => container.appendChild(createHerbCard(h)));
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderHerbs();
 });
