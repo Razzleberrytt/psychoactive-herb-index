@@ -1,19 +1,47 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>The Hippie Scientist Herb Index</title>
-    <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Hippie Scientist Herb Index</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <header>
-        <h1>🌿 The Hippie Scientist Herb Index</h1>
-        <input type="text" id="searchInput" placeholder="Search herbs..." />
-    </header>
-    <main id="herbContainer"></main>
-    <script src="data.js"></script>
-    <script src="script.js"></script>
+  <header>
+    <h1>🌿 The Hippie Scientist Herb Index</h1>
+    <input type="text" id="search" placeholder="Search herbs..." />
+  </header>
+  <main id="herb-list"></main>
+  <script src="herbs.js"></script>
+  <script>
+    const container = document.getElementById('herb-list');
+    const searchInput = document.getElementById('search');
+
+    function renderHerbs(herbs) {
+      container.innerHTML = '';
+      herbs.forEach(h => {
+        const card = document.createElement('div');
+        card.className = 'herb-card';
+        card.innerHTML = `
+          <h2>${h.name}</h2>
+          <p><strong>Category:</strong> ${h.category}</p>
+          <p><strong>Effects:</strong> ${h.effects}</p>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    fetch('herbs.js')
+      .then(res => res.text())
+      .then(js => {
+        const herbsData = eval(js.match(/=\s*(\[.*\]);/s)[1]);
+        renderHerbs(herbsData);
+        searchInput.addEventListener('input', () => {
+          const q = searchInput.value.toLowerCase();
+          const filtered = herbsData.filter(h => h.name.toLowerCase().includes(q));
+          renderHerbs(filtered);
+        });
+      });
+  </script>
 </body>
 </html>
