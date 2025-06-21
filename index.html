@@ -13,35 +13,6 @@
   </header>
   <main id="herb-list"></main>
   <script src="herbs.js"></script>
-  <script>
-    const container = document.getElementById('herb-list');
-    const searchInput = document.getElementById('search');
-
-    function renderHerbs(herbs) {
-      container.innerHTML = '';
-      herbs.forEach(h => {
-        const card = document.createElement('div');
-        card.className = 'herb-card';
-        card.innerHTML = `
-          <h2>${h.name}</h2>
-          <p><strong>Category:</strong> ${h.category}</p>
-          <p><strong>Effects:</strong> ${h.effects}</p>
-        `;
-        container.appendChild(card);
-      });
-    }
-
-    fetch('herbs.js')
-      .then(res => res.text())
-      .then(js => {
-        const herbsData = eval(js.match(/=\s*(\[.*\]);/s)[1]);
-        renderHerbs(herbsData);
-        searchInput.addEventListener('input', () => {
-          const q = searchInput.value.toLowerCase();
-          const filtered = herbsData.filter(h => h.name.toLowerCase().includes(q));
-          renderHerbs(filtered);
-        });
-      });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
