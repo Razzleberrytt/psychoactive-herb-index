@@ -1,17 +1,33 @@
+
 body {
-  font-family: sans-serif;
-  background-color: #faf6f1;
-  color: #3b2f2f;
-  margin: 0;
-  padding: 1rem;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 1em;
+    background: #fdfaf5;
 }
-header h1 {
-  font-size: 1.5rem;
+header {
+    text-align: center;
+    margin-bottom: 1em;
 }
-.herb-card {
-  border: 1px solid #ddd;
-  padding: 1rem;
-  margin: 0.5rem 0;
-  border-radius: 8px;
-  background-color: #fff;
+#searchInput {
+    padding: 0.5em;
+    width: 90%;
+    max-width: 400px;
+}
+.card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 1em;
+    margin: 1em auto;
+    max-width: 500px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.category {
+    display: inline-block;
+    padding: 0.2em 0.5em;
+    border-radius: 4px;
+    background: #d3f8e2;
+    font-size: 0.8em;
+    margin-top: 0.5em;
 }

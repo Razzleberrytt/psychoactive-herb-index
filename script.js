@@ -1,13 +1,25 @@
-import { herbData } from './psychoactive_herb_index_data.js';
 
-const container = document.getElementById('herb-list');
-if (container && herbData && Array.isArray(herbData)) {
-  herbData.forEach(herb => {
-    const div = document.createElement('div');
-    div.className = 'herb-card';
-    div.innerHTML = `<h3>${herb.name}</h3>
-                     <p><strong>Category:</strong> ${herb.category}</p>
-                     <p><strong>Effects:</strong> ${herb.effects}</p>`;
-    container.appendChild(div);
-  });
+const container = document.getElementById("herbContainer");
+const searchInput = document.getElementById("searchInput");
+
+function renderHerbs(data) {
+    container.innerHTML = "";
+    data.forEach(herb => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+            <h2>${herb.name}</h2>
+            <div class="category">${herb.category}</div>
+            <p><strong>Effects:</strong> ${herb.effects}</p>
+        `;
+        container.appendChild(card);
+    });
 }
+
+searchInput.addEventListener("input", () => {
+    const query = searchInput.value.toLowerCase();
+    const filtered = herbData.filter(h => h.name.toLowerCase().includes(query));
+    renderHerbs(filtered);
+});
+
+renderHerbs(herbData);
