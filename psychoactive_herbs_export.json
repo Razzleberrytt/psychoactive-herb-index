@@ -1,1 +1,51 @@
-[]
+[
+  {
+    "name": "Calea zacatechichi",
+    "category": "Oneirogen",
+    "effects": "Vivid/lucid dreams, dream recall",
+    "preparation": "Bitter tea or smoke",
+    "intensity": "Mild",
+    "onset": "1\u20135 min",
+    "legal_status": "Legal \u2713 Unregulated",
+    "region": "Latin America",
+    "tags": [
+      "Smokable",
+      "Brewable",
+      "Dream",
+      "Safe"
+    ],
+    "mechanism": "Flavones and sesquiterpene lactones may modulate cholinergic transmission, possibly enhancing REM and dream clarity."
+  },
+  {
+    "name": "Silene capensis",
+    "category": "Oneirogen",
+    "effects": "Dream contact, ancestor connection",
+    "preparation": "Cold root infusion",
+    "intensity": "Mild",
+    "onset": "15\u201345 min",
+    "legal_status": "Legal \u2713 Unregulated",
+    "region": "Africa",
+    "tags": [
+      "Brewable",
+      "Dream",
+      "Safe"
+    ],
+    "mechanism": "Unknown; may interact with REM sleep cycles or GABAergic pathways."
+  },
+  {
+    "name": "Entada rheedii",
+    "category": "Oneirogen",
+    "effects": "Trance, dream enhancement",
+    "preparation": "Seed powder or chew",
+    "intensity": "Moderate",
+    "onset": "30\u201360 min",
+    "legal_status": "Legal \u2713 Unregulated",
+    "region": "Latin America",
+    "tags": [
+      "Oral",
+      "Dream",
+      "Safe"
+    ],
+    "mechanism": "Contains saponins and alkaloids, possibly modulating neurotransmitter systems."
+  }
+]
