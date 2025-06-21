@@ -1,5 +1,3 @@
-import { herbData } from './herbData_FULL.js';
-
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.getElementById('herb-list');
 
@@ -24,13 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
         <p><strong>Preparation:</strong> ${herb.Preparation || 'Unknown'}</p>
         <p><strong>Intensity:</strong> ${herb.Intensity || 'Unknown'}</p>
         <p><strong>Onset:</strong> ${herb.Onset || 'Unknown'}</p>
-        <p><strong>Mechanism:</strong> ${herb.Mechanism || 'Unknown'}</p>
+        <p><strong>Mechanism:</strong> ${herb['Mechanism of Action'] || 'Unknown'}</p>
         <p><strong>Region:</strong> ${herb.Region || 'Unknown'}</p>
-        <p><strong>Therapeutic Uses:</strong> ${herb.Therapeutic || 'Unknown'}</p>
-        <p><strong>Side Effects:</strong> ${herb.Side_effects || 'Unknown'}</p>
-        <p><strong>Legal Status:</strong> ${herb.Legal || 'Unknown'}</p>
+        <p><strong>Therapeutic Uses:</strong> ${herb['Therapeutic Uses'] || 'Unknown'}</p>
+        <p><strong>Side Effects:</strong> ${herb['Side Effects'] || 'Unknown'}</p>
+        <p><strong>Legal Status:</strong> ${herb['Legal Status'] || 'Unknown'}</p>
         <p><strong>Tags:</strong> ${herb.Tags || ''}</p>
-        ${herb.Link ? `<p><a href="${herb.Link}" target="_blank">More Info</a></p>` : ''}
       </div>
     `;
 
