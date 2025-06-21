@@ -1,44 +1,46 @@
+import { herbData } from './herbData_FULL.js';
+
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.getElementById('herb-list');
-  const searchInput = document.getElementById('search');
 
-  function createHerbCard(herb) {
+  if (!Array.isArray(herbData) || herbData.length === 0) {
+    container.innerHTML = '<p>No herb data available.</p>';
+    return;
+  }
+
+  herbData.forEach(herb => {
     const card = document.createElement('div');
-    card.className = 'card';
-    const slug = herb.Herb.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+    card.className = 'herb-card';
 
-    const fieldBlock = (label, value) => value ? `<p><strong>${label}:</strong> ${value}</p>` : '';
-
-    card.innerHTML = `
-      <h2>${herb.Herb}</h2>
-      <p><em>${herb.Category || ''}</em></p>
-      <p><strong>Effects:</strong> ${herb.Effects || ''}</p>
-      <div class="details">
-        ${fieldBlock("Preparation", herb.Preparation)}
-        ${fieldBlock("Intensity", herb.Intensity)}
-        ${fieldBlock("Onset", herb.Onset)}
-        ${fieldBlock("Region", herb.Region)}
-        ${fieldBlock("Mechanism of Action", herb["Mechanism of Action"])}
-        ${fieldBlock("Therapeutic Uses", herb["Therapeutic Uses"])}
-        ${fieldBlock("Side Effects", herb["Side Effects"])}
-        ${fieldBlock("Legal Status", herb["Legal Status"])}
-        <p><a href="./herb/${slug}.html">🔗 More Info</a></p>
-      </div>
-      <button onclick="this.parentNode.classList.toggle('open')">Toggle Details</button>
+    const summary = `
+      <h3>${herb.Herb || 'Unknown Herb'}</h3>
+      <p><strong>Category:</strong> ${herb.Category || 'Unknown'}</p>
+      <p><strong>Effects:</strong> ${herb.Effects || 'Unknown'}</p>
+      <button class="toggle-details">Show Details</button>
     `;
-    return card;
-  }
 
-  function renderHerbs(data) {
-    container.innerHTML = '';
-    data.forEach(h => container.appendChild(createHerbCard(h)));
-  }
+    const details = `
+      <div class="herb-details" style="display:none;">
+        <p><strong>Preparation:</strong> ${herb.Preparation || 'Unknown'}</p>
+        <p><strong>Intensity:</strong> ${herb.Intensity || 'Unknown'}</p>
+        <p><strong>Onset:</strong> ${herb.Onset || 'Unknown'}</p>
+        <p><strong>Mechanism:</strong> ${herb.Mechanism || 'Unknown'}</p>
+        <p><strong>Region:</strong> ${herb.Region || 'Unknown'}</p>
+        <p><strong>Therapeutic Uses:</strong> ${herb.Therapeutic || 'Unknown'}</p>
+        <p><strong>Side Effects:</strong> ${herb.Side_effects || 'Unknown'}</p>
+        <p><strong>Legal Status:</strong> ${herb.Legal || 'Unknown'}</p>
+        <p><strong>Tags:</strong> ${herb.Tags || ''}</p>
+        ${herb.Link ? `<p><a href="${herb.Link}" target="_blank">More Info</a></p>` : ''}
+      </div>
+    `;
 
-  renderHerbs(herbs);
+    card.innerHTML = summary + details;
 
-  searchInput.addEventListener('input', () => {
-    const q = searchInput.value.toLowerCase();
-    const filtered = herbs.filter(h => h.Herb.toLowerCase().includes(q));
-    renderHerbs(filtered);
+    card.querySelector('.toggle-details').addEventListener('click', () => {
+      const d = card.querySelector('.herb-details');
+      d.style.display = d.style.display === 'none' ? 'block' : 'none';
+    });
+
+    container.appendChild(card);
   });
 });
