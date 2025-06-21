@@ -1,27 +1,49 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const herbList = document.getElementById("herb-list");
-  const searchInput = document.getElementById("search");
 
-  function renderHerbs(data) {
-    herbList.innerHTML = data.map(herb => `
-      <div class="herb-card">
-        <h3>${herb.Herb}</h3>
-        <p><strong>Category:</strong> ${herb.Category || 'N/A'}</p>
-        <p><strong>Effects:</strong> ${herb.Effects || 'N/A'}</p>
-        <p><strong>Preparation:</strong> ${herb.Preparation || 'N/A'}</p>
-        <p><strong>Mechanism:</strong> ${herb.Mechanism || 'N/A'}</p>
-      </div>
-    `).join("");
+function renderHerbCard(herb) {
+  const card = document.createElement('details');
+  card.className = 'herb-card';
+
+  const summary = document.createElement('summary');
+  summary.innerHTML = `<strong>${herb.name}</strong><br><em>${herb.category || ''}</em></div>`;
+  card.appendChild(summary);
+
+  const body = document.createElement('div');
+  body.className = 'herb-content';
+
+  // Optional image
+  if (herb.image_url) {
+    const img = document.createElement('img');
+    img.src = herb.image_url;
+    img.alt = herb.name;
+    img.loading = 'lazy';
+    body.appendChild(img);
   }
 
-  renderHerbs(herbData);
+  const fieldMap = {
+    'Effects': herb.effects,
+    'Preparation': herb.preparation,
+    'Intensity': herb.intensity,
+    'Onset': herb.onset,
+    'Region': herb.region,
+    'Mechanism of Action': herb.mechanism_of_action,
+    'Therapeutic Uses': herb.therapeutic_uses,
+    'Side Effects': herb.side_effects,
+    'Legal Status': herb.legal_status,
+    'Tags': (herb.tags || []).join(', '),
+  };
 
-  searchInput.addEventListener("input", () => {
-    const term = searchInput.value.toLowerCase();
-    const filtered = herbData.filter(h =>
-      h.Herb.toLowerCase().includes(term) ||
-      (h.Effects && h.Effects.toLowerCase().includes(term))
-    );
-    renderHerbs(filtered);
-  });
-});
+  for (const [label, value] of Object.entries(fieldMap)) {
+    const line = document.createElement('p');
+    line.innerHTML = `<strong>${label}:</strong> ${value || 'Not Available'}</div>`;
+    body.appendChild(line);
+  }
+
+  if (herb.source_url) {
+    const link = document.createElement('p');
+    link.innerHTML = `<a href="${herb.source_url}" target="_blank">🔗 More Info</a></div>`;
+    body.appendChild(link);
+  }
+
+  card.appendChild(body);
+  return card;
+}
