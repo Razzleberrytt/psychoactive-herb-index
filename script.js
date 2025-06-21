@@ -1,15 +1,13 @@
+import { herbData } from './psychoactive_herb_index_data.js';
 
-document.addEventListener('DOMContentLoaded', () => {
-  const container = document.getElementById("herb-list");
-  if (!window.herbIndex || !Array.isArray(window.herbIndex)) {
-    container.innerHTML = "<p>Error loading data.</p>";
-    return;
-  }
-  container.innerHTML = window.herbIndex.map(herb => `
-    <div class="herb">
-      <strong>${herb.name}</strong><br/>
-      <em>${herb.category}</em><br/>
-      <span>${herb.effects}</span>
-    </div>
-  `).join("");
-});
+const container = document.getElementById('herb-list');
+if (container && herbData && Array.isArray(herbData)) {
+  herbData.forEach(herb => {
+    const div = document.createElement('div');
+    div.className = 'herb-card';
+    div.innerHTML = `<h3>${herb.name}</h3>
+                     <p><strong>Category:</strong> ${herb.category}</p>
+                     <p><strong>Effects:</strong> ${herb.effects}</p>`;
+    container.appendChild(div);
+  });
+}

@@ -1,5 +1,4 @@
-
-window.herbIndex = [
+export const herbData = [
   {
     name: "Calea zacatechichi",
     category: "Oneirogen",
@@ -19,5 +18,10 @@ window.herbIndex = [
     name: "Mugwort",
     category: "Oneirogen",
     effects: "Lucid dreams, astral travel"
+  },
+  {
+    name: "Heimia salicifolia (Sinicuichi)",
+    category: "Oneirogen",
+    effects: "Auditory changes, relaxation"
   }
 ];

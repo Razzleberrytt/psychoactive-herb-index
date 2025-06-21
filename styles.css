@@ -1,17 +1,17 @@
-
 body {
-  font-family: system-ui, sans-serif;
-  background: #fdfaf5;
-  color: #3d2b1f;
-  padding: 20px;
+  font-family: sans-serif;
+  background-color: #faf6f1;
+  color: #3b2f2f;
+  margin: 0;
+  padding: 1rem;
 }
-h1 {
-  color: #4a2c74;
+header h1 {
+  font-size: 1.5rem;
 }
-.herb {
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin: 10px 0;
-  background: #fff;
+.herb-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin: 0.5rem 0;
   border-radius: 8px;
+  background-color: #fff;
 }
