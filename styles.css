@@ -1,50 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap');
-:root {
-  --color-bg: #F5F1E8;
-  --color-text: #333333;
-  --color-primary: #60734A;
-  --color-secondary: #4A3A75;
-  --color-tertiary: #6A4A3F;
-  --color-accent: #B99B4C;
-  --font-heading: 'Playfair Display', serif;
-  --font-body: 'Open Sans', sans-serif;
-}
-* { box-sizing: border-box; }
 body {
-  margin: 0; padding: 0;
-  background: var(--color-bg);
-  color: var(--color-text);
-  font-family: var(--font-body);
-  line-height: 1.6;
+  font-family: sans-serif;
+  background: #fdfaf6;
+  margin: 0;
+  padding: 0;
+  color: #2d1c16;
 }
 header {
-  background: var(--color-secondary);
-  color: #fff; padding: 1rem;
+  background: #5b3a97;
+  color: white;
+  padding: 1em;
+  text-align: center;
 }
-.logo { font-family: var(--font-heading); font-size: 1.5rem; }
-.navbar a, .navbar button { margin-right: 1rem; color: #fff; text-decoration: none; font-weight: 600; }
-#searchInput { padding: 0.5rem; border-radius: 4px; border: none; }
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 1em;
+}
+.herb-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+  padding: 1em;
+}
 .herb-card {
-  background: #fff; border: 1px solid var(--color-primary);
-  border-radius: 8px; padding: 1rem; margin: 1rem auto;
-  max-width: 800px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background: white;
+  border: 1px solid #ccc;
+  padding: 1em;
+  width: 200px;
+  border-radius: 6px;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
 }
-.herb-card h2 {
-  font-family: var(--font-heading); font-size: 1.5rem;
-  color: var(--color-primary); display: flex; justify-content: space-between;
-  align-items: center; margin-bottom: 0.5rem;
-}
-.favorite-btn { background: none; border: none; font-size: 1.2rem; cursor: pointer; }
-.favorite-btn.active { color: var(--color-accent); }
-details summary { font-weight: 600; cursor: pointer; margin-top: 0.5rem; }
-.dark-mode { background: #333; color: #eee; }
-.dark-mode header { background: #222; }
 footer {
-  background: var(--color-accent); text-align: center;
-  padding: 1rem; font-size: 0.9rem; color: #fff;
+  text-align: center;
+  padding: 1em;
+  background: #d0ad58;
 }
-.about { max-width: 800px; margin: 2rem auto; padding: 1rem; }
-.about h1 { font-family: var(--font-heading); color: var(--color-secondary); margin-bottom: 1rem; }
-.about p { margin-bottom: 1rem; }
-.boards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 1rem; margin-top: 1rem; }
-.boards img { width: 100%; border-radius: 8px; object-fit: cover; }

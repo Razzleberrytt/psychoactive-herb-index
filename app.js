@@ -1,49 +1,38 @@
-/* global herbData */
-// DEBUG ALERT VERSION
-alert('HERBDATA length: ' + (Array.isArray(herbData) ? herbData.length : 'NOT ARRAY'));
+document.addEventListener("DOMContentLoaded", () => {
+  const herbList = document.getElementById("herb-list");
+  const searchInput = document.getElementById("search");
 
-let currentFilter = '';
-let showFavoritesOnly = false;
-let currentSort = 'alphabetical';
+  fetch("psychoactive_herbs_export.json")
+    .then(response => response.json())
+    .then(data => {
+      let allHerbs = data;
 
-function getFavorites() {
-  return JSON.parse(localStorage.getItem('favorites') || '[]');
-}
+      function renderHerbs(herbs) {
+        if (!herbs.length) {
+          herbList.innerHTML = "<p>No herbs found.</p>";
+          return;
+        }
+        herbList.innerHTML = herbs.map(herb => `
+          <div class="herb-card">
+            <h3>${herb.Herb}</h3>
+            <p><strong>Category:</strong> ${herb.Category}</p>
+            <p><strong>Effects:</strong> ${herb.Effects}</p>
+          </div>
+        `).join("");
+      }
 
-function saveFavorites(favs) {
-  localStorage.setItem('favorites', JSON.stringify(favs));
-}
+      renderHerbs(allHerbs);
 
-function createHerbCard(herb) {
-  const section = document.createElement('section');
-  section.className = 'herb-card';
-  section.innerHTML = \`
-    <h2>
-      \${herb.Herb}
-      <button class="favorite-btn \${getFavorites().includes(herb.Herb) ? 'active' : ''}" title="Toggle Favorite">★</button>
-    </h2>
-    <p><strong>Category:</strong> \${herb.Category}</p>
-    <p><strong>Effects:</strong> \${herb.Effects}</p>
-    <details><summary>Details</summary><p>More info here</p></details>
-  \`;
-  const header = section.querySelector('h2');
-  header.style.cursor = 'pointer';
-  header.addEventListener('click', () => {
-    alert('HEADER CLICKED: ' + herb.Herb);
-    const details = section.querySelectorAll('details');
-    const anyClosed = Array.from(details).some(d => !d.open);
-    details.forEach(d => d.open = anyClosed);
-  });
-  return section;
-}
-
-function renderHerbs() {
-  const container = document.getElementById('herb-list');
-  container.innerHTML = '';
-  if (!Array.isArray(herbData)) return;
-  herbData.forEach(h => container.appendChild(createHerbCard(h)));
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  renderHerbs();
+      searchInput.addEventListener("input", () => {
+        const term = searchInput.value.toLowerCase();
+        const filtered = allHerbs.filter(h =>
+          h.Herb.toLowerCase().includes(term) ||
+          h.Effects.toLowerCase().includes(term)
+        );
+        renderHerbs(filtered);
+      });
+    })
+    .catch(err => {
+      herbList.innerHTML = "<p>Error loading data.</p>";
+    });
 });
