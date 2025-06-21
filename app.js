@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const herbList = document.getElementById("herb-list");
   const searchInput = document.getElementById("search");
 
-  fetch("psychoactive_herbs_export.json")
+  fetch("./psychoactive_herbs_export.json")
     .then(response => response.json())
     .then(data => {
       let allHerbs = data;
