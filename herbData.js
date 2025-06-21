@@ -1,6 +1,7 @@
 const herbData = [
   {
     "Herb": "Calea zacatechichi",
+  "image_url": "images/calea_zacatechichi.jpg",
     "Category": "Oneirogen",
     "Effects": "Vivid/lucid dreams, dream recall",
     "Preparation": "Bitter tea or smoke",
@@ -20,6 +21,7 @@ const herbData = [
   },
   {
     "Herb": "Silene capensis",
+  "image_url": "images/silene_capensis.jpg",
     "Category": "Oneirogen",
     "Effects": "Deep dreaming, ancestor contact",
     "Preparation": "Cold water root brew",
