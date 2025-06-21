@@ -1,1 +1,1 @@
-console.log('Welcome to The Hippie Scientist');
+// JS placeholder
