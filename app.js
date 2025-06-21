@@ -6,8 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
     herbList.innerHTML = data.map(herb => `
       <div class="herb-card">
         <h3>${herb.Herb}</h3>
-        <p><strong>Category:</strong> ${herb.Category || ''}</p>
-        <p><strong>Effects:</strong> ${herb.Effects || ''}</p>
+        <p><strong>Category:</strong> ${herb.Category || 'N/A'}</p>
+        <p><strong>Effects:</strong> ${herb.Effects || 'N/A'}</p>
+        <p><strong>Preparation:</strong> ${herb.Preparation || 'N/A'}</p>
+        <p><strong>Mechanism:</strong> ${herb.Mechanism || 'N/A'}</p>
       </div>
     `).join("");
   }
