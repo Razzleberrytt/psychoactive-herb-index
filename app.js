@@ -47,6 +47,3 @@ function renderHerbCard(herb) {
   card.appendChild(body);
   return card;
 }
-
-// Render all herb cards
-herbData.forEach(renderHerbCard);

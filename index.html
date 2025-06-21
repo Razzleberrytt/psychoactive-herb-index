@@ -1,15 +1,113 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Psychoactive Herb Index</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="favicon.ico" />
+  <meta property="og:image" content="https://razzleberrytt.github.io/og-image.png">
+  <meta property="og:title" content="The Hippie Scientist Herb Index">
+  <meta property="og:description" content="Explore 65+ legal psychoactive herbs with traditional and scientific profiles.">
+  <script async defer data-domain="razzleberrytt.github.io" src="https://plausible.io/js/plausible.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <nav>
+    <a href="index.html">Herb Index</a>
+    <a href="about.html">About</a>
+  </nav>
+
   <h1>Psychoactive Herb Index</h1>
-  <div id="herb-container"></div>
-  <script src="herbData_FULL.js"></script>
-  <script src="script.js"></script>
+  <input type="text" id="searchBox" placeholder="Search...">
+  <select id="filterCategory"><option value="">All Categories</option></select>
+  <select id="filterIntensity"><option value="">All Intensities</option></select>
+  <select id="filterRegion"><option value="">All Regions</option></select>
+  <div id="herbTable">Loading...</div>
+
+  <section style="margin-top:2em;">
+    <h2>📤 Export the Index</h2>
+    <ul>
+      <li><a href="psychoactive_herbs_export.csv" download>📄 CSV Format</a></li>
+      <li><a href="psychoactive_herbs_export.json" download>📘 JSON Format</a></li>
+    </ul>
+  </section>
+
+  <section style="margin-top:2em;">
+    <h2>🌿 Stay in the Loop</h2>
+    <form action="https://buttondown.email/api/emails/embed-subscribe/YOUR_USERNAME" method="post" target="popupwindow"
+          onsubmit="window.open('https://buttondown.email/YOUR_USERNAME', 'popupwindow')">
+      <input type="email" name="email" placeholder="you@example.com" required />
+      <input type="submit" value="Subscribe">
+    </form>
+  </section>
+
+  <script>
+    let herbData = [];
+
+    function renderHerbCards(data) {
+      const container = document.getElementById("herbTable");
+      let html = "";
+      data.forEach(herb => {
+        const slug = (herb.Herb || '').toLowerCase().replace(/['/,]/g, '').replace(/\s+/g, '-');
+        html += `
+        <details>
+          <summary><strong>${herb.Herb || 'Unknown'}</strong> – ${herb.Category || ''}</summary>
+          <div>
+            <p><strong>Effects:</strong> ${herb.Effects || ''}</p>
+            <p><strong>Preparation:</strong> ${herb.Preparation || ''}</p>
+            <p><strong>Intensity:</strong> ${herb.Intensity || ''}</p>
+            <p><strong>Onset:</strong> ${herb.Onset || ''}</p>
+            <p><strong>Region:</strong> ${herb.Region || ''}</p>
+            <p><strong>Legal Status:</strong> ${herb["Legal Status"] || ''}</p>
+            <p><strong>Mechanism:</strong> ${herb["Mechanism of Action"] || ''}</p>
+            <p><strong>Tags:</strong> ${herb.Tags || ''}</p>
+            <p><a href="herbs/${slug}.html">Read more →</a></p>
+          </div>
+        </details>`;
+      });
+      container.innerHTML = html || "<p>No matching herbs.</p>";
+    }
+
+    function applyFilters() {
+      const category = document.getElementById("filterCategory").value;
+      const intensity = document.getElementById("filterIntensity").value;
+      const region = document.getElementById("filterRegion").value;
+      const term = document.getElementById("searchBox").value.toLowerCase();
+
+      const filtered = herbData.filter(h =>
+        (!category || h.Category === category) &&
+        (!intensity || h.Intensity === intensity) &&
+        (!region || h.Region === region) &&
+        (!term || Object.values(h).some(v => v && v.toString().toLowerCase().includes(term)))
+      );
+      renderHerbCards(filtered);
+    }
+
+    function populateFilters() {
+      const categories = Array.from(new Set(herbData.map(h => h.Category).filter(Boolean)));
+      const intensities = Array.from(new Set(herbData.map(h => h.Intensity).filter(Boolean)));
+      const regions = Array.from(new Set(herbData.map(h => h.Region).filter(Boolean)));
+
+      document.getElementById("filterCategory").innerHTML += categories.map(c => `<option value="${c}">${c}</option>`).join('');
+      document.getElementById("filterIntensity").innerHTML += intensities.map(i => `<option value="${i}">${i}</option>`).join('');
+      document.getElementById("filterRegion").innerHTML += regions.map(r => `<option value="${r}">${r}</option>`).join('');
+    }
+
+    fetch("psychoactive_herbs_export.json")
+      .then(res => res.json())
+      .then(data => {
+        herbData = data;
+        populateFilters();
+        renderHerbCards(herbData);
+      });
+
+    document.getElementById("searchBox").addEventListener("input", applyFilters);
+    document.getElementById("filterCategory").addEventListener("change", applyFilters);
+    document.getElementById("filterIntensity").addEventListener("change", applyFilters);
+    document.getElementById("filterRegion").addEventListener("change", applyFilters);
+  </script>
+<script src="filters.js"></script>
+<script>setupFilters(herbData);</script>
 </body>
 </html>
