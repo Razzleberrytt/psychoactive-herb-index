@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Psychoactive Herb Index</title>
+  <style>
+    .herb-card {
+      width: 200px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 10px;
+      display: inline-block;
+      vertical-align: top;
+      text-align: center;
+    }
+    .herb-card img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <h1>Psychoactive Herb Index</h1>
+  <div id="herb-container"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.1/papaparse.min.js"></script>
+  <script>
+    fetch('data.csv')
+      .then(response => response.text())
+      .then(csvText => {
+        Papa.parse(csvText, {
+          header: true,
+          complete: function(results) {
+            const herbs = results.data;
+            const container = document.getElementById("herb-container");
+            herbs.forEach(h => {
+              const card = document.createElement("div");
+              card.className = "herb-card";
+              card.innerHTML = `
+                <img src="${h.Image.replace('./', '')}" alt="${h.Herb}">
+                <h3>${h.Herb}</h3>
+                <p><strong>Uses:</strong> ${h["Therapeutic Uses"] || 'N/A'}</p>
+              `;
+              container.appendChild(card);
+            });
+          }
+        });
+      });
+  </script>
+</body>
+</html>
